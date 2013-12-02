@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>994054C8-817F-4D8A-AFD9-584D9CAC6E6B</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Plate</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>F0525D5E-61CC-4949-A1D2-C5A8E69636F4</key>
+		<string>ssh://github.com/ebaizel/plateios.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Plate.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>F0525D5E-61CC-4949-A1D2-C5A8E69636F4</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/ebaizel/plateios.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>F0525D5E-61CC-4949-A1D2-C5A8E69636F4</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>F0525D5E-61CC-4949-A1D2-C5A8E69636F4</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Plate</string>
+		</dict>
+	</array>
+</dict>
+</plist>

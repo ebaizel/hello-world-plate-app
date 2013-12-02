@@ -7,6 +7,7 @@
 //
 
 #import "PLAppDelegate.h"
+#import "PLHomeViewController.h"
 
 @implementation PLAppDelegate
 
@@ -14,7 +15,13 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
+
+    PLHomeViewController *plhvc = [[PLHomeViewController alloc]initWithNibName:@"PLHomeViewController" bundle:nil];
+    UINavigationController *masterNav = [[UINavigationController alloc] initWithRootViewController:plhvc];
+    
+    [[self window] setRootViewController:masterNav];
+    
+    //self.window.backgroundColor = [UIColor blueColor];
     [self.window makeKeyAndVisible];
     return YES;
 }

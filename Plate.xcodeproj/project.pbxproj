@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A318C63184532250023FFF5 /* PLHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A318C61184532250023FFF5 /* PLHomeViewController.m */; };
+		0A318C64184532250023FFF5 /* PLHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A318C62184532250023FFF5 /* PLHomeViewController.xib */; };
+		0A9D7DCE18470F5F00BAE38D /* PLSelectPlateSizeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D7DCC18470F5F00BAE38D /* PLSelectPlateSizeViewController.m */; };
+		0A9D7DCF18470F5F00BAE38D /* PLSelectPlateSizeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A9D7DCD18470F5F00BAE38D /* PLSelectPlateSizeViewController.xib */; };
+		0A9D7DDA184A93C800BAE38D /* PLSelectMainsViewControllerORIG.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D7DD8184A93C800BAE38D /* PLSelectMainsViewControllerORIG.m */; };
+		0A9D7DDB184A93C800BAE38D /* PLSelectMainsViewControllerORIG.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A9D7DD9184A93C800BAE38D /* PLSelectMainsViewControllerORIG.xib */; };
+		0A9D7DDF184BA6D000BAE38D /* PLSelectMainsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D7DDD184BA6D000BAE38D /* PLSelectMainsViewController.m */; };
+		0A9D7DE0184BA6D000BAE38D /* PLSelectMainsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A9D7DDE184BA6D000BAE38D /* PLSelectMainsViewController.xib */; };
+		0A9D7DE8184C5C6700BAE38D /* PlateStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A9D7DE7184C5C6700BAE38D /* PlateStoryboard.storyboard */; };
 		0ABBE3F41843D0390031D3E2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ABBE3F31843D0390031D3E2 /* Foundation.framework */; };
 		0ABBE3F61843D0390031D3E2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ABBE3F51843D0390031D3E2 /* CoreGraphics.framework */; };
 		0ABBE3F81843D0390031D3E2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ABBE3F71843D0390031D3E2 /* UIKit.framework */; };
@@ -32,6 +41,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A318C60184532250023FFF5 /* PLHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLHomeViewController.h; sourceTree = "<group>"; };
+		0A318C61184532250023FFF5 /* PLHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLHomeViewController.m; sourceTree = "<group>"; };
+		0A318C62184532250023FFF5 /* PLHomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PLHomeViewController.xib; sourceTree = "<group>"; };
+		0A9D7DCB18470F5E00BAE38D /* PLSelectPlateSizeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLSelectPlateSizeViewController.h; sourceTree = "<group>"; };
+		0A9D7DCC18470F5F00BAE38D /* PLSelectPlateSizeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLSelectPlateSizeViewController.m; sourceTree = "<group>"; };
+		0A9D7DCD18470F5F00BAE38D /* PLSelectPlateSizeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PLSelectPlateSizeViewController.xib; sourceTree = "<group>"; };
+		0A9D7DD7184A93C800BAE38D /* PLSelectMainsViewControllerORIG.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLSelectMainsViewControllerORIG.h; sourceTree = "<group>"; };
+		0A9D7DD8184A93C800BAE38D /* PLSelectMainsViewControllerORIG.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLSelectMainsViewControllerORIG.m; sourceTree = "<group>"; };
+		0A9D7DD9184A93C800BAE38D /* PLSelectMainsViewControllerORIG.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PLSelectMainsViewControllerORIG.xib; sourceTree = "<group>"; };
+		0A9D7DDC184BA6D000BAE38D /* PLSelectMainsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLSelectMainsViewController.h; sourceTree = "<group>"; };
+		0A9D7DDD184BA6D000BAE38D /* PLSelectMainsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLSelectMainsViewController.m; sourceTree = "<group>"; };
+		0A9D7DDE184BA6D000BAE38D /* PLSelectMainsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PLSelectMainsViewController.xib; sourceTree = "<group>"; };
+		0A9D7DE7184C5C6700BAE38D /* PlateStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PlateStoryboard.storyboard; sourceTree = "<group>"; };
 		0ABBE3F01843D0390031D3E2 /* Plate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Plate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0ABBE3F31843D0390031D3E2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0ABBE3F51843D0390031D3E2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -74,13 +96,49 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A9D7DD018470F8C00BAE38D /* Plate Create */ = {
+			isa = PBXGroup;
+			children = (
+				0A9D7DCB18470F5E00BAE38D /* PLSelectPlateSizeViewController.h */,
+				0A9D7DCC18470F5F00BAE38D /* PLSelectPlateSizeViewController.m */,
+				0A9D7DCD18470F5F00BAE38D /* PLSelectPlateSizeViewController.xib */,
+				0A9D7DDC184BA6D000BAE38D /* PLSelectMainsViewController.h */,
+				0A9D7DDD184BA6D000BAE38D /* PLSelectMainsViewController.m */,
+				0A9D7DDE184BA6D000BAE38D /* PLSelectMainsViewController.xib */,
+			);
+			name = "Plate Create";
+			sourceTree = "<group>";
+		};
+		0A9D7DD118470FA100BAE38D /* Plate Home */ = {
+			isa = PBXGroup;
+			children = (
+				0A318C60184532250023FFF5 /* PLHomeViewController.h */,
+				0A318C61184532250023FFF5 /* PLHomeViewController.m */,
+				0A318C62184532250023FFF5 /* PLHomeViewController.xib */,
+			);
+			name = "Plate Home";
+			sourceTree = "<group>";
+		};
+		0A9D7DE1184BA6E800BAE38D /* Stash */ = {
+			isa = PBXGroup;
+			children = (
+				0A9D7DD7184A93C800BAE38D /* PLSelectMainsViewControllerORIG.h */,
+				0A9D7DD8184A93C800BAE38D /* PLSelectMainsViewControllerORIG.m */,
+				0A9D7DD9184A93C800BAE38D /* PLSelectMainsViewControllerORIG.xib */,
+			);
+			name = Stash;
+			sourceTree = "<group>";
+		};
 		0ABBE3E71843D0390031D3E2 = {
 			isa = PBXGroup;
 			children = (
+				0A9D7DD118470FA100BAE38D /* Plate Home */,
+				0A9D7DD018470F8C00BAE38D /* Plate Create */,
 				0ABBE3F91843D0390031D3E2 /* Plate */,
 				0ABBE4121843D0390031D3E2 /* PlateTests */,
 				0ABBE3F21843D0390031D3E2 /* Frameworks */,
 				0ABBE3F11843D0390031D3E2 /* Products */,
+				0A9D7DE1184BA6E800BAE38D /* Stash */,
 			);
 			sourceTree = "<group>";
 		};
@@ -121,6 +179,7 @@
 				0ABBE3FB1843D0390031D3E2 /* Plate-Info.plist */,
 				0ABBE3FC1843D0390031D3E2 /* InfoPlist.strings */,
 				0ABBE3FF1843D0390031D3E2 /* main.m */,
+				0A9D7DE7184C5C6700BAE38D /* PlateStoryboard.storyboard */,
 				0ABBE4011843D0390031D3E2 /* Plate-Prefix.pch */,
 			);
 			name = "Supporting Files";
@@ -221,7 +280,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				0ABBE3FE1843D0390031D3E2 /* InfoPlist.strings in Resources */,
+				0A9D7DDB184A93C800BAE38D /* PLSelectMainsViewControllerORIG.xib in Resources */,
+				0A9D7DE8184C5C6700BAE38D /* PlateStoryboard.storyboard in Resources */,
+				0A9D7DCF18470F5F00BAE38D /* PLSelectPlateSizeViewController.xib in Resources */,
+				0A318C64184532250023FFF5 /* PLHomeViewController.xib in Resources */,
 				0ABBE4061843D0390031D3E2 /* Images.xcassets in Resources */,
+				0A9D7DE0184BA6D000BAE38D /* PLSelectMainsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,7 +305,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				0ABBE4041843D0390031D3E2 /* PLAppDelegate.m in Sources */,
+				0A9D7DDF184BA6D000BAE38D /* PLSelectMainsViewController.m in Sources */,
+				0A318C63184532250023FFF5 /* PLHomeViewController.m in Sources */,
+				0A9D7DDA184A93C800BAE38D /* PLSelectMainsViewControllerORIG.m in Sources */,
 				0ABBE4001843D0390031D3E2 /* main.m in Sources */,
+				0A9D7DCE18470F5F00BAE38D /* PLSelectPlateSizeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -444,6 +512,7 @@
 				0ABBE41E1843D0390031D3E2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0ABBE41F1843D0390031D3E2 /* Build configuration list for PBXNativeTarget "PlateTests" */ = {
 			isa = XCConfigurationList;
@@ -452,6 +521,7 @@
 				0ABBE4211843D0390031D3E2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
