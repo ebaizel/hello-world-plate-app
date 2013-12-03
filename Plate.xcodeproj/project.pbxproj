@@ -11,11 +11,15 @@
 		0A318C64184532250023FFF5 /* PLHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A318C62184532250023FFF5 /* PLHomeViewController.xib */; };
 		0A9D7DCE18470F5F00BAE38D /* PLSelectPlateSizeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D7DCC18470F5F00BAE38D /* PLSelectPlateSizeViewController.m */; };
 		0A9D7DCF18470F5F00BAE38D /* PLSelectPlateSizeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A9D7DCD18470F5F00BAE38D /* PLSelectPlateSizeViewController.xib */; };
-		0A9D7DDA184A93C800BAE38D /* PLSelectMainsViewControllerORIG.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D7DD8184A93C800BAE38D /* PLSelectMainsViewControllerORIG.m */; };
-		0A9D7DDB184A93C800BAE38D /* PLSelectMainsViewControllerORIG.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A9D7DD9184A93C800BAE38D /* PLSelectMainsViewControllerORIG.xib */; };
-		0A9D7DDF184BA6D000BAE38D /* PLSelectMainsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D7DDD184BA6D000BAE38D /* PLSelectMainsViewController.m */; };
-		0A9D7DE0184BA6D000BAE38D /* PLSelectMainsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A9D7DDE184BA6D000BAE38D /* PLSelectMainsViewController.xib */; };
+		0A9D7DDA184A93C800BAE38D /* PLSelectMainsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D7DD8184A93C800BAE38D /* PLSelectMainsViewController.m */; };
+		0A9D7DDB184A93C800BAE38D /* PLSelectMainsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A9D7DD9184A93C800BAE38D /* PLSelectMainsViewController.xib */; };
+		0A9D7DDF184BA6D000BAE38D /* PLSelectMainsViewControllerDELETEME.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D7DDD184BA6D000BAE38D /* PLSelectMainsViewControllerDELETEME.m */; };
+		0A9D7DE0184BA6D000BAE38D /* PLSelectMainsViewControllerDELETEME.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A9D7DDE184BA6D000BAE38D /* PLSelectMainsViewControllerDELETEME.xib */; };
 		0A9D7DE8184C5C6700BAE38D /* PlateStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A9D7DE7184C5C6700BAE38D /* PlateStoryboard.storyboard */; };
+		0A9D7DEC184C62CA00BAE38D /* PLSelectSidesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D7DEA184C62CA00BAE38D /* PLSelectSidesViewController.m */; };
+		0A9D7DED184C62CA00BAE38D /* PLSelectSidesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A9D7DEB184C62CA00BAE38D /* PLSelectSidesViewController.xib */; };
+		0A9D7DF3184D19C400BAE38D /* PLOrderSummaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D7DF1184D19C400BAE38D /* PLOrderSummaryViewController.m */; };
+		0A9D7DF4184D19C400BAE38D /* PLOrderSummaryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A9D7DF2184D19C400BAE38D /* PLOrderSummaryViewController.xib */; };
 		0ABBE3F41843D0390031D3E2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ABBE3F31843D0390031D3E2 /* Foundation.framework */; };
 		0ABBE3F61843D0390031D3E2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ABBE3F51843D0390031D3E2 /* CoreGraphics.framework */; };
 		0ABBE3F81843D0390031D3E2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ABBE3F71843D0390031D3E2 /* UIKit.framework */; };
@@ -47,13 +51,19 @@
 		0A9D7DCB18470F5E00BAE38D /* PLSelectPlateSizeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLSelectPlateSizeViewController.h; sourceTree = "<group>"; };
 		0A9D7DCC18470F5F00BAE38D /* PLSelectPlateSizeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLSelectPlateSizeViewController.m; sourceTree = "<group>"; };
 		0A9D7DCD18470F5F00BAE38D /* PLSelectPlateSizeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PLSelectPlateSizeViewController.xib; sourceTree = "<group>"; };
-		0A9D7DD7184A93C800BAE38D /* PLSelectMainsViewControllerORIG.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLSelectMainsViewControllerORIG.h; sourceTree = "<group>"; };
-		0A9D7DD8184A93C800BAE38D /* PLSelectMainsViewControllerORIG.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLSelectMainsViewControllerORIG.m; sourceTree = "<group>"; };
-		0A9D7DD9184A93C800BAE38D /* PLSelectMainsViewControllerORIG.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PLSelectMainsViewControllerORIG.xib; sourceTree = "<group>"; };
-		0A9D7DDC184BA6D000BAE38D /* PLSelectMainsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLSelectMainsViewController.h; sourceTree = "<group>"; };
-		0A9D7DDD184BA6D000BAE38D /* PLSelectMainsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLSelectMainsViewController.m; sourceTree = "<group>"; };
-		0A9D7DDE184BA6D000BAE38D /* PLSelectMainsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PLSelectMainsViewController.xib; sourceTree = "<group>"; };
+		0A9D7DD7184A93C800BAE38D /* PLSelectMainsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLSelectMainsViewController.h; sourceTree = "<group>"; };
+		0A9D7DD8184A93C800BAE38D /* PLSelectMainsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLSelectMainsViewController.m; sourceTree = "<group>"; };
+		0A9D7DD9184A93C800BAE38D /* PLSelectMainsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PLSelectMainsViewController.xib; sourceTree = "<group>"; };
+		0A9D7DDC184BA6D000BAE38D /* PLSelectMainsViewControllerDELETEME.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLSelectMainsViewControllerDELETEME.h; sourceTree = "<group>"; };
+		0A9D7DDD184BA6D000BAE38D /* PLSelectMainsViewControllerDELETEME.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLSelectMainsViewControllerDELETEME.m; sourceTree = "<group>"; };
+		0A9D7DDE184BA6D000BAE38D /* PLSelectMainsViewControllerDELETEME.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PLSelectMainsViewControllerDELETEME.xib; sourceTree = "<group>"; };
 		0A9D7DE7184C5C6700BAE38D /* PlateStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PlateStoryboard.storyboard; sourceTree = "<group>"; };
+		0A9D7DE9184C62CA00BAE38D /* PLSelectSidesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLSelectSidesViewController.h; sourceTree = "<group>"; };
+		0A9D7DEA184C62CA00BAE38D /* PLSelectSidesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLSelectSidesViewController.m; sourceTree = "<group>"; };
+		0A9D7DEB184C62CA00BAE38D /* PLSelectSidesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PLSelectSidesViewController.xib; sourceTree = "<group>"; };
+		0A9D7DF0184D19C400BAE38D /* PLOrderSummaryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLOrderSummaryViewController.h; sourceTree = "<group>"; };
+		0A9D7DF1184D19C400BAE38D /* PLOrderSummaryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLOrderSummaryViewController.m; sourceTree = "<group>"; };
+		0A9D7DF2184D19C400BAE38D /* PLOrderSummaryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PLOrderSummaryViewController.xib; sourceTree = "<group>"; };
 		0ABBE3F01843D0390031D3E2 /* Plate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Plate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0ABBE3F31843D0390031D3E2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0ABBE3F51843D0390031D3E2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -99,12 +109,18 @@
 		0A9D7DD018470F8C00BAE38D /* Plate Create */ = {
 			isa = PBXGroup;
 			children = (
+				0A9D7DD7184A93C800BAE38D /* PLSelectMainsViewController.h */,
+				0A9D7DD8184A93C800BAE38D /* PLSelectMainsViewController.m */,
+				0A9D7DD9184A93C800BAE38D /* PLSelectMainsViewController.xib */,
 				0A9D7DCB18470F5E00BAE38D /* PLSelectPlateSizeViewController.h */,
 				0A9D7DCC18470F5F00BAE38D /* PLSelectPlateSizeViewController.m */,
 				0A9D7DCD18470F5F00BAE38D /* PLSelectPlateSizeViewController.xib */,
-				0A9D7DDC184BA6D000BAE38D /* PLSelectMainsViewController.h */,
-				0A9D7DDD184BA6D000BAE38D /* PLSelectMainsViewController.m */,
-				0A9D7DDE184BA6D000BAE38D /* PLSelectMainsViewController.xib */,
+				0A9D7DE9184C62CA00BAE38D /* PLSelectSidesViewController.h */,
+				0A9D7DEA184C62CA00BAE38D /* PLSelectSidesViewController.m */,
+				0A9D7DEB184C62CA00BAE38D /* PLSelectSidesViewController.xib */,
+				0A9D7DF0184D19C400BAE38D /* PLOrderSummaryViewController.h */,
+				0A9D7DF1184D19C400BAE38D /* PLOrderSummaryViewController.m */,
+				0A9D7DF2184D19C400BAE38D /* PLOrderSummaryViewController.xib */,
 			);
 			name = "Plate Create";
 			sourceTree = "<group>";
@@ -122,9 +138,9 @@
 		0A9D7DE1184BA6E800BAE38D /* Stash */ = {
 			isa = PBXGroup;
 			children = (
-				0A9D7DD7184A93C800BAE38D /* PLSelectMainsViewControllerORIG.h */,
-				0A9D7DD8184A93C800BAE38D /* PLSelectMainsViewControllerORIG.m */,
-				0A9D7DD9184A93C800BAE38D /* PLSelectMainsViewControllerORIG.xib */,
+				0A9D7DDC184BA6D000BAE38D /* PLSelectMainsViewControllerDELETEME.h */,
+				0A9D7DDD184BA6D000BAE38D /* PLSelectMainsViewControllerDELETEME.m */,
+				0A9D7DDE184BA6D000BAE38D /* PLSelectMainsViewControllerDELETEME.xib */,
 			);
 			name = Stash;
 			sourceTree = "<group>";
@@ -280,12 +296,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				0ABBE3FE1843D0390031D3E2 /* InfoPlist.strings in Resources */,
-				0A9D7DDB184A93C800BAE38D /* PLSelectMainsViewControllerORIG.xib in Resources */,
+				0A9D7DDB184A93C800BAE38D /* PLSelectMainsViewController.xib in Resources */,
 				0A9D7DE8184C5C6700BAE38D /* PlateStoryboard.storyboard in Resources */,
+				0A9D7DED184C62CA00BAE38D /* PLSelectSidesViewController.xib in Resources */,
 				0A9D7DCF18470F5F00BAE38D /* PLSelectPlateSizeViewController.xib in Resources */,
 				0A318C64184532250023FFF5 /* PLHomeViewController.xib in Resources */,
 				0ABBE4061843D0390031D3E2 /* Images.xcassets in Resources */,
-				0A9D7DE0184BA6D000BAE38D /* PLSelectMainsViewController.xib in Resources */,
+				0A9D7DF4184D19C400BAE38D /* PLOrderSummaryViewController.xib in Resources */,
+				0A9D7DE0184BA6D000BAE38D /* PLSelectMainsViewControllerDELETEME.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,10 +323,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				0ABBE4041843D0390031D3E2 /* PLAppDelegate.m in Sources */,
-				0A9D7DDF184BA6D000BAE38D /* PLSelectMainsViewController.m in Sources */,
+				0A9D7DDF184BA6D000BAE38D /* PLSelectMainsViewControllerDELETEME.m in Sources */,
 				0A318C63184532250023FFF5 /* PLHomeViewController.m in Sources */,
-				0A9D7DDA184A93C800BAE38D /* PLSelectMainsViewControllerORIG.m in Sources */,
+				0A9D7DDA184A93C800BAE38D /* PLSelectMainsViewController.m in Sources */,
 				0ABBE4001843D0390031D3E2 /* main.m in Sources */,
+				0A9D7DEC184C62CA00BAE38D /* PLSelectSidesViewController.m in Sources */,
+				0A9D7DF3184D19C400BAE38D /* PLOrderSummaryViewController.m in Sources */,
 				0A9D7DCE18470F5F00BAE38D /* PLSelectPlateSizeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

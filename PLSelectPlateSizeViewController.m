@@ -7,7 +7,7 @@
 //
 
 #import "PLSelectPlateSizeViewController.h"
-#import "PLSelectMainsViewControllerORIG.h"
+#import "PLSelectMainsViewController.h"
 
 @interface PLSelectPlateSizeViewController ()
 
@@ -19,16 +19,11 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
-    if ([indexPath row] == 0) {
-//        [[self view] addSubview:[[self selectSizeController] view]];
-//        [[self navigationController] pushViewController:[self selectSizeController] animated:YES];
-    } else if ([indexPath row] == 1) {
-        
-    } else {
-        
+    if([tableView cellForRowAtIndexPath:indexPath].accessoryType == UITableViewCellAccessoryCheckmark){
+        [tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryNone;
+    }else{
+        [tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryCheckmark;
     }
-    
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -45,7 +40,6 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell"];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"UITableViewCell"];
-        [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
     }
 
     if ([self plateSizeTable] == tableView) {
@@ -81,7 +75,7 @@
         [[self navigationItem] setTitle:@"Create a Plate"];
         self.navigationController.navigationBar.tintColor = [UIColor blackColor];
         
-        self.mainsViewController = [[PLSelectMainsViewControllerORIG alloc] init];
+        self.mainsViewController = [[PLSelectMainsViewController alloc] init];
     }
     return self;
 }

@@ -8,13 +8,13 @@
 
 #import <UIKit/UIKit.h>
 @class PLSelectPlateSizeViewController;
-@class PLSelectMainsViewControllerORIG;
+@class PLSelectMainsViewController;
 
 @interface PLSelectPlateSizeViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *plateTypeTable;
 @property (weak, nonatomic) IBOutlet UITableView *plateSizeTable;
-@property (strong, nonatomic) IBOutlet PLSelectMainsViewControllerORIG *mainsViewController;
+@property (strong, nonatomic) IBOutlet PLSelectMainsViewController *mainsViewController;
 - (IBAction)displayMains:(id)sender;
 
 @end

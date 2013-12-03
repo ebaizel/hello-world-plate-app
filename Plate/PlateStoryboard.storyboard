@@ -4,10 +4,10 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
-        <!--Select Mains View Controller-->
+        <!--Select Mains View ControllerDELETEME-->
         <scene sceneID="dgv-Ap-ndI">
             <objects>
-                <tableViewController id="TCK-PU-cVD" customClass="PLSelectMainsViewController" sceneMemberID="viewController">
+                <tableViewController id="TCK-PU-cVD" customClass="PLSelectMainsViewControllerDELETEME" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="kRF-8R-y3r">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

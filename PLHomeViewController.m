@@ -20,7 +20,6 @@
 {
  
     if ([indexPath row] == 0) {
-//        [[self view] addSubview:[[self selectSizeController] view]];
         [[self navigationController] pushViewController:[self selectSizeController] animated:YES];
     } else if ([indexPath row] == 1) {
 
@@ -30,13 +29,13 @@
     
 }
 
--(float)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-    return  0.0;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return 0.0;
-}
+//-(float)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+//    return  0.0;
+//}
+//
+//- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+//    return 0.0;
+//}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
