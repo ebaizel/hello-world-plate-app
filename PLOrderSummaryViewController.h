@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PLBaseOrderViewController.h"
 
+//@interface PLOrderSummaryViewController : PLBaseOrderViewController
 @interface PLOrderSummaryViewController : UIViewController
 
 @end

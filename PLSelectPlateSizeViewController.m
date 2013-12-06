@@ -41,9 +41,15 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"UITableViewCell"];
     }
-
+    
+    cell.layer.borderWidth = 1.0f;
+    cell.layer.borderColor = [[UIColor blackColor] CGColor];
+    cell.layer.masksToBounds = YES;
+    cell.layer.cornerRadius = 12.0f;
+    cell.layer.backgroundColor = [[UIColor grayColor] CGColor];
+    
     if ([self plateSizeTable] == tableView) {
-
+        
         if ([indexPath row] == 0) {
             [[cell textLabel] setText:@"Fit"];
         } else if ([indexPath row] == 1) {
@@ -51,15 +57,15 @@
         } else {
             [[cell textLabel] setText:@"Kid"];
         }
-
+        
     } else {
-
+        
         if ([indexPath row] == 0) {
             [[cell textLabel] setText:@"1 Main and 2 Sides"];
         } else if ([indexPath row] == 1) {
             [[cell textLabel] setText:@"4 Sides"];
         }
-
+        
     }
     
     
@@ -67,14 +73,13 @@
     
 }
 
+#pragma INITIALIZERS
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        [[self navigationItem] setTitle:@"Create a Plate"];
-        self.navigationController.navigationBar.tintColor = [UIColor blackColor];
-        
         self.mainsViewController = [[PLSelectMainsViewController alloc] init];
     }
     return self;
@@ -84,13 +89,12 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-//    self.edgesForExtendedLayout=UIRectEdgeNone;
+    [self setTitle:@"Sizes"];
+}
 
-    self.navigationItem.backBarButtonItem =
-    [[UIBarButtonItem alloc] initWithTitle:@"Sizes"
-                                     style:UIBarButtonItemStyleBordered
-                                    target:nil
-                                    action:nil];
+- (void)viewDidAppear:(BOOL)animated
+{
+    self.navigationController.toolbarHidden = NO;
 }
 
 - (void)didReceiveMemoryWarning
@@ -99,7 +103,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)displayMains:(id)sender {
+- (IBAction)actionContinue:(id)sender {
     [[self navigationController] pushViewController:[self mainsViewController] animated:YES];
 }
 @end

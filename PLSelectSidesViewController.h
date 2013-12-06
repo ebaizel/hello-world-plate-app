@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "PLOrderSummaryViewController.h"
+#import "PLBaseOrderViewController.h"
 
-@interface PLSelectSidesViewController : UIViewController
+@interface PLSelectSidesViewController : PLBaseOrderViewController
 
-- (IBAction)viewOrderSummary:(id)sender;
+//- (IBAction)viewOrderSummary:(id)sender;
 @property (nonatomic, strong) PLOrderSummaryViewController *orderSummaryController;
 @end

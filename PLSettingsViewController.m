@@ -1,24 +1,26 @@
 //
-//  PLOrderSummaryViewController.m
+//  PLSettingsViewController.m
 //  Plate
 //
-//  Created by emileleon on 12/2/13.
+//  Created by emileleon on 12/5/13.
 //  Copyright (c) 2013 Plate SF. All rights reserved.
 //
 
-#import "PLOrderSummaryViewController.h"
+#import "PLSettingsViewController.h"
 
-@interface PLOrderSummaryViewController ()
+@interface PLSettingsViewController ()
 
 @end
 
-@implementation PLOrderSummaryViewController
+@implementation PLSettingsViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        UITabBarItem *tbi = [self tabBarItem];
+        [tbi setTitle:@"Settings"];
     }
     return self;
 }
@@ -33,16 +35,6 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
-    self.navigationController.toolbarHidden = NO;
-}
-
-- (void)actionContinue:(id)sender
-{
-    NSLog(@"continue clicked from summary");
 }
 
 @end

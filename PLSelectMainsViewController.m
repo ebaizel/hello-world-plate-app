@@ -24,6 +24,12 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"UITableViewCell"];
     }
     
+    cell.layer.borderWidth = 1.0f;
+    cell.layer.borderColor = [[UIColor blackColor] CGColor];
+    cell.layer.masksToBounds = YES;
+    cell.layer.cornerRadius = 12.0f;
+    cell.layer.backgroundColor = [[UIColor grayColor] CGColor];
+    
         if ([indexPath row] == 0) {
             [[cell textLabel] setText:@"Fish"];
         } else if ([indexPath row] == 1) {
@@ -46,9 +52,9 @@
     
 }
 
--(float)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-    return  0.0;
-}
+//-(float)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+//    return  0.0;
+//}
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
     if ([tableView.dataSource tableView:tableView numberOfRowsInSection:section] == 0) {
@@ -106,7 +112,17 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        [[self navigationItem] setTitle:@"Create a Plate"];
+        
+        // Setup the bottom toolbar
+        UIBarButtonItem *flexibleSpaceLeft = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+        UIBarButtonItem *barButton = [[UIBarButtonItem alloc] initWithTitle:@"Continue" style:UIBarButtonItemStylePlain target:self action:@selector(actionContinue:)];
+        [barButton setTitleTextAttributes:@{
+                                            NSFontAttributeName: [UIFont fontWithName:@"Helvetica" size:24.0],
+                                            NSForegroundColorAttributeName: [UIColor blackColor]
+                                            } forState:UIControlStateNormal];
+        self.toolbarItems = [NSArray arrayWithObjects: flexibleSpaceLeft, barButton, nil];
+        
+        
     }
     return self;
 }
@@ -115,17 +131,9 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.navigationItem.backBarButtonItem =
-    [[UIBarButtonItem alloc] initWithTitle:@"Mains"
-                                     style:UIBarButtonItemStyleBordered
-                                    target:nil
-                                    action:nil];
+    [self setTitle:@"Mains"];
     [[self tableMains] setTableHeaderView:nil];
-
-    self.edgesForExtendedLayout=UIRectEdgeNone;
     
-//    self.navigationController.navigationBar.barTintColor = [UIColor greenColor];
-//    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
 }
 
 - (void)didReceiveMemoryWarning
@@ -134,7 +142,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)displaySides:(id)sender {
+- (IBAction)actionContinue:(id)sender {
     self.sidesController = [[PLSelectSidesViewController alloc] init];
     [[self navigationController] pushViewController:[self sidesController] animated:YES];
 }

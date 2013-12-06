@@ -17,29 +17,6 @@
 
 @synthesize orderSummaryController;
 
-- (void)viewDidAppear:(BOOL)animated
-{
-    //self.tableView.frame = CGRectMake(0,10,320,250);
-}
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    self.orderSummaryController = [[PLOrderSummaryViewController alloc]init];
-
-//    [[self ] setTableHeaderView:nil];
-    
-    self.edgesForExtendedLayout=UIRectEdgeNone;
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-}
-
-
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -57,7 +34,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return 5;
+    return 8;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -67,6 +44,12 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
     }
+    
+    cell.layer.borderWidth = 1.0f;
+    cell.layer.borderColor = [[UIColor blackColor] CGColor];
+    cell.layer.masksToBounds = YES;
+    cell.layer.cornerRadius = 12.0f;
+    cell.layer.backgroundColor = [[UIColor grayColor] CGColor];
     
     if ([indexPath row] == 0) {
         [[cell textLabel] setText:@"Brocollini"];
@@ -156,18 +139,25 @@
  
  */
 
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    self.title = @"Sides";
+    self.orderSummaryController = [[PLOrderSummaryViewController alloc]init];
+}
+
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        [[self navigationItem] setTitle:@"Create a Plate"];
     }
     return self;
 }
 
 
-- (IBAction)viewOrderSummary:(id)sender {
+- (IBAction)actionContinue:(id)sender {
     [[self navigationController] pushViewController:[self orderSummaryController] animated:YES];
 }
 @end

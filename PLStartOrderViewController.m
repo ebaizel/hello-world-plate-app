@@ -6,14 +6,14 @@
 //  Copyright (c) 2013 Plate SF. All rights reserved.
 //
 
-#import "PLHomeViewController.h"
+#import "PLStartOrderViewController.h"
 #import "PLSelectPlateSizeViewController.h"
 
-@interface PLHomeViewController ()
+@interface PLStartOrderViewController ()
 
 @end
 
-@implementation PLHomeViewController
+@implementation PLStartOrderViewController
 
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -49,6 +49,12 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"UITableViewCell"];
         [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
     }
+    
+    cell.layer.borderWidth = 1.0f;
+    cell.layer.borderColor = [[UIColor blackColor] CGColor];
+    cell.layer.masksToBounds = YES;
+    cell.layer.cornerRadius = 12.0f;
+    cell.layer.backgroundColor = [[UIColor grayColor] CGColor];
  
     if ([indexPath row] == 0) {
         [[cell textLabel] setText:@"Create a Plate"];
@@ -68,8 +74,11 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.title = @"Plate";
-        [self setSelectSizeController:[[PLSelectPlateSizeViewController alloc] init]];
+        [self setTitle:@"Order"];
+        PLSelectPlateSizeViewController *plpsvc = [[PLSelectPlateSizeViewController alloc]init];
+        plpsvc.hidesBottomBarWhenPushed = YES;
+        [self setSelectSizeController:plpsvc];
+
     }
     return self;
 }
@@ -79,14 +88,18 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.navigationItem.backBarButtonItem =
-    [[UIBarButtonItem alloc] initWithTitle:@"Home"
+    [[UIBarButtonItem alloc] initWithTitle:@"Order"
                                       style:UIBarButtonItemStyleBordered
                                      target:nil
                                      action:nil];
 
-    self.edgesForExtendedLayout=UIRectEdgeNone;
-    self.navigationController.navigationBar.barTintColor = [UIColor greenColor];
-    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+//    self.navigationController.navigationBar.barTintColor = [UIColor greenColor];
+//    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    self.navigationController.toolbarHidden = YES;
 }
 
 - (void)didReceiveMemoryWarning

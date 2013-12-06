@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "PLSelectPlateSizeViewController.h"
+#import "PLBaseOrderViewController.h"
 
-@interface PLHomeViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@class PLSelectPlateSizeViewController;
+
+@interface PLStartOrderViewController : PLBaseOrderViewController <UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) PLSelectPlateSizeViewController *selectSizeController;
 @end

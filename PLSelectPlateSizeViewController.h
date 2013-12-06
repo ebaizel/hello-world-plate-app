@@ -7,14 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PLBaseOrderViewController.h"
 @class PLSelectPlateSizeViewController;
 @class PLSelectMainsViewController;
 
-@interface PLSelectPlateSizeViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@interface PLSelectPlateSizeViewController : PLBaseOrderViewController <UITableViewDelegate, UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *plateTypeTable;
 @property (weak, nonatomic) IBOutlet UITableView *plateSizeTable;
 @property (strong, nonatomic) IBOutlet PLSelectMainsViewController *mainsViewController;
-- (IBAction)displayMains:(id)sender;
 
 @end

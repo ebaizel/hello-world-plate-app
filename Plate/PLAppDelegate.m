@@ -7,21 +7,36 @@
 //
 
 #import "PLAppDelegate.h"
-#import "PLHomeViewController.h"
+#import "PLOrderNavigationController.h"
+#import "PLMenuViewController.h"
+#import "PLRewardsViewController.h"
+#import "PLSettingsViewController.h"
+#import "TestFlight.h"
 
 @implementation PLAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [TestFlight takeOff:@"7e7b66b2-35a9-4033-b76e-c6c1f0c9581c"];
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
 
-    PLHomeViewController *plhvc = [[PLHomeViewController alloc]initWithNibName:@"PLHomeViewController" bundle:nil];
-    UINavigationController *masterNav = [[UINavigationController alloc] initWithRootViewController:plhvc];
+    //Init each of the tab bar's controllers
+    PLOrderNavigationController *plhvc = [[PLOrderNavigationController alloc]initWithNibName:@"PLOrderNavigationController" bundle:nil];
+    PLMenuViewController *plmvc = [[PLMenuViewController alloc]init];
+    PLRewardsViewController *plrvc = [[PLRewardsViewController alloc]init];
+    PLSettingsViewController *plsvc = [[PLSettingsViewController alloc]init];
     
-    [[self window] setRootViewController:masterNav];
+    UITabBarController *tabBarController = [[UITabBarController alloc]init];
+
+    //    UINavigationController *masterNav = [[UINavigationController alloc] initWithRootViewController:plhvc];
+
+    NSArray *viewControllers = [NSArray arrayWithObjects:plhvc, plmvc, plrvc, plsvc, nil];
+    [tabBarController setViewControllers:viewControllers];
+
+    [[self window] setRootViewController:tabBarController];
     
-    //self.window.backgroundColor = [UIColor blueColor];
     [self.window makeKeyAndVisible];
     return YES;
 }

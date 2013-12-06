@@ -1,24 +1,26 @@
 //
-//  PLOrderSummaryViewController.m
+//  PLRewardsViewController.m
 //  Plate
 //
-//  Created by emileleon on 12/2/13.
+//  Created by emileleon on 12/5/13.
 //  Copyright (c) 2013 Plate SF. All rights reserved.
 //
 
-#import "PLOrderSummaryViewController.h"
+#import "PLRewardsViewController.h"
 
-@interface PLOrderSummaryViewController ()
+@interface PLRewardsViewController ()
 
 @end
 
-@implementation PLOrderSummaryViewController
+@implementation PLRewardsViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        UITabBarItem *tbi = [self tabBarItem];
+        [tbi setTitle:@"Rewards"];
     }
     return self;
 }
@@ -33,16 +35,6 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-- (void)viewDidAppear:(BOOL)animated
-{
-    self.navigationController.toolbarHidden = NO;
-}
-
-- (void)actionContinue:(id)sender
-{
-    NSLog(@"continue clicked from summary");
 }
 
 @end

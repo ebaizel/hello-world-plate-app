@@ -7,8 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0A318C63184532250023FFF5 /* PLHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A318C61184532250023FFF5 /* PLHomeViewController.m */; };
-		0A318C64184532250023FFF5 /* PLHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A318C62184532250023FFF5 /* PLHomeViewController.xib */; };
+		0A0D16931850FC9E0057F538 /* PLMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A0D16911850FC9E0057F538 /* PLMenuViewController.m */; };
+		0A0D16941850FC9E0057F538 /* PLMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A0D16921850FC9E0057F538 /* PLMenuViewController.xib */; };
+		0A0D16981850FE750057F538 /* PLRewardsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A0D16961850FE750057F538 /* PLRewardsViewController.m */; };
+		0A0D16991850FE750057F538 /* PLRewardsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A0D16971850FE750057F538 /* PLRewardsViewController.xib */; };
+		0A0D169D185102140057F538 /* PLSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A0D169B185102140057F538 /* PLSettingsViewController.m */; };
+		0A0D169E185102140057F538 /* PLSettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A0D169C185102140057F538 /* PLSettingsViewController.xib */; };
+		0A0D16A3185105C10057F538 /* PLOrderNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A0D16A2185105C10057F538 /* PLOrderNavigationController.m */; };
+		0A0D16A518510F790057F538 /* bg-tomatoes.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A0D16A418510F790057F538 /* bg-tomatoes.png */; };
+		0A0D16A71851114F0057F538 /* bg-grey.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0A0D16A61851114F0057F538 /* bg-grey.jpg */; };
+		0A0D16AC185131680057F538 /* PLBaseOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A0D16AA185131680057F538 /* PLBaseOrderViewController.m */; };
+		0A0D16AD185131680057F538 /* PLBaseOrderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A0D16AB185131680057F538 /* PLBaseOrderViewController.xib */; };
+		0A318C63184532250023FFF5 /* PLStartOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A318C61184532250023FFF5 /* PLStartOrderViewController.m */; };
+		0A318C64184532250023FFF5 /* PLStartOrderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A318C62184532250023FFF5 /* PLStartOrderViewController.xib */; };
 		0A9D7DCE18470F5F00BAE38D /* PLSelectPlateSizeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D7DCC18470F5F00BAE38D /* PLSelectPlateSizeViewController.m */; };
 		0A9D7DCF18470F5F00BAE38D /* PLSelectPlateSizeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A9D7DCD18470F5F00BAE38D /* PLSelectPlateSizeViewController.xib */; };
 		0A9D7DDA184A93C800BAE38D /* PLSelectMainsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D7DD8184A93C800BAE38D /* PLSelectMainsViewController.m */; };
@@ -20,6 +31,10 @@
 		0A9D7DED184C62CA00BAE38D /* PLSelectSidesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A9D7DEB184C62CA00BAE38D /* PLSelectSidesViewController.xib */; };
 		0A9D7DF3184D19C400BAE38D /* PLOrderSummaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D7DF1184D19C400BAE38D /* PLOrderSummaryViewController.m */; };
 		0A9D7DF4184D19C400BAE38D /* PLOrderSummaryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A9D7DF2184D19C400BAE38D /* PLOrderSummaryViewController.xib */; };
+		0A9D7E06184D602500BAE38D /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A9D7E00184D602400BAE38D /* libTestFlight.a */; };
+		0A9D7E07184D602500BAE38D /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 0A9D7E01184D602500BAE38D /* README.md */; };
+		0A9D7E08184D602500BAE38D /* release_notes.md in Resources */ = {isa = PBXBuildFile; fileRef = 0A9D7E02184D602500BAE38D /* release_notes.md */; };
+		0A9D7E0A184D606200BAE38D /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A9D7E09184D606200BAE38D /* libz.dylib */; };
 		0ABBE3F41843D0390031D3E2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ABBE3F31843D0390031D3E2 /* Foundation.framework */; };
 		0ABBE3F61843D0390031D3E2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ABBE3F51843D0390031D3E2 /* CoreGraphics.framework */; };
 		0ABBE3F81843D0390031D3E2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ABBE3F71843D0390031D3E2 /* UIKit.framework */; };
@@ -45,9 +60,25 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0A318C60184532250023FFF5 /* PLHomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLHomeViewController.h; sourceTree = "<group>"; };
-		0A318C61184532250023FFF5 /* PLHomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLHomeViewController.m; sourceTree = "<group>"; };
-		0A318C62184532250023FFF5 /* PLHomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PLHomeViewController.xib; sourceTree = "<group>"; };
+		0A0D16901850FC9E0057F538 /* PLMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLMenuViewController.h; sourceTree = "<group>"; };
+		0A0D16911850FC9E0057F538 /* PLMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLMenuViewController.m; sourceTree = "<group>"; };
+		0A0D16921850FC9E0057F538 /* PLMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PLMenuViewController.xib; sourceTree = "<group>"; };
+		0A0D16951850FE750057F538 /* PLRewardsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLRewardsViewController.h; sourceTree = "<group>"; };
+		0A0D16961850FE750057F538 /* PLRewardsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLRewardsViewController.m; sourceTree = "<group>"; };
+		0A0D16971850FE750057F538 /* PLRewardsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PLRewardsViewController.xib; sourceTree = "<group>"; };
+		0A0D169A185102140057F538 /* PLSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLSettingsViewController.h; sourceTree = "<group>"; };
+		0A0D169B185102140057F538 /* PLSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLSettingsViewController.m; sourceTree = "<group>"; };
+		0A0D169C185102140057F538 /* PLSettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PLSettingsViewController.xib; sourceTree = "<group>"; };
+		0A0D16A1185105C10057F538 /* PLOrderNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLOrderNavigationController.h; sourceTree = "<group>"; };
+		0A0D16A2185105C10057F538 /* PLOrderNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLOrderNavigationController.m; sourceTree = "<group>"; };
+		0A0D16A418510F790057F538 /* bg-tomatoes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-tomatoes.png"; sourceTree = "<group>"; };
+		0A0D16A61851114F0057F538 /* bg-grey.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bg-grey.jpg"; sourceTree = "<group>"; };
+		0A0D16A9185131680057F538 /* PLBaseOrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLBaseOrderViewController.h; sourceTree = "<group>"; };
+		0A0D16AA185131680057F538 /* PLBaseOrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLBaseOrderViewController.m; sourceTree = "<group>"; };
+		0A0D16AB185131680057F538 /* PLBaseOrderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PLBaseOrderViewController.xib; sourceTree = "<group>"; };
+		0A318C60184532250023FFF5 /* PLStartOrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLStartOrderViewController.h; sourceTree = "<group>"; };
+		0A318C61184532250023FFF5 /* PLStartOrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLStartOrderViewController.m; sourceTree = "<group>"; };
+		0A318C62184532250023FFF5 /* PLStartOrderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PLStartOrderViewController.xib; sourceTree = "<group>"; };
 		0A9D7DCB18470F5E00BAE38D /* PLSelectPlateSizeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLSelectPlateSizeViewController.h; sourceTree = "<group>"; };
 		0A9D7DCC18470F5F00BAE38D /* PLSelectPlateSizeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLSelectPlateSizeViewController.m; sourceTree = "<group>"; };
 		0A9D7DCD18470F5F00BAE38D /* PLSelectPlateSizeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PLSelectPlateSizeViewController.xib; sourceTree = "<group>"; };
@@ -64,6 +95,13 @@
 		0A9D7DF0184D19C400BAE38D /* PLOrderSummaryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLOrderSummaryViewController.h; sourceTree = "<group>"; };
 		0A9D7DF1184D19C400BAE38D /* PLOrderSummaryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLOrderSummaryViewController.m; sourceTree = "<group>"; };
 		0A9D7DF2184D19C400BAE38D /* PLOrderSummaryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PLOrderSummaryViewController.xib; sourceTree = "<group>"; };
+		0A9D7E00184D602400BAE38D /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTestFlight.a; sourceTree = "<group>"; };
+		0A9D7E01184D602500BAE38D /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		0A9D7E02184D602500BAE38D /* release_notes.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = release_notes.md; sourceTree = "<group>"; };
+		0A9D7E03184D602500BAE38D /* TestFlight+AsyncLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestFlight+AsyncLogging.h"; sourceTree = "<group>"; };
+		0A9D7E04184D602500BAE38D /* TestFlight+ManualSessions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestFlight+ManualSessions.h"; sourceTree = "<group>"; };
+		0A9D7E05184D602500BAE38D /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFlight.h; sourceTree = "<group>"; };
+		0A9D7E09184D606200BAE38D /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		0ABBE3F01843D0390031D3E2 /* Plate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Plate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0ABBE3F31843D0390031D3E2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0ABBE3F51843D0390031D3E2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -87,9 +125,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A9D7E0A184D606200BAE38D /* libz.dylib in Frameworks */,
 				0ABBE3F61843D0390031D3E2 /* CoreGraphics.framework in Frameworks */,
 				0ABBE3F81843D0390031D3E2 /* UIKit.framework in Frameworks */,
 				0ABBE3F41843D0390031D3E2 /* Foundation.framework in Frameworks */,
+				0A9D7E06184D602500BAE38D /* libTestFlight.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,15 +146,52 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0A9D7DD018470F8C00BAE38D /* Plate Create */ = {
+		0A0D169F185102890057F538 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				0A9D7DD7184A93C800BAE38D /* PLSelectMainsViewController.h */,
-				0A9D7DD8184A93C800BAE38D /* PLSelectMainsViewController.m */,
-				0A9D7DD9184A93C800BAE38D /* PLSelectMainsViewController.xib */,
+				0A0D169A185102140057F538 /* PLSettingsViewController.h */,
+				0A0D169B185102140057F538 /* PLSettingsViewController.m */,
+				0A0D169C185102140057F538 /* PLSettingsViewController.xib */,
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
+		0A0D16A0185102A90057F538 /* Rewards */ = {
+			isa = PBXGroup;
+			children = (
+				0A0D16951850FE750057F538 /* PLRewardsViewController.h */,
+				0A0D16961850FE750057F538 /* PLRewardsViewController.m */,
+				0A0D16971850FE750057F538 /* PLRewardsViewController.xib */,
+			);
+			name = Rewards;
+			sourceTree = "<group>";
+		};
+		0A0D16A8185120E10057F538 /* assets */ = {
+			isa = PBXGroup;
+			children = (
+				0A0D16A61851114F0057F538 /* bg-grey.jpg */,
+				0A0D16A418510F790057F538 /* bg-tomatoes.png */,
+			);
+			name = assets;
+			sourceTree = "<group>";
+		};
+		0A9D7DD018470F8C00BAE38D /* Ordering */ = {
+			isa = PBXGroup;
+			children = (
+				0A0D16A1185105C10057F538 /* PLOrderNavigationController.h */,
+				0A0D16A2185105C10057F538 /* PLOrderNavigationController.m */,
+				0A0D16A9185131680057F538 /* PLBaseOrderViewController.h */,
+				0A0D16AA185131680057F538 /* PLBaseOrderViewController.m */,
+				0A0D16AB185131680057F538 /* PLBaseOrderViewController.xib */,
+				0A318C60184532250023FFF5 /* PLStartOrderViewController.h */,
+				0A318C61184532250023FFF5 /* PLStartOrderViewController.m */,
+				0A318C62184532250023FFF5 /* PLStartOrderViewController.xib */,
 				0A9D7DCB18470F5E00BAE38D /* PLSelectPlateSizeViewController.h */,
 				0A9D7DCC18470F5F00BAE38D /* PLSelectPlateSizeViewController.m */,
 				0A9D7DCD18470F5F00BAE38D /* PLSelectPlateSizeViewController.xib */,
+				0A9D7DD7184A93C800BAE38D /* PLSelectMainsViewController.h */,
+				0A9D7DD8184A93C800BAE38D /* PLSelectMainsViewController.m */,
+				0A9D7DD9184A93C800BAE38D /* PLSelectMainsViewController.xib */,
 				0A9D7DE9184C62CA00BAE38D /* PLSelectSidesViewController.h */,
 				0A9D7DEA184C62CA00BAE38D /* PLSelectSidesViewController.m */,
 				0A9D7DEB184C62CA00BAE38D /* PLSelectSidesViewController.xib */,
@@ -122,39 +199,57 @@
 				0A9D7DF1184D19C400BAE38D /* PLOrderSummaryViewController.m */,
 				0A9D7DF2184D19C400BAE38D /* PLOrderSummaryViewController.xib */,
 			);
-			name = "Plate Create";
+			name = Ordering;
 			sourceTree = "<group>";
 		};
-		0A9D7DD118470FA100BAE38D /* Plate Home */ = {
+		0A9D7DD118470FA100BAE38D /* View Menu */ = {
 			isa = PBXGroup;
 			children = (
-				0A318C60184532250023FFF5 /* PLHomeViewController.h */,
-				0A318C61184532250023FFF5 /* PLHomeViewController.m */,
-				0A318C62184532250023FFF5 /* PLHomeViewController.xib */,
+				0A0D16901850FC9E0057F538 /* PLMenuViewController.h */,
+				0A0D16911850FC9E0057F538 /* PLMenuViewController.m */,
+				0A0D16921850FC9E0057F538 /* PLMenuViewController.xib */,
 			);
-			name = "Plate Home";
+			name = "View Menu";
 			sourceTree = "<group>";
 		};
-		0A9D7DE1184BA6E800BAE38D /* Stash */ = {
+		0A9D7DE1184BA6E800BAE38D /* Stash Bin */ = {
 			isa = PBXGroup;
 			children = (
 				0A9D7DDC184BA6D000BAE38D /* PLSelectMainsViewControllerDELETEME.h */,
 				0A9D7DDD184BA6D000BAE38D /* PLSelectMainsViewControllerDELETEME.m */,
 				0A9D7DDE184BA6D000BAE38D /* PLSelectMainsViewControllerDELETEME.xib */,
 			);
-			name = Stash;
+			name = "Stash Bin";
+			sourceTree = "<group>";
+		};
+		0A9D7DFF184D602400BAE38D /* TestFlightSDK2.0.2 */ = {
+			isa = PBXGroup;
+			children = (
+				0A9D7E00184D602400BAE38D /* libTestFlight.a */,
+				0A9D7E01184D602500BAE38D /* README.md */,
+				0A9D7E02184D602500BAE38D /* release_notes.md */,
+				0A9D7E03184D602500BAE38D /* TestFlight+AsyncLogging.h */,
+				0A9D7E04184D602500BAE38D /* TestFlight+ManualSessions.h */,
+				0A9D7E05184D602500BAE38D /* TestFlight.h */,
+			);
+			name = TestFlightSDK2.0.2;
+			path = "TestFlightSDK2.0.2 (1)";
 			sourceTree = "<group>";
 		};
 		0ABBE3E71843D0390031D3E2 = {
 			isa = PBXGroup;
 			children = (
-				0A9D7DD118470FA100BAE38D /* Plate Home */,
-				0A9D7DD018470F8C00BAE38D /* Plate Create */,
+				0A0D16A0185102A90057F538 /* Rewards */,
+				0A0D169F185102890057F538 /* Settings */,
+				0A9D7DD118470FA100BAE38D /* View Menu */,
+				0A9D7DD018470F8C00BAE38D /* Ordering */,
 				0ABBE3F91843D0390031D3E2 /* Plate */,
+				0A0D16A8185120E10057F538 /* assets */,
 				0ABBE4121843D0390031D3E2 /* PlateTests */,
 				0ABBE3F21843D0390031D3E2 /* Frameworks */,
 				0ABBE3F11843D0390031D3E2 /* Products */,
-				0A9D7DE1184BA6E800BAE38D /* Stash */,
+				0A9D7DFF184D602400BAE38D /* TestFlightSDK2.0.2 */,
+				0A9D7DE1184BA6E800BAE38D /* Stash Bin */,
 			);
 			sourceTree = "<group>";
 		};
@@ -170,6 +265,7 @@
 		0ABBE3F21843D0390031D3E2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0A9D7E09184D606200BAE38D /* libz.dylib */,
 				0ABBE3F31843D0390031D3E2 /* Foundation.framework */,
 				0ABBE3F51843D0390031D3E2 /* CoreGraphics.framework */,
 				0ABBE3F71843D0390031D3E2 /* UIKit.framework */,
@@ -297,11 +393,19 @@
 			files = (
 				0ABBE3FE1843D0390031D3E2 /* InfoPlist.strings in Resources */,
 				0A9D7DDB184A93C800BAE38D /* PLSelectMainsViewController.xib in Resources */,
+				0A9D7E07184D602500BAE38D /* README.md in Resources */,
+				0A0D169E185102140057F538 /* PLSettingsViewController.xib in Resources */,
 				0A9D7DE8184C5C6700BAE38D /* PlateStoryboard.storyboard in Resources */,
+				0A0D16AD185131680057F538 /* PLBaseOrderViewController.xib in Resources */,
+				0A0D16A518510F790057F538 /* bg-tomatoes.png in Resources */,
+				0A9D7E08184D602500BAE38D /* release_notes.md in Resources */,
+				0A0D16A71851114F0057F538 /* bg-grey.jpg in Resources */,
 				0A9D7DED184C62CA00BAE38D /* PLSelectSidesViewController.xib in Resources */,
 				0A9D7DCF18470F5F00BAE38D /* PLSelectPlateSizeViewController.xib in Resources */,
-				0A318C64184532250023FFF5 /* PLHomeViewController.xib in Resources */,
+				0A318C64184532250023FFF5 /* PLStartOrderViewController.xib in Resources */,
 				0ABBE4061843D0390031D3E2 /* Images.xcassets in Resources */,
+				0A0D16991850FE750057F538 /* PLRewardsViewController.xib in Resources */,
+				0A0D16941850FC9E0057F538 /* PLMenuViewController.xib in Resources */,
 				0A9D7DF4184D19C400BAE38D /* PLOrderSummaryViewController.xib in Resources */,
 				0A9D7DE0184BA6D000BAE38D /* PLSelectMainsViewControllerDELETEME.xib in Resources */,
 			);
@@ -322,12 +426,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A0D16A3185105C10057F538 /* PLOrderNavigationController.m in Sources */,
+				0A0D16931850FC9E0057F538 /* PLMenuViewController.m in Sources */,
 				0ABBE4041843D0390031D3E2 /* PLAppDelegate.m in Sources */,
 				0A9D7DDF184BA6D000BAE38D /* PLSelectMainsViewControllerDELETEME.m in Sources */,
-				0A318C63184532250023FFF5 /* PLHomeViewController.m in Sources */,
+				0A318C63184532250023FFF5 /* PLStartOrderViewController.m in Sources */,
 				0A9D7DDA184A93C800BAE38D /* PLSelectMainsViewController.m in Sources */,
+				0A0D16981850FE750057F538 /* PLRewardsViewController.m in Sources */,
+				0A0D169D185102140057F538 /* PLSettingsViewController.m in Sources */,
 				0ABBE4001843D0390031D3E2 /* main.m in Sources */,
 				0A9D7DEC184C62CA00BAE38D /* PLSelectSidesViewController.m in Sources */,
+				0A0D16AC185131680057F538 /* PLBaseOrderViewController.m in Sources */,
 				0A9D7DF3184D19C400BAE38D /* PLOrderSummaryViewController.m in Sources */,
 				0A9D7DCE18470F5F00BAE38D /* PLSelectPlateSizeViewController.m in Sources */,
 			);
@@ -448,12 +557,19 @@
 		0ABBE41D1843D0390031D3E2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Plate/Plate-Prefix.pch";
 				INFOPLIST_FILE = "Plate/Plate-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/emileleon/Downloads/TestFlightSDK2.0.2,
+					"/Users/emileleon/Documents/workspace/ios/Plate/TestFlightSDK2.0.2\\ (1)",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "666BC26F-1E3E-4862-A2D0-85539899FECD";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -461,12 +577,19 @@
 		0ABBE41E1843D0390031D3E2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Plate/Plate-Prefix.pch";
 				INFOPLIST_FILE = "Plate/Plate-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/emileleon/Downloads/TestFlightSDK2.0.2,
+					"/Users/emileleon/Documents/workspace/ios/Plate/TestFlightSDK2.0.2\\ (1)",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "EB45C706-2056-46FA-AE27-42CEA3E5336C";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

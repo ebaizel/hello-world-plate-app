@@ -7,11 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PLBaseOrderViewController.h"
 @class PLSelectSidesViewController;
 
-@interface PLSelectMainsViewController : UIViewController  <UITableViewDelegate, UITableViewDataSource>
+@interface PLSelectMainsViewController : PLBaseOrderViewController  <UITableViewDelegate, UITableViewDataSource>
 
-- (IBAction)displaySides:(id)sender;
 @property (weak, nonatomic) IBOutlet UITableView *tableMains;
 @property (nonatomic, strong) PLSelectSidesViewController *sidesController;
 @end
