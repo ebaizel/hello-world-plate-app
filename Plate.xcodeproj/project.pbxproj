@@ -20,6 +20,11 @@
 		0A0D16AD185131680057F538 /* PLBaseOrderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A0D16AB185131680057F538 /* PLBaseOrderViewController.xib */; };
 		0A318C63184532250023FFF5 /* PLStartOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A318C61184532250023FFF5 /* PLStartOrderViewController.m */; };
 		0A318C64184532250023FFF5 /* PLStartOrderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A318C62184532250023FFF5 /* PLStartOrderViewController.xib */; };
+		0A495EEF1852824800C14B03 /* bg-scones.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0A495EED1852824800C14B03 /* bg-scones.jpg */; };
+		0A495EF01852824800C14B03 /* bg-salmon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0A495EEE1852824800C14B03 /* bg-salmon.jpg */; };
+		0A495EF31852905200C14B03 /* PLBaseMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A495EF21852905200C14B03 /* PLBaseMenuViewController.m */; };
+		0A495EF61852925D00C14B03 /* PLBaseRewardsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A495EF51852925D00C14B03 /* PLBaseRewardsViewController.m */; };
+		0A495EF91852931300C14B03 /* PLBaseSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A495EF81852931300C14B03 /* PLBaseSettingsViewController.m */; };
 		0A9D7DCE18470F5F00BAE38D /* PLSelectPlateSizeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D7DCC18470F5F00BAE38D /* PLSelectPlateSizeViewController.m */; };
 		0A9D7DCF18470F5F00BAE38D /* PLSelectPlateSizeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A9D7DCD18470F5F00BAE38D /* PLSelectPlateSizeViewController.xib */; };
 		0A9D7DDA184A93C800BAE38D /* PLSelectMainsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D7DD8184A93C800BAE38D /* PLSelectMainsViewController.m */; };
@@ -79,6 +84,14 @@
 		0A318C60184532250023FFF5 /* PLStartOrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLStartOrderViewController.h; sourceTree = "<group>"; };
 		0A318C61184532250023FFF5 /* PLStartOrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLStartOrderViewController.m; sourceTree = "<group>"; };
 		0A318C62184532250023FFF5 /* PLStartOrderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PLStartOrderViewController.xib; sourceTree = "<group>"; };
+		0A495EED1852824800C14B03 /* bg-scones.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bg-scones.jpg"; sourceTree = "<group>"; };
+		0A495EEE1852824800C14B03 /* bg-salmon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "bg-salmon.jpg"; sourceTree = "<group>"; };
+		0A495EF11852905200C14B03 /* PLBaseMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLBaseMenuViewController.h; sourceTree = "<group>"; };
+		0A495EF21852905200C14B03 /* PLBaseMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLBaseMenuViewController.m; sourceTree = "<group>"; };
+		0A495EF41852925D00C14B03 /* PLBaseRewardsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLBaseRewardsViewController.h; sourceTree = "<group>"; };
+		0A495EF51852925D00C14B03 /* PLBaseRewardsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLBaseRewardsViewController.m; sourceTree = "<group>"; };
+		0A495EF71852931300C14B03 /* PLBaseSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLBaseSettingsViewController.h; sourceTree = "<group>"; };
+		0A495EF81852931300C14B03 /* PLBaseSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLBaseSettingsViewController.m; sourceTree = "<group>"; };
 		0A9D7DCB18470F5E00BAE38D /* PLSelectPlateSizeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLSelectPlateSizeViewController.h; sourceTree = "<group>"; };
 		0A9D7DCC18470F5F00BAE38D /* PLSelectPlateSizeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLSelectPlateSizeViewController.m; sourceTree = "<group>"; };
 		0A9D7DCD18470F5F00BAE38D /* PLSelectPlateSizeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PLSelectPlateSizeViewController.xib; sourceTree = "<group>"; };
@@ -149,6 +162,8 @@
 		0A0D169F185102890057F538 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				0A495EF71852931300C14B03 /* PLBaseSettingsViewController.h */,
+				0A495EF81852931300C14B03 /* PLBaseSettingsViewController.m */,
 				0A0D169A185102140057F538 /* PLSettingsViewController.h */,
 				0A0D169B185102140057F538 /* PLSettingsViewController.m */,
 				0A0D169C185102140057F538 /* PLSettingsViewController.xib */,
@@ -159,6 +174,8 @@
 		0A0D16A0185102A90057F538 /* Rewards */ = {
 			isa = PBXGroup;
 			children = (
+				0A495EF41852925D00C14B03 /* PLBaseRewardsViewController.h */,
+				0A495EF51852925D00C14B03 /* PLBaseRewardsViewController.m */,
 				0A0D16951850FE750057F538 /* PLRewardsViewController.h */,
 				0A0D16961850FE750057F538 /* PLRewardsViewController.m */,
 				0A0D16971850FE750057F538 /* PLRewardsViewController.xib */,
@@ -169,6 +186,8 @@
 		0A0D16A8185120E10057F538 /* assets */ = {
 			isa = PBXGroup;
 			children = (
+				0A495EED1852824800C14B03 /* bg-scones.jpg */,
+				0A495EEE1852824800C14B03 /* bg-salmon.jpg */,
 				0A0D16A61851114F0057F538 /* bg-grey.jpg */,
 				0A0D16A418510F790057F538 /* bg-tomatoes.png */,
 			);
@@ -205,6 +224,8 @@
 		0A9D7DD118470FA100BAE38D /* View Menu */ = {
 			isa = PBXGroup;
 			children = (
+				0A495EF11852905200C14B03 /* PLBaseMenuViewController.h */,
+				0A495EF21852905200C14B03 /* PLBaseMenuViewController.m */,
 				0A0D16901850FC9E0057F538 /* PLMenuViewController.h */,
 				0A0D16911850FC9E0057F538 /* PLMenuViewController.m */,
 				0A0D16921850FC9E0057F538 /* PLMenuViewController.xib */,
@@ -394,6 +415,7 @@
 				0ABBE3FE1843D0390031D3E2 /* InfoPlist.strings in Resources */,
 				0A9D7DDB184A93C800BAE38D /* PLSelectMainsViewController.xib in Resources */,
 				0A9D7E07184D602500BAE38D /* README.md in Resources */,
+				0A495EF01852824800C14B03 /* bg-salmon.jpg in Resources */,
 				0A0D169E185102140057F538 /* PLSettingsViewController.xib in Resources */,
 				0A9D7DE8184C5C6700BAE38D /* PlateStoryboard.storyboard in Resources */,
 				0A0D16AD185131680057F538 /* PLBaseOrderViewController.xib in Resources */,
@@ -408,6 +430,7 @@
 				0A0D16941850FC9E0057F538 /* PLMenuViewController.xib in Resources */,
 				0A9D7DF4184D19C400BAE38D /* PLOrderSummaryViewController.xib in Resources */,
 				0A9D7DE0184BA6D000BAE38D /* PLSelectMainsViewControllerDELETEME.xib in Resources */,
+				0A495EEF1852824800C14B03 /* bg-scones.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -426,6 +449,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A495EF91852931300C14B03 /* PLBaseSettingsViewController.m in Sources */,
+				0A495EF31852905200C14B03 /* PLBaseMenuViewController.m in Sources */,
 				0A0D16A3185105C10057F538 /* PLOrderNavigationController.m in Sources */,
 				0A0D16931850FC9E0057F538 /* PLMenuViewController.m in Sources */,
 				0ABBE4041843D0390031D3E2 /* PLAppDelegate.m in Sources */,
@@ -439,6 +464,7 @@
 				0A0D16AC185131680057F538 /* PLBaseOrderViewController.m in Sources */,
 				0A9D7DF3184D19C400BAE38D /* PLOrderSummaryViewController.m in Sources */,
 				0A9D7DCE18470F5F00BAE38D /* PLSelectPlateSizeViewController.m in Sources */,
+				0A495EF61852925D00C14B03 /* PLBaseRewardsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

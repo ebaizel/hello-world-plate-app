@@ -34,7 +34,7 @@
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     self.view.backgroundColor = [UIColor colorWithPatternImage:image];
-//    self.edgesForExtendedLayout=UIRectEdgeNone;
+    //    self.edgesForExtendedLayout=UIRectEdgeNone;
 
     // Setup the navigation bar
     [[self navigationItem] setTitle:@"Create a Plate"];
@@ -48,6 +48,9 @@
                                         } forState:UIControlStateNormal];
 
     self.toolbarItems = [NSArray arrayWithObjects: flexibleSpaceLeft, barButton, nil];
+    
+    // We don't want extra space above tables for scrolling
+    self.automaticallyAdjustsScrollViewInsets = NO;
 }
 
 - (void)viewDidAppear:(BOOL)animated

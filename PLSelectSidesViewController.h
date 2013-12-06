@@ -11,7 +11,8 @@
 #import "PLBaseOrderViewController.h"
 
 @interface PLSelectSidesViewController : PLBaseOrderViewController
-
-//- (IBAction)viewOrderSummary:(id)sender;
+{
+    NSArray *sides;
+}
 @property (nonatomic, strong) PLOrderSummaryViewController *orderSummaryController;
 @end

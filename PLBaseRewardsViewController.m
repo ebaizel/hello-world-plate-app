@@ -1,18 +1,19 @@
 //
-//  PLRewardsViewController.m
+//  PLBaseRewardsViewController.m
 //  Plate
 //
-//  Created by emileleon on 12/5/13.
+//  Created by emileleon on 12/6/13.
 //  Copyright (c) 2013 Plate SF. All rights reserved.
 //
 
+#import "PLBaseRewardsViewController.h"
 #import "PLRewardsViewController.h"
 
-@interface PLRewardsViewController ()
+@interface PLBaseRewardsViewController ()
 
 @end
 
-@implementation PLRewardsViewController
+@implementation PLBaseRewardsViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -21,6 +22,7 @@
         // Custom initialization
         UITabBarItem *tbi = [self tabBarItem];
         [tbi setTitle:@"Rewards"];
+        [[self view] setBackgroundColor:[UIColor purpleColor]];
     }
     return self;
 }
@@ -28,17 +30,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-
-    // Setup the background
-    UIGraphicsBeginImageContext(self.view.frame.size);
-    [[UIImage imageNamed:@"bg-scones.jpg"] drawInRect:self.view.bounds];
-    UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
-    UIGraphicsEndImageContext();
-    self.view.backgroundColor = [UIColor colorWithPatternImage:image];
-    
-    // Set nav title
-    self.navigationItem.title = @"Rewards";
+	// Do any additional setup after loading the view.
+    [self pushViewController:[[PLRewardsViewController alloc] init] animated:YES];
+    self.navigationBar.barStyle = UIBarStyleBlackTranslucent;
+    self.navigationBar.tintColor = [UIColor whiteColor];
 }
 
 - (void)didReceiveMemoryWarning

@@ -8,9 +8,9 @@
 
 #import "PLAppDelegate.h"
 #import "PLOrderNavigationController.h"
-#import "PLMenuViewController.h"
-#import "PLRewardsViewController.h"
-#import "PLSettingsViewController.h"
+#import "PLBaseRewardsViewController.h"
+#import "PLBaseSettingsViewController.h"
+#import "PLBaseMenuViewController.h"
 #import "TestFlight.h"
 
 @implementation PLAppDelegate
@@ -24,9 +24,9 @@
 
     //Init each of the tab bar's controllers
     PLOrderNavigationController *plhvc = [[PLOrderNavigationController alloc]initWithNibName:@"PLOrderNavigationController" bundle:nil];
-    PLMenuViewController *plmvc = [[PLMenuViewController alloc]init];
-    PLRewardsViewController *plrvc = [[PLRewardsViewController alloc]init];
-    PLSettingsViewController *plsvc = [[PLSettingsViewController alloc]init];
+    PLBaseMenuViewController *plmvc = [[PLBaseMenuViewController alloc]init];
+    PLBaseRewardsViewController *plrvc = [[PLBaseRewardsViewController alloc]init];
+    PLBaseSettingsViewController *plsvc = [[PLBaseSettingsViewController alloc]init];
     
     UITabBarController *tabBarController = [[UITabBarController alloc]init];
 

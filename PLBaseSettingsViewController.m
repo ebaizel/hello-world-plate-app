@@ -1,18 +1,19 @@
 //
-//  PLSettingsViewController.m
+//  PLBaseSettingsViewController.m
 //  Plate
 //
-//  Created by emileleon on 12/5/13.
+//  Created by emileleon on 12/6/13.
 //  Copyright (c) 2013 Plate SF. All rights reserved.
 //
 
+#import "PLBaseSettingsViewController.h"
 #import "PLSettingsViewController.h"
 
-@interface PLSettingsViewController ()
+@interface PLBaseSettingsViewController ()
 
 @end
 
-@implementation PLSettingsViewController
+@implementation PLBaseSettingsViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -21,6 +22,7 @@
         // Custom initialization
         UITabBarItem *tbi = [self tabBarItem];
         [tbi setTitle:@"Settings"];
+        [[self view] setBackgroundColor:[UIColor purpleColor]];
     }
     return self;
 }
@@ -28,8 +30,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-    self.navigationItem.title = @"Settings";    
+	// Do any additional setup after loading the view.
+    [self pushViewController:[[PLSettingsViewController alloc] init] animated:YES];
+    self.navigationBar.barStyle = UIBarStyleBlackTranslucent;
+    self.navigationBar.tintColor = [UIColor whiteColor];
 }
 
 - (void)didReceiveMemoryWarning
