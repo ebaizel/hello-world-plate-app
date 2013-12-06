@@ -75,12 +75,12 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    if (!plateSize) {
-        plateSize = [[NSArray alloc]initWithObjects:@"1 Main with 2 Sides", @"4 Sides", nil];
+    if (!plateType) {
+        plateType = [[NSArray alloc]initWithObjects:@"1 Main with 2 Sides", @"4 Sides", nil];
     }
     
-    if (!plateType) {
-        plateType = [[NSArray alloc]initWithObjects:@"Fit", @"Ultra", @"Kids", nil];
+    if (!plateSize) {
+        plateSize = [[NSArray alloc]initWithObjects:@"Fit", @"Ultra", @"Kids", nil];
     }
     
     [self setTitle:@"Sizes"];
