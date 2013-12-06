@@ -29,17 +29,9 @@
     
 }
 
-//-(float)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-//    return  0.0;
-//}
-//
-//- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-//    return 0.0;
-//}
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return (3);
+    return [startingOptions count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -55,14 +47,8 @@
     cell.layer.masksToBounds = YES;
     cell.layer.cornerRadius = 12.0f;
     cell.layer.backgroundColor = [[UIColor grayColor] CGColor];
- 
-    if ([indexPath row] == 0) {
-        [[cell textLabel] setText:@"Create a Plate"];
-    } else if ([indexPath row] == 1) {
-        [[cell textLabel] setText:@"A la Carte"];
-    } else {
-        [[cell textLabel] setText:@"Add ons"];
-    }
+
+    [[cell textLabel] setText:[startingOptions objectAtIndex:[indexPath row]]];
     
     return cell;
 
@@ -74,10 +60,6 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        [self setTitle:@"Order"];
-        PLSelectPlateSizeViewController *plpsvc = [[PLSelectPlateSizeViewController alloc]init];
-        plpsvc.hidesBottomBarWhenPushed = YES;
-        [self setSelectSizeController:plpsvc];
 
     }
     return self;
@@ -86,15 +68,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
-    self.navigationItem.backBarButtonItem =
-    [[UIBarButtonItem alloc] initWithTitle:@"Order"
-                                      style:UIBarButtonItemStyleBordered
-                                     target:nil
-                                     action:nil];
+    
+    if (!startingOptions) {
+        startingOptions = [[NSArray alloc]initWithObjects:@"Create a Plate", @"A la carte", @"Add ons", nil];
+    }
 
-//    self.navigationController.navigationBar.barTintColor = [UIColor greenColor];
-//    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    [self setTitle:@"Order"];
+
+    PLSelectPlateSizeViewController *plpsvc = [[PLSelectPlateSizeViewController alloc]init];
+    plpsvc.hidesBottomBarWhenPushed = YES;
+    [self setSelectSizeController:plpsvc];
 }
 
 - (void)viewDidAppear:(BOOL)animated

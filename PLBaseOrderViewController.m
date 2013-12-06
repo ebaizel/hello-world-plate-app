@@ -34,7 +34,7 @@
     UIImage *image = UIGraphicsGetImageFromCurrentImageContext();
     UIGraphicsEndImageContext();
     self.view.backgroundColor = [UIColor colorWithPatternImage:image];
-    self.edgesForExtendedLayout=UIRectEdgeNone;
+//    self.edgesForExtendedLayout=UIRectEdgeNone;
 
     // Setup the navigation bar
     [[self navigationItem] setTitle:@"Create a Plate"];
@@ -46,6 +46,7 @@
                                         NSFontAttributeName: [UIFont fontWithName:@"Helvetica" size:24.0],
                                         NSForegroundColorAttributeName: [UIColor blackColor]
                                         } forState:UIControlStateNormal];
+
     self.toolbarItems = [NSArray arrayWithObjects: flexibleSpaceLeft, barButton, nil];
 }
 
@@ -63,6 +64,7 @@
 - (void)actionContinue:(id)sender
 {
     // do nothing
+    NSLog(@"***** ActionContinue must be implemented! *****");
 }
 
 @end

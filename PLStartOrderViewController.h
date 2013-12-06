@@ -12,6 +12,9 @@
 @class PLSelectPlateSizeViewController;
 
 @interface PLStartOrderViewController : PLBaseOrderViewController <UITableViewDelegate, UITableViewDataSource>
-
+{
+    NSArray *startingOptions;
+}
 @property (nonatomic, strong) PLSelectPlateSizeViewController *selectSizeController;
+
 @end

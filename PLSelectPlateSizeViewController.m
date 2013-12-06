@@ -29,9 +29,9 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if ([self plateSizeTable] == tableView) {
-        return 3;
+        return [plateSize count];
     } else {
-        return 2;
+        return [plateType count];
     }
 }
 
@@ -49,25 +49,10 @@
     cell.layer.backgroundColor = [[UIColor grayColor] CGColor];
     
     if ([self plateSizeTable] == tableView) {
-        
-        if ([indexPath row] == 0) {
-            [[cell textLabel] setText:@"Fit"];
-        } else if ([indexPath row] == 1) {
-            [[cell textLabel] setText:@"Ultra"];
-        } else {
-            [[cell textLabel] setText:@"Kid"];
-        }
-        
+        [[cell textLabel] setText:[plateSize objectAtIndex:[indexPath row]]];
     } else {
-        
-        if ([indexPath row] == 0) {
-            [[cell textLabel] setText:@"1 Main and 2 Sides"];
-        } else if ([indexPath row] == 1) {
-            [[cell textLabel] setText:@"4 Sides"];
-        }
-        
+        [[cell textLabel] setText:[plateType objectAtIndex:[indexPath row]]];
     }
-    
     
     return cell;
     
@@ -89,12 +74,17 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    if (!plateSize) {
+        plateSize = [[NSArray alloc]initWithObjects:@"1 Main with 2 Sides", @"4 Sides", nil];
+    }
+    
+    if (!plateType) {
+        plateType = [[NSArray alloc]initWithObjects:@"Fit", @"Ultra", @"Kids", nil];
+    }
+    
     [self setTitle:@"Sizes"];
-}
 
-- (void)viewDidAppear:(BOOL)animated
-{
-    self.navigationController.toolbarHidden = NO;
 }
 
 - (void)didReceiveMemoryWarning

@@ -52,17 +52,12 @@
     
 }
 
-//-(float)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
-//    return  0.0;
-//}
+-(float)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    return  0.0;
+}
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    if ([tableView.dataSource tableView:tableView numberOfRowsInSection:section] == 0) {
-        return 0;
-    } else {
-        // whatever height you'd want for a real section header
-        return 0;
-    }
+    return 0.0;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
@@ -112,17 +107,6 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
-        
-        // Setup the bottom toolbar
-        UIBarButtonItem *flexibleSpaceLeft = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
-        UIBarButtonItem *barButton = [[UIBarButtonItem alloc] initWithTitle:@"Continue" style:UIBarButtonItemStylePlain target:self action:@selector(actionContinue:)];
-        [barButton setTitleTextAttributes:@{
-                                            NSFontAttributeName: [UIFont fontWithName:@"Helvetica" size:24.0],
-                                            NSForegroundColorAttributeName: [UIColor blackColor]
-                                            } forState:UIControlStateNormal];
-        self.toolbarItems = [NSArray arrayWithObjects: flexibleSpaceLeft, barButton, nil];
-        
-        
     }
     return self;
 }
@@ -133,6 +117,7 @@
     // Do any additional setup after loading the view from its nib.
     [self setTitle:@"Mains"];
     [[self tableMains] setTableHeaderView:nil];
+//    self.edgesForExtendedLayout=UIRectEdgeNone;
     
 }
 

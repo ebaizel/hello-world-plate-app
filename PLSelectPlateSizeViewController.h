@@ -12,7 +12,10 @@
 @class PLSelectMainsViewController;
 
 @interface PLSelectPlateSizeViewController : PLBaseOrderViewController <UITableViewDelegate, UITableViewDataSource>
-
+{
+    NSArray *plateType; // main with two sides, or 4 sides
+    NSArray *plateSize; // ultra, fit, kids
+}
 @property (weak, nonatomic) IBOutlet UITableView *plateTypeTable;
 @property (weak, nonatomic) IBOutlet UITableView *plateSizeTable;
 @property (strong, nonatomic) IBOutlet PLSelectMainsViewController *mainsViewController;

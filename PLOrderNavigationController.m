@@ -29,9 +29,9 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    [self.navigationBar setBackgroundImage:[UIImage imageNamed:@"bg-grey.png"] forBarMetrics:UIBarMetricsDefault];
-//    [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"bg-grey.png"] forBarMetrics:UIBarMetricsDefault];
+//    [self.navigationBar setBackgroundImage:[UIImage imageNamed:@"bg-grey.png"] forBarMetrics:UIBarMetricsDefault];
     self.navigationBar.barStyle = UIBarStyleBlackTranslucent;
+    self.navigationBar.tintColor = [UIColor whiteColor];
     
     [self pushViewController:[[PLStartOrderViewController alloc]init] animated:YES];
 }
