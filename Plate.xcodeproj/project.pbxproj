@@ -52,6 +52,8 @@
 		0ABBE40F1843D0390031D3E2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ABBE3F71843D0390031D3E2 /* UIKit.framework */; };
 		0ABBE4171843D0390031D3E2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0ABBE4151843D0390031D3E2 /* InfoPlist.strings */; };
 		0ABBE4191843D0390031D3E2 /* PlateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ABBE4181843D0390031D3E2 /* PlateTests.m */; };
+		0ADC532D185671A700258E1E /* PLMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ADC532C185671A700258E1E /* PLMenuItem.m */; };
+		0ADC53301856738400258E1E /* PLPlateStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ADC532F1856738400258E1E /* PLPlateStore.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -131,6 +133,10 @@
 		0ABBE4141843D0390031D3E2 /* PlateTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PlateTests-Info.plist"; sourceTree = "<group>"; };
 		0ABBE4161843D0390031D3E2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0ABBE4181843D0390031D3E2 /* PlateTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlateTests.m; sourceTree = "<group>"; };
+		0ADC532B185671A700258E1E /* PLMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLMenuItem.h; sourceTree = "<group>"; };
+		0ADC532C185671A700258E1E /* PLMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLMenuItem.m; sourceTree = "<group>"; };
+		0ADC532E1856738400258E1E /* PLPlateStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLPlateStore.h; sourceTree = "<group>"; };
+		0ADC532F1856738400258E1E /* PLPlateStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLPlateStore.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -260,6 +266,10 @@
 		0ABBE3E71843D0390031D3E2 = {
 			isa = PBXGroup;
 			children = (
+				0ADC532E1856738400258E1E /* PLPlateStore.h */,
+				0ADC532F1856738400258E1E /* PLPlateStore.m */,
+				0ADC532B185671A700258E1E /* PLMenuItem.h */,
+				0ADC532C185671A700258E1E /* PLMenuItem.m */,
 				0A0D16A0185102A90057F538 /* Rewards */,
 				0A0D169F185102890057F538 /* Settings */,
 				0A9D7DD118470FA100BAE38D /* View Menu */,
@@ -452,6 +462,8 @@
 				0A495EF91852931300C14B03 /* PLBaseSettingsViewController.m in Sources */,
 				0A495EF31852905200C14B03 /* PLBaseMenuViewController.m in Sources */,
 				0A0D16A3185105C10057F538 /* PLOrderNavigationController.m in Sources */,
+				0ADC532D185671A700258E1E /* PLMenuItem.m in Sources */,
+				0ADC53301856738400258E1E /* PLPlateStore.m in Sources */,
 				0A0D16931850FC9E0057F538 /* PLMenuViewController.m in Sources */,
 				0ABBE4041843D0390031D3E2 /* PLAppDelegate.m in Sources */,
 				0A9D7DDF184BA6D000BAE38D /* PLSelectMainsViewControllerDELETEME.m in Sources */,

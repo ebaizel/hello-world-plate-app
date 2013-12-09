@@ -8,6 +8,7 @@
 
 #import "PLSelectMainsViewController.h"
 #import "PLSelectSidesViewController.h"
+#import "PLPlateStore.h"
 
 @interface PLSelectMainsViewController ()
 
@@ -30,24 +31,8 @@
     cell.layer.cornerRadius = 12.0f;
     cell.layer.backgroundColor = [[UIColor grayColor] CGColor];
     
-        if ([indexPath row] == 0) {
-            [[cell textLabel] setText:@"Fish"];
-        } else if ([indexPath row] == 1) {
-            [[cell textLabel] setText:@"Tofurkey"];
-        } else if ([indexPath row] == 2) {
-            [[cell textLabel] setText:@"Eel Sandwich"];
-        } else if ([indexPath row] == 3) {
-            [[cell textLabel] setText:@"Tofu Enchiladas"];
-        } else if ([indexPath row] == 4) {
-            [[cell textLabel] setText:@"Pumpkin Casserole"];
-        } else if ([indexPath row] == 5) {
-            [[cell textLabel] setText:@"Chow Fun"];
-        } else if ([indexPath row] == 6) {
-            [[cell textLabel] setText:@"BBQ Ribs"];
-        } else {
-            [[cell textLabel] setText:@"Mayonnaise"];
-        }
-    
+    [[cell textLabel] setText:[[mains objectAtIndex:[indexPath row]] name]];
+
     return cell;
     
 }
@@ -71,13 +56,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 7;
-}
-
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
-
-{
-    return @"My Title";
+    return [mains count];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -85,20 +64,24 @@
     return 1;
 }
 
+- (void)fetchMains
+{
+    [[PLPlateStore sharedStore] getMains:^(NSArray *mainsResult, NSError *err) {
+        if (!err) {
+            mains = mainsResult;
+            [[self tableMains] reloadData];
+        } else {
+            UIAlertView *av =[[UIAlertView alloc]
+                              initWithTitle:@"Error"
+                              message:[err localizedDescription]
+                              delegate:nil
+                              cancelButtonTitle:@"OK"
+                              otherButtonTitles:nil];
+            [av show];
+        }
+    }];
+}
 
-//-(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
-//{
-//    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, tableView.frame.size.width, 18)];
-//    /* Create custom view to display section header... */
-//    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(10, 5, tableView.frame.size.width, 18)];
-//    [label setFont:[UIFont boldSystemFontOfSize:12]];
-//    NSString *string =@"Choose a main";
-//    /* Section header is in 0th index... */
-//    [label setText:string];
-//    [view addSubview:label];
-//    [view setBackgroundColor:[UIColor colorWithRed:166/255.0 green:177/255.0 blue:186/255.0 alpha:1.0]]; //your background color...
-//    return view;
-//}
 
 #pragma INITIALIZERS
 
@@ -117,8 +100,11 @@
     // Do any additional setup after loading the view from its nib.
     [self setTitle:@"Mains"];
     [[self tableMains] setTableHeaderView:nil];
-//    self.automaticallyAdjustsScrollViewInsets = NO;
-//    self.edgesForExtendedLayout=UIRectEdgeNone;
+    if (!mains) {
+        [self fetchMains];
+    }
+    //    self.automaticallyAdjustsScrollViewInsets = NO;
+    //    self.edgesForExtendedLayout=UIRectEdgeNone;
     
 }
 

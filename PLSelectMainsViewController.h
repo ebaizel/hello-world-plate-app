@@ -11,7 +11,10 @@
 @class PLSelectSidesViewController;
 
 @interface PLSelectMainsViewController : PLBaseOrderViewController  <UITableViewDelegate, UITableViewDataSource>
-
+{
+    NSArray *mains;
+}
 @property (weak, nonatomic) IBOutlet UITableView *tableMains;
 @property (nonatomic, strong) PLSelectSidesViewController *sidesController;
+//@property (nonatomic, strong) NSArray *mains;
 @end
