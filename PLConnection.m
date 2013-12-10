@@ -7,6 +7,7 @@
 //
 
 #import "PLConnection.h"
+#import "PLMenuItem.h"
 
 static NSMutableArray *sharedConnectionList = nil;
 

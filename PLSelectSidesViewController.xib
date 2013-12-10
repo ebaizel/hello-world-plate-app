@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PLSelectSidesViewController">
             <connections>
+                <outlet property="tableSides" destination="eVj-sw-Qwj" id="4h3-5a-tAd"/>
                 <outlet property="view" destination="0N9-W6-mEK" id="5hf-UG-ql7"/>
             </connections>
         </placeholder>

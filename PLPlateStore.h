@@ -7,14 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "PLMenu.h"
 
 @interface PLPlateStore : NSObject
 {
-    NSArray *mainDishes;
+    PLMenu *menu;
 }
 
 + (PLPlateStore *)sharedStore;
-- (void)getMains:(void (^)(NSArray *mains, NSError *err))block;
+- (void)clearCache;
+- (void)getMenu:(void (^)(PLMenu *menuResult, NSError *err))block;
 
 
 @end

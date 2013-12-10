@@ -8,6 +8,7 @@
 
 #import "PLSelectSidesViewController.h"
 #import "PLOrderSummaryViewController.h"
+#import "PLPlateStore.h"
 
 @interface PLSelectSidesViewController ()
 
@@ -18,6 +19,35 @@
 @synthesize orderSummaryController;
 
 #pragma mark - Table view data source
+
+- (void)fetchSides
+{
+
+    UIView *currentTitleView = [[self navigationItem] titleView];
+    UIActivityIndicatorView *aiView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
+    [[self navigationItem] setTitleView:aiView];
+    [aiView startAnimating];
+    
+    __weak PLSelectSidesViewController *weakSelf = self;
+    
+    [[PLPlateStore sharedStore] getMenu:^(PLMenu *menuResult, NSError *err) {
+        
+        [[weakSelf navigationItem] setTitleView:currentTitleView];
+        
+        if (!err) {
+            sides = [menuResult sides];
+            [[weakSelf tableSides] reloadData];
+        } else {
+            UIAlertView *av =[[UIAlertView alloc]
+                              initWithTitle:@"Error"
+                              message:[err localizedDescription]
+                              delegate:nil
+                              cancelButtonTitle:@"OK"
+                              otherButtonTitles:nil];
+            [av show];
+        }
+    }];
+}
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -43,7 +73,7 @@
     cell.layer.cornerRadius = 12.0f;
     cell.layer.backgroundColor = [[UIColor grayColor] CGColor];
 
-    [[cell textLabel] setText:[sides objectAtIndex:[indexPath row]]];
+    [[cell textLabel] setText:[[sides objectAtIndex:[indexPath row]]name]];
     
     return cell;
 }
@@ -63,8 +93,8 @@
     self.title = @"Sides";
     self.orderSummaryController = [[PLOrderSummaryViewController alloc]init];
     
-    sides = [[NSArray alloc]initWithObjects:@"Broccolini", @"Mashed Potatoes", @"Moroccan Cauliflower", @"Pickled Beets",
-             @"Deviled Eggs", @"Kool Aid, no sugar", @"Peanut Butter, no jelly", @"Ham, no burger", nil];
+    [self fetchSides];
+
 }
 
 

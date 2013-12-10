@@ -55,6 +55,7 @@
 		0ADC532D185671A700258E1E /* PLMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ADC532C185671A700258E1E /* PLMenuItem.m */; };
 		0ADC53301856738400258E1E /* PLPlateStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ADC532F1856738400258E1E /* PLPlateStore.m */; };
 		0ADC53331856808F00258E1E /* PLConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ADC53321856808F00258E1E /* PLConnection.m */; };
+		0ADC533718579C6300258E1E /* PLMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ADC533618579C6300258E1E /* PLMenu.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -141,6 +142,8 @@
 		0ADC53311856808E00258E1E /* PLConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLConnection.h; sourceTree = "<group>"; };
 		0ADC53321856808F00258E1E /* PLConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLConnection.m; sourceTree = "<group>"; };
 		0ADC533418568E3600258E1E /* JSONSerializable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSONSerializable.h; sourceTree = "<group>"; };
+		0ADC533518579C6300258E1E /* PLMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLMenu.h; sourceTree = "<group>"; };
+		0ADC533618579C6300258E1E /* PLMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLMenu.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -270,6 +273,8 @@
 		0ABBE3E71843D0390031D3E2 = {
 			isa = PBXGroup;
 			children = (
+				0ADC533518579C6300258E1E /* PLMenu.h */,
+				0ADC533618579C6300258E1E /* PLMenu.m */,
 				0ADC533418568E3600258E1E /* JSONSerializable.h */,
 				0ADC53311856808E00258E1E /* PLConnection.h */,
 				0ADC53321856808F00258E1E /* PLConnection.m */,
@@ -478,6 +483,7 @@
 				0A318C63184532250023FFF5 /* PLStartOrderViewController.m in Sources */,
 				0A9D7DDA184A93C800BAE38D /* PLSelectMainsViewController.m in Sources */,
 				0A0D16981850FE750057F538 /* PLRewardsViewController.m in Sources */,
+				0ADC533718579C6300258E1E /* PLMenu.m in Sources */,
 				0A0D169D185102140057F538 /* PLSettingsViewController.m in Sources */,
 				0ABBE4001843D0390031D3E2 /* main.m in Sources */,
 				0A9D7DEC184C62CA00BAE38D /* PLSelectSidesViewController.m in Sources */,

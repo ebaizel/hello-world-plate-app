@@ -10,10 +10,12 @@
 
 @implementation PLMenuItem
 
+@synthesize name, plateId, description, allergies, isGlutenFree, isVegan, isVegetarian;
+
 -(void)readFromJSONDictionary:(NSDictionary *)d
 {
-    [self setName:@"Menu Item Name"];
-    //TODO: parse the json into the object
+    [self setName:[d objectForKey:@"meta.name"]];
+
 }
 
 -(id)initWithName:(NSString *)itemName itemType:(int)type

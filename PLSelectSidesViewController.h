@@ -14,5 +14,6 @@
 {
     NSArray *sides;
 }
+@property (weak, nonatomic) IBOutlet UITableView *tableSides;
 @property (nonatomic, strong) PLOrderSummaryViewController *orderSummaryController;
 @end

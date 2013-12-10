@@ -9,26 +9,38 @@
 #import "PLPlateStore.h"
 #import "PLMenuItem.h"
 #import "PLConnection.h"
+#import "PLMenu.h"
 
 @implementation PLPlateStore
 
-- (void) getMains:(void (^)(NSArray *mains, NSError *err))block
+- (void) getMenu:(void (^)(PLMenu *menuResult, NSError *err))block
 {
-    if (mainDishes) {
-        block(mainDishes, nil);
+    if (menu) {
+        block(menu, nil);
     } else {
-    
-        NSMutableArray *results = [[NSMutableArray alloc]init];
-        [results addObject:[[PLMenuItem alloc]initWithName:@"Pan Seared Chilean Sea Bass" itemType:MenuItemMain]];
-        [results addObject:[[PLMenuItem alloc]initWithName:@"Kung Pao Chicken" itemType:MenuItemMain]];
-        [results addObject:[[PLMenuItem alloc]initWithName:@"Peking Duck" itemType:MenuItemMain]];
-        [results addObject:[[PLMenuItem alloc]initWithName:@"Fire Roasted Tofu" itemType:MenuItemMain]];
-        [results addObject:[[PLMenuItem alloc]initWithName:@"Golden Quinoa Dumplings" itemType:MenuItemMain]];
         
-        mainDishes = results;
-
-        block(results, nil);
+        NSURL *url = [NSURL URLWithString:@"http://ep2.gulosolutions.com/menus/get_modifiers/1"];
+        NSURLRequest *req = [NSURLRequest requestWithURL:url];
+        
+        PLMenu *menuRootObject = [[PLMenu alloc]init];
+        PLConnection *connect = [[PLConnection alloc]initWithRequest:req];
+        [connect setJsonRootObject:menuRootObject];
+        
+        [connect setCompletionBlock:^(PLMenu *menuConnectResult, NSError *err) {
+            if (!err) {
+                menu = menuConnectResult;
+                block(menuConnectResult, nil);
+            } else {
+                block(nil, err);
+            }
+        }];
+        [connect start];
     }
+}
+
+- (void)clearCache
+{
+    menu = nil;
 }
 
 + (PLPlateStore *)sharedStore

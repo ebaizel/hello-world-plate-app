@@ -21,6 +21,11 @@ typedef enum {
 
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *plateId;
+@property (nonatomic, strong) NSString *description;
+@property (nonatomic, strong) NSString *allergies;
+@property (assign) BOOL isGlutenFree;
+@property (assign) BOOL isVegan;
+@property (assign) BOOL isVegetarian;
 
 -(id)initWithName:(NSString *)itemName itemType:(int)type;
 

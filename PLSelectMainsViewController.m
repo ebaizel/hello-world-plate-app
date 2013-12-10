@@ -9,6 +9,7 @@
 #import "PLSelectMainsViewController.h"
 #import "PLSelectSidesViewController.h"
 #import "PLPlateStore.h"
+#import "PLMenu.h"
 
 @interface PLSelectMainsViewController ()
 
@@ -72,13 +73,15 @@
     [[self navigationItem] setTitleView:aiView];
     [aiView startAnimating];
     
-    [[PLPlateStore sharedStore] getMains:^(NSArray *mainsResult, NSError *err) {
+    __weak PLSelectMainsViewController *weakSelf = self;
+
+    [[PLPlateStore sharedStore] getMenu:^(PLMenu *menuResult, NSError *err) {
         
-        [[self navigationItem] setTitleView:currentTitleView];
+        [[weakSelf navigationItem] setTitleView:currentTitleView];
         
         if (!err) {
-            mains = mainsResult;
-            [[self tableMains] reloadData];
+            mains = [menuResult mains];
+            [[weakSelf tableMains] reloadData];
         } else {
             UIAlertView *av =[[UIAlertView alloc]
                               initWithTitle:@"Error"
@@ -109,9 +112,8 @@
     // Do any additional setup after loading the view from its nib.
     [self setTitle:@"Mains"];
     [[self tableMains] setTableHeaderView:nil];
-    if (!mains) {
-        [self fetchMains];
-    }
+    [self fetchMains];
+
     //    self.automaticallyAdjustsScrollViewInsets = NO;
     //    self.edgesForExtendedLayout=UIRectEdgeNone;
     
