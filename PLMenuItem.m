@@ -10,6 +10,12 @@
 
 @implementation PLMenuItem
 
+-(void)readFromJSONDictionary:(NSDictionary *)d
+{
+    [self setName:@"Menu Item Name"];
+    //TODO: parse the json into the object
+}
+
 -(id)initWithName:(NSString *)itemName itemType:(int)type
 {
     self = [super init];

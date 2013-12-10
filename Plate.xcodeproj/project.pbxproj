@@ -54,6 +54,7 @@
 		0ABBE4191843D0390031D3E2 /* PlateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ABBE4181843D0390031D3E2 /* PlateTests.m */; };
 		0ADC532D185671A700258E1E /* PLMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ADC532C185671A700258E1E /* PLMenuItem.m */; };
 		0ADC53301856738400258E1E /* PLPlateStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ADC532F1856738400258E1E /* PLPlateStore.m */; };
+		0ADC53331856808F00258E1E /* PLConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ADC53321856808F00258E1E /* PLConnection.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -137,6 +138,9 @@
 		0ADC532C185671A700258E1E /* PLMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLMenuItem.m; sourceTree = "<group>"; };
 		0ADC532E1856738400258E1E /* PLPlateStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLPlateStore.h; sourceTree = "<group>"; };
 		0ADC532F1856738400258E1E /* PLPlateStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLPlateStore.m; sourceTree = "<group>"; };
+		0ADC53311856808E00258E1E /* PLConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLConnection.h; sourceTree = "<group>"; };
+		0ADC53321856808F00258E1E /* PLConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLConnection.m; sourceTree = "<group>"; };
+		0ADC533418568E3600258E1E /* JSONSerializable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSONSerializable.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -266,6 +270,9 @@
 		0ABBE3E71843D0390031D3E2 = {
 			isa = PBXGroup;
 			children = (
+				0ADC533418568E3600258E1E /* JSONSerializable.h */,
+				0ADC53311856808E00258E1E /* PLConnection.h */,
+				0ADC53321856808F00258E1E /* PLConnection.m */,
 				0ADC532E1856738400258E1E /* PLPlateStore.h */,
 				0ADC532F1856738400258E1E /* PLPlateStore.m */,
 				0ADC532B185671A700258E1E /* PLMenuItem.h */,
@@ -467,6 +474,7 @@
 				0A0D16931850FC9E0057F538 /* PLMenuViewController.m in Sources */,
 				0ABBE4041843D0390031D3E2 /* PLAppDelegate.m in Sources */,
 				0A9D7DDF184BA6D000BAE38D /* PLSelectMainsViewControllerDELETEME.m in Sources */,
+				0ADC53331856808F00258E1E /* PLConnection.m in Sources */,
 				0A318C63184532250023FFF5 /* PLStartOrderViewController.m in Sources */,
 				0A9D7DDA184A93C800BAE38D /* PLSelectMainsViewController.m in Sources */,
 				0A0D16981850FE750057F538 /* PLRewardsViewController.m in Sources */,

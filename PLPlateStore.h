@@ -9,9 +9,12 @@
 #import <Foundation/Foundation.h>
 
 @interface PLPlateStore : NSObject
+{
+    NSArray *mainDishes;
+}
 
 + (PLPlateStore *)sharedStore;
 - (void)getMains:(void (^)(NSArray *mains, NSError *err))block;
-//- (NSArray *)getSides;
+
 
 @end

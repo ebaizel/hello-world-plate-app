@@ -66,7 +66,16 @@
 
 - (void)fetchMains
 {
+    
+    UIView *currentTitleView = [[self navigationItem] titleView];
+    UIActivityIndicatorView *aiView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
+    [[self navigationItem] setTitleView:aiView];
+    [aiView startAnimating];
+    
     [[PLPlateStore sharedStore] getMains:^(NSArray *mainsResult, NSError *err) {
+        
+        [[self navigationItem] setTitleView:currentTitleView];
+        
         if (!err) {
             mains = mainsResult;
             [[self tableMains] reloadData];

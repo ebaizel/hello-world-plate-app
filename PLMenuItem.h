@@ -7,13 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "JSONSerializable.h"
 
 typedef enum {
     MenuItemMain,
     MenuItemSide
 } MenuItemType;
 
-@interface PLMenuItem : NSObject
+@interface PLMenuItem : NSObject <JSONSerializable>
 {
     MenuItemType itemType;
 }

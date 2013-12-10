@@ -8,19 +8,27 @@
 
 #import "PLPlateStore.h"
 #import "PLMenuItem.h"
+#import "PLConnection.h"
 
 @implementation PLPlateStore
 
 - (void) getMains:(void (^)(NSArray *mains, NSError *err))block
 {
-    NSMutableArray *results = [[NSMutableArray alloc]init];
-    [results addObject:[[PLMenuItem alloc]initWithName:@"Pan Seared Chilean Sea Bass" itemType:MenuItemMain]];
-    [results addObject:[[PLMenuItem alloc]initWithName:@"Kung Pao Chicken" itemType:MenuItemMain]];
-    [results addObject:[[PLMenuItem alloc]initWithName:@"Peking Duck" itemType:MenuItemMain]];
-    [results addObject:[[PLMenuItem alloc]initWithName:@"Fire Roasted Tofu" itemType:MenuItemMain]];
-    [results addObject:[[PLMenuItem alloc]initWithName:@"Golden Quinoa Dumplings" itemType:MenuItemMain]];
+    if (mainDishes) {
+        block(mainDishes, nil);
+    } else {
+    
+        NSMutableArray *results = [[NSMutableArray alloc]init];
+        [results addObject:[[PLMenuItem alloc]initWithName:@"Pan Seared Chilean Sea Bass" itemType:MenuItemMain]];
+        [results addObject:[[PLMenuItem alloc]initWithName:@"Kung Pao Chicken" itemType:MenuItemMain]];
+        [results addObject:[[PLMenuItem alloc]initWithName:@"Peking Duck" itemType:MenuItemMain]];
+        [results addObject:[[PLMenuItem alloc]initWithName:@"Fire Roasted Tofu" itemType:MenuItemMain]];
+        [results addObject:[[PLMenuItem alloc]initWithName:@"Golden Quinoa Dumplings" itemType:MenuItemMain]];
+        
+        mainDishes = results;
 
-    block(results, nil);
+        block(results, nil);
+    }
 }
 
 + (PLPlateStore *)sharedStore
