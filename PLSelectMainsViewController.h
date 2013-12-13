@@ -15,5 +15,7 @@
     NSArray *mains;
 }
 @property (nonatomic, weak) IBOutlet UITableView *tableMains;
+@property (nonatomic, strong) NSString *plateType;
+@property (nonatomic, strong) NSString *plateSize;
 @property (nonatomic, strong) PLSelectSidesViewController *sidesController;
 @end

@@ -25,7 +25,6 @@
         
         for (NSString *key in mainModifiers) {
 
-            NSLog(@"key is %@", key);
             NSDictionary *mainModifier = [mainModifiers objectForKey:key];
             NSDictionary *mainItem = [mainModifier objectForKey:@"meta"];
 

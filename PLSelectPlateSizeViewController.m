@@ -94,6 +94,8 @@
 }
 
 - (IBAction)actionContinue:(id)sender {
+//    [[self mainsViewController] setPlateSize: [self.plateSizeTable [[self plateSizeTable] indexPathForSelectedRow]];
+    [[self mainsViewController] setPlateType:@""];
     [[self navigationController] pushViewController:[self mainsViewController] animated:YES];
 }
 @end
