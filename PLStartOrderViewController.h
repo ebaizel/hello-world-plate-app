@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "PLBaseOrderViewController.h"
+#import "PLALaCarteViewController.h"
 
 @class PLSelectPlateSizeViewController;
 
@@ -15,6 +16,11 @@
 {
     NSArray *startingOptions;
 }
+@property (weak, nonatomic) IBOutlet UITableView *basketTableView;
+@property (weak, nonatomic) IBOutlet UITableView *orderTypeTableView;
+- (IBAction)checkout:(id)sender;
+
 @property (nonatomic, strong) PLSelectPlateSizeViewController *selectSizeController;
+@property (nonatomic, strong) PLALaCarteViewController *alaCarteViewController;
 
 @end

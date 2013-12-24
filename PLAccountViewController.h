@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PLSettingsViewController : UIViewController
+@interface PLAccountViewController : UIViewController
 
 @end

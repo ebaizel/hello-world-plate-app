@@ -11,8 +11,8 @@
 		0A0D16941850FC9E0057F538 /* PLMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A0D16921850FC9E0057F538 /* PLMenuViewController.xib */; };
 		0A0D16981850FE750057F538 /* PLRewardsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A0D16961850FE750057F538 /* PLRewardsViewController.m */; };
 		0A0D16991850FE750057F538 /* PLRewardsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A0D16971850FE750057F538 /* PLRewardsViewController.xib */; };
-		0A0D169D185102140057F538 /* PLSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A0D169B185102140057F538 /* PLSettingsViewController.m */; };
-		0A0D169E185102140057F538 /* PLSettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A0D169C185102140057F538 /* PLSettingsViewController.xib */; };
+		0A0D169D185102140057F538 /* PLAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A0D169B185102140057F538 /* PLAccountViewController.m */; };
+		0A0D169E185102140057F538 /* PLAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A0D169C185102140057F538 /* PLAccountViewController.xib */; };
 		0A0D16A3185105C10057F538 /* PLOrderNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A0D16A2185105C10057F538 /* PLOrderNavigationController.m */; };
 		0A0D16A518510F790057F538 /* bg-tomatoes.png in Resources */ = {isa = PBXBuildFile; fileRef = 0A0D16A418510F790057F538 /* bg-tomatoes.png */; };
 		0A0D16A71851114F0057F538 /* bg-grey.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0A0D16A61851114F0057F538 /* bg-grey.jpg */; };
@@ -24,7 +24,12 @@
 		0A495EF01852824800C14B03 /* bg-salmon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0A495EEE1852824800C14B03 /* bg-salmon.jpg */; };
 		0A495EF31852905200C14B03 /* PLBaseMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A495EF21852905200C14B03 /* PLBaseMenuViewController.m */; };
 		0A495EF61852925D00C14B03 /* PLBaseRewardsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A495EF51852925D00C14B03 /* PLBaseRewardsViewController.m */; };
-		0A495EF91852931300C14B03 /* PLBaseSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A495EF81852931300C14B03 /* PLBaseSettingsViewController.m */; };
+		0A495EF91852931300C14B03 /* PLBaseAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A495EF81852931300C14B03 /* PLBaseAccountViewController.m */; };
+		0A5FC5271868CE5600F69BA5 /* PLBasketStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A5FC5261868CE5600F69BA5 /* PLBasketStore.m */; };
+		0A5FC52C1868D06B00F69BA5 /* PLALaCarteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A5FC52A1868D06B00F69BA5 /* PLALaCarteViewController.m */; };
+		0A5FC52D1868D06B00F69BA5 /* PLALaCarteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A5FC52B1868D06B00F69BA5 /* PLALaCarteViewController.xib */; };
+		0A5FC531186A2EFB00F69BA5 /* PLALaCarteSummaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A5FC52F186A2EFB00F69BA5 /* PLALaCarteSummaryViewController.m */; };
+		0A5FC532186A2EFB00F69BA5 /* PLALaCarteSummaryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A5FC530186A2EFB00F69BA5 /* PLALaCarteSummaryViewController.xib */; };
 		0A9D7DCE18470F5F00BAE38D /* PLSelectPlateSizeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D7DCC18470F5F00BAE38D /* PLSelectPlateSizeViewController.m */; };
 		0A9D7DCF18470F5F00BAE38D /* PLSelectPlateSizeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A9D7DCD18470F5F00BAE38D /* PLSelectPlateSizeViewController.xib */; };
 		0A9D7DDA184A93C800BAE38D /* PLSelectMainsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D7DD8184A93C800BAE38D /* PLSelectMainsViewController.m */; };
@@ -52,6 +57,8 @@
 		0ABBE40F1843D0390031D3E2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ABBE3F71843D0390031D3E2 /* UIKit.framework */; };
 		0ABBE4171843D0390031D3E2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0ABBE4151843D0390031D3E2 /* InfoPlist.strings */; };
 		0ABBE4191843D0390031D3E2 /* PlateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ABBE4181843D0390031D3E2 /* PlateTests.m */; };
+		0AC187F3185F872D00A0DD9F /* PLOrderItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC187F2185F872D00A0DD9F /* PLOrderItem.m */; };
+		0AC187F6185F8D4D00A0DD9F /* PLOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC187F5185F8D4D00A0DD9F /* PLOrder.m */; };
 		0ADC532D185671A700258E1E /* PLMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ADC532C185671A700258E1E /* PLMenuItem.m */; };
 		0ADC53301856738400258E1E /* PLPlateStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ADC532F1856738400258E1E /* PLPlateStore.m */; };
 		0ADC53331856808F00258E1E /* PLConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ADC53321856808F00258E1E /* PLConnection.m */; };
@@ -75,9 +82,9 @@
 		0A0D16951850FE750057F538 /* PLRewardsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLRewardsViewController.h; sourceTree = "<group>"; };
 		0A0D16961850FE750057F538 /* PLRewardsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLRewardsViewController.m; sourceTree = "<group>"; };
 		0A0D16971850FE750057F538 /* PLRewardsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PLRewardsViewController.xib; sourceTree = "<group>"; };
-		0A0D169A185102140057F538 /* PLSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLSettingsViewController.h; sourceTree = "<group>"; };
-		0A0D169B185102140057F538 /* PLSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLSettingsViewController.m; sourceTree = "<group>"; };
-		0A0D169C185102140057F538 /* PLSettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PLSettingsViewController.xib; sourceTree = "<group>"; };
+		0A0D169A185102140057F538 /* PLAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLAccountViewController.h; sourceTree = "<group>"; };
+		0A0D169B185102140057F538 /* PLAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLAccountViewController.m; sourceTree = "<group>"; };
+		0A0D169C185102140057F538 /* PLAccountViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PLAccountViewController.xib; sourceTree = "<group>"; };
 		0A0D16A1185105C10057F538 /* PLOrderNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLOrderNavigationController.h; sourceTree = "<group>"; };
 		0A0D16A2185105C10057F538 /* PLOrderNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLOrderNavigationController.m; sourceTree = "<group>"; };
 		0A0D16A418510F790057F538 /* bg-tomatoes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg-tomatoes.png"; sourceTree = "<group>"; };
@@ -94,8 +101,16 @@
 		0A495EF21852905200C14B03 /* PLBaseMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLBaseMenuViewController.m; sourceTree = "<group>"; };
 		0A495EF41852925D00C14B03 /* PLBaseRewardsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLBaseRewardsViewController.h; sourceTree = "<group>"; };
 		0A495EF51852925D00C14B03 /* PLBaseRewardsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLBaseRewardsViewController.m; sourceTree = "<group>"; };
-		0A495EF71852931300C14B03 /* PLBaseSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLBaseSettingsViewController.h; sourceTree = "<group>"; };
-		0A495EF81852931300C14B03 /* PLBaseSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLBaseSettingsViewController.m; sourceTree = "<group>"; };
+		0A495EF71852931300C14B03 /* PLBaseAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLBaseAccountViewController.h; sourceTree = "<group>"; };
+		0A495EF81852931300C14B03 /* PLBaseAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLBaseAccountViewController.m; sourceTree = "<group>"; };
+		0A5FC5251868CE5600F69BA5 /* PLBasketStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLBasketStore.h; sourceTree = "<group>"; };
+		0A5FC5261868CE5600F69BA5 /* PLBasketStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLBasketStore.m; sourceTree = "<group>"; };
+		0A5FC5291868D06B00F69BA5 /* PLALaCarteViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLALaCarteViewController.h; sourceTree = "<group>"; };
+		0A5FC52A1868D06B00F69BA5 /* PLALaCarteViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLALaCarteViewController.m; sourceTree = "<group>"; };
+		0A5FC52B1868D06B00F69BA5 /* PLALaCarteViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PLALaCarteViewController.xib; sourceTree = "<group>"; };
+		0A5FC52E186A2EFB00F69BA5 /* PLALaCarteSummaryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLALaCarteSummaryViewController.h; sourceTree = "<group>"; };
+		0A5FC52F186A2EFB00F69BA5 /* PLALaCarteSummaryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLALaCarteSummaryViewController.m; sourceTree = "<group>"; };
+		0A5FC530186A2EFB00F69BA5 /* PLALaCarteSummaryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PLALaCarteSummaryViewController.xib; sourceTree = "<group>"; };
 		0A9D7DCB18470F5E00BAE38D /* PLSelectPlateSizeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLSelectPlateSizeViewController.h; sourceTree = "<group>"; };
 		0A9D7DCC18470F5F00BAE38D /* PLSelectPlateSizeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLSelectPlateSizeViewController.m; sourceTree = "<group>"; };
 		0A9D7DCD18470F5F00BAE38D /* PLSelectPlateSizeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PLSelectPlateSizeViewController.xib; sourceTree = "<group>"; };
@@ -135,6 +150,10 @@
 		0ABBE4141843D0390031D3E2 /* PlateTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PlateTests-Info.plist"; sourceTree = "<group>"; };
 		0ABBE4161843D0390031D3E2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0ABBE4181843D0390031D3E2 /* PlateTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlateTests.m; sourceTree = "<group>"; };
+		0AC187F1185F872D00A0DD9F /* PLOrderItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLOrderItem.h; sourceTree = "<group>"; };
+		0AC187F2185F872D00A0DD9F /* PLOrderItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLOrderItem.m; sourceTree = "<group>"; };
+		0AC187F4185F8D4D00A0DD9F /* PLOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLOrder.h; sourceTree = "<group>"; };
+		0AC187F5185F8D4D00A0DD9F /* PLOrder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLOrder.m; sourceTree = "<group>"; };
 		0ADC532B185671A700258E1E /* PLMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLMenuItem.h; sourceTree = "<group>"; };
 		0ADC532C185671A700258E1E /* PLMenuItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLMenuItem.m; sourceTree = "<group>"; };
 		0ADC532E1856738400258E1E /* PLPlateStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLPlateStore.h; sourceTree = "<group>"; };
@@ -175,11 +194,11 @@
 		0A0D169F185102890057F538 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				0A495EF71852931300C14B03 /* PLBaseSettingsViewController.h */,
-				0A495EF81852931300C14B03 /* PLBaseSettingsViewController.m */,
-				0A0D169A185102140057F538 /* PLSettingsViewController.h */,
-				0A0D169B185102140057F538 /* PLSettingsViewController.m */,
-				0A0D169C185102140057F538 /* PLSettingsViewController.xib */,
+				0A495EF71852931300C14B03 /* PLBaseAccountViewController.h */,
+				0A495EF81852931300C14B03 /* PLBaseAccountViewController.m */,
+				0A0D169A185102140057F538 /* PLAccountViewController.h */,
+				0A0D169B185102140057F538 /* PLAccountViewController.m */,
+				0A0D169C185102140057F538 /* PLAccountViewController.xib */,
 			);
 			name = Settings;
 			sourceTree = "<group>";
@@ -205,6 +224,19 @@
 				0A0D16A418510F790057F538 /* bg-tomatoes.png */,
 			);
 			name = assets;
+			sourceTree = "<group>";
+		};
+		0A5FC5281868D01C00F69BA5 /* A La Carte */ = {
+			isa = PBXGroup;
+			children = (
+				0A5FC5291868D06B00F69BA5 /* PLALaCarteViewController.h */,
+				0A5FC52A1868D06B00F69BA5 /* PLALaCarteViewController.m */,
+				0A5FC52B1868D06B00F69BA5 /* PLALaCarteViewController.xib */,
+				0A5FC52E186A2EFB00F69BA5 /* PLALaCarteSummaryViewController.h */,
+				0A5FC52F186A2EFB00F69BA5 /* PLALaCarteSummaryViewController.m */,
+				0A5FC530186A2EFB00F69BA5 /* PLALaCarteSummaryViewController.xib */,
+			);
+			name = "A La Carte";
 			sourceTree = "<group>";
 		};
 		0A9D7DD018470F8C00BAE38D /* Ordering */ = {
@@ -273,6 +305,9 @@
 		0ABBE3E71843D0390031D3E2 = {
 			isa = PBXGroup;
 			children = (
+				0A5FC5281868D01C00F69BA5 /* A La Carte */,
+				0AC187FA185F934100A0DD9F /* Shopping Cart */,
+				0AC187F0185F871100A0DD9F /* Models */,
 				0ADC533518579C6300258E1E /* PLMenu.h */,
 				0ADC533618579C6300258E1E /* PLMenu.m */,
 				0ADC533418568E3600258E1E /* JSONSerializable.h */,
@@ -358,6 +393,26 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		0AC187F0185F871100A0DD9F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0AC187F1185F872D00A0DD9F /* PLOrderItem.h */,
+				0AC187F2185F872D00A0DD9F /* PLOrderItem.m */,
+				0AC187F4185F8D4D00A0DD9F /* PLOrder.h */,
+				0AC187F5185F8D4D00A0DD9F /* PLOrder.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		0AC187FA185F934100A0DD9F /* Shopping Cart */ = {
+			isa = PBXGroup;
+			children = (
+				0A5FC5251868CE5600F69BA5 /* PLBasketStore.h */,
+				0A5FC5261868CE5600F69BA5 /* PLBasketStore.m */,
+			);
+			name = "Shopping Cart";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -406,6 +461,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Plate SF";
 				TargetAttributes = {
+					0ABBE3EF1843D0390031D3E2 = {
+						DevelopmentTeam = 8AL33R6B84;
+					};
 					0ABBE40A1843D0390031D3E2 = {
 						TestTargetID = 0ABBE3EF1843D0390031D3E2;
 					};
@@ -435,10 +493,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				0ABBE3FE1843D0390031D3E2 /* InfoPlist.strings in Resources */,
+				0A5FC52D1868D06B00F69BA5 /* PLALaCarteViewController.xib in Resources */,
 				0A9D7DDB184A93C800BAE38D /* PLSelectMainsViewController.xib in Resources */,
 				0A9D7E07184D602500BAE38D /* README.md in Resources */,
 				0A495EF01852824800C14B03 /* bg-salmon.jpg in Resources */,
-				0A0D169E185102140057F538 /* PLSettingsViewController.xib in Resources */,
+				0A0D169E185102140057F538 /* PLAccountViewController.xib in Resources */,
 				0A9D7DE8184C5C6700BAE38D /* PlateStoryboard.storyboard in Resources */,
 				0A0D16AD185131680057F538 /* PLBaseOrderViewController.xib in Resources */,
 				0A0D16A518510F790057F538 /* bg-tomatoes.png in Resources */,
@@ -448,6 +507,7 @@
 				0A9D7DCF18470F5F00BAE38D /* PLSelectPlateSizeViewController.xib in Resources */,
 				0A318C64184532250023FFF5 /* PLStartOrderViewController.xib in Resources */,
 				0ABBE4061843D0390031D3E2 /* Images.xcassets in Resources */,
+				0A5FC532186A2EFB00F69BA5 /* PLALaCarteSummaryViewController.xib in Resources */,
 				0A0D16991850FE750057F538 /* PLRewardsViewController.xib in Resources */,
 				0A0D16941850FC9E0057F538 /* PLMenuViewController.xib in Resources */,
 				0A9D7DF4184D19C400BAE38D /* PLOrderSummaryViewController.xib in Resources */,
@@ -471,7 +531,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A495EF91852931300C14B03 /* PLBaseSettingsViewController.m in Sources */,
+				0A495EF91852931300C14B03 /* PLBaseAccountViewController.m in Sources */,
 				0A495EF31852905200C14B03 /* PLBaseMenuViewController.m in Sources */,
 				0A0D16A3185105C10057F538 /* PLOrderNavigationController.m in Sources */,
 				0ADC532D185671A700258E1E /* PLMenuItem.m in Sources */,
@@ -483,14 +543,19 @@
 				0A318C63184532250023FFF5 /* PLStartOrderViewController.m in Sources */,
 				0A9D7DDA184A93C800BAE38D /* PLSelectMainsViewController.m in Sources */,
 				0A0D16981850FE750057F538 /* PLRewardsViewController.m in Sources */,
+				0AC187F6185F8D4D00A0DD9F /* PLOrder.m in Sources */,
 				0ADC533718579C6300258E1E /* PLMenu.m in Sources */,
-				0A0D169D185102140057F538 /* PLSettingsViewController.m in Sources */,
+				0A0D169D185102140057F538 /* PLAccountViewController.m in Sources */,
+				0A5FC531186A2EFB00F69BA5 /* PLALaCarteSummaryViewController.m in Sources */,
 				0ABBE4001843D0390031D3E2 /* main.m in Sources */,
 				0A9D7DEC184C62CA00BAE38D /* PLSelectSidesViewController.m in Sources */,
 				0A0D16AC185131680057F538 /* PLBaseOrderViewController.m in Sources */,
 				0A9D7DF3184D19C400BAE38D /* PLOrderSummaryViewController.m in Sources */,
 				0A9D7DCE18470F5F00BAE38D /* PLSelectPlateSizeViewController.m in Sources */,
+				0A5FC5271868CE5600F69BA5 /* PLBasketStore.m in Sources */,
+				0A5FC52C1868D06B00F69BA5 /* PLALaCarteViewController.m in Sources */,
 				0A495EF61852925D00C14B03 /* PLBaseRewardsViewController.m in Sources */,
+				0AC187F3185F872D00A0DD9F /* PLOrderItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -549,7 +614,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -612,6 +677,7 @@
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Plate/Plate-Prefix.pch";
 				INFOPLIST_FILE = "Plate/Plate-Info.plist";
@@ -621,7 +687,7 @@
 					"/Users/emileleon/Documents/workspace/ios/Plate/TestFlightSDK2.0.2\\ (1)",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "666BC26F-1E3E-4862-A2D0-85539899FECD";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -632,6 +698,8 @@
 				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Plate/Plate-Prefix.pch";
 				INFOPLIST_FILE = "Plate/Plate-Info.plist";
@@ -641,7 +709,7 @@
 					"/Users/emileleon/Documents/workspace/ios/Plate/TestFlightSDK2.0.2\\ (1)",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "EB45C706-2056-46FA-AE27-42CEA3E5336C";
+				PROVISIONING_PROFILE = "65C72D6A-D562-48E3-9167-117F32B40E7E";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

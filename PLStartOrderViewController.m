@@ -8,6 +8,7 @@
 
 #import "PLStartOrderViewController.h"
 #import "PLSelectPlateSizeViewController.h"
+#import "PLALaCarteViewController.h"
 
 @interface PLStartOrderViewController ()
 
@@ -18,20 +19,27 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    if (tableView == [self orderTypeTableView]) {
  
-    if ([indexPath row] == 0) {
-        [[self navigationController] pushViewController:[self selectSizeController] animated:YES];
-    } else if ([indexPath row] == 1) {
+        if ([indexPath row] == 0) {
+            [[self navigationController] pushViewController:[self selectSizeController] animated:YES];
+        } else if ([indexPath row] == 1) {
+            [[self navigationController] pushViewController:[self alaCarteViewController] animated:YES];
+        } else {
 
-    } else {
-
+        }
+    } else {  // basket
+        
     }
-    
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [startingOptions count];
+    if (tableView == [self orderTypeTableView]) {
+        return [startingOptions count];
+    } else {
+        return 3;
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -39,7 +47,6 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell"];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"UITableViewCell"];
-        [cell setAccessoryType:UITableViewCellAccessoryDisclosureIndicator];
     }
     
     cell.layer.borderWidth = 1.0f;
@@ -48,7 +55,21 @@
     cell.layer.cornerRadius = 12.0f;
     cell.layer.backgroundColor = [[UIColor grayColor] CGColor];
 
-    [[cell textLabel] setText:[startingOptions objectAtIndex:[indexPath row]]];
+    if (tableView == [self orderTypeTableView]) {
+        [[cell textLabel] setText:[startingOptions objectAtIndex:[indexPath row]]];
+    } else {
+        
+        UIFont *basketFont = [ UIFont fontWithName: @"Arial" size: 12.0 ];
+        cell.textLabel.font = basketFont;
+        
+        if ([indexPath row] == 0) {
+            [[cell textLabel] setText:@"Basket is currently empty"];
+        } else if ([indexPath row] == 1){
+            [[cell textLabel] setText:@"Items ordered will appear here"];
+        } else {
+            [[cell textLabel] setText:@"and can be removed from basket here"];
+        }
+    }
     
     return cell;
 
@@ -78,6 +99,12 @@
     PLSelectPlateSizeViewController *plpsvc = [[PLSelectPlateSizeViewController alloc]init];
     plpsvc.hidesBottomBarWhenPushed = YES;
     [self setSelectSizeController:plpsvc];
+    
+    PLALaCarteViewController *plalacartevc = [[PLALaCarteViewController alloc]init];
+    plalacartevc.hidesBottomBarWhenPushed = YES;
+    [self setAlaCarteViewController:plalacartevc];
+    
+    self.basketTableView.backgroundColor = [UIColor clearColor];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -91,4 +118,6 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)checkout:(id)sender {
+}
 @end

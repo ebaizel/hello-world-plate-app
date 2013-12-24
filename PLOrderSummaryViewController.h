@@ -10,5 +10,6 @@
 #import "PLBaseOrderViewController.h"
 
 @interface PLOrderSummaryViewController : PLBaseOrderViewController
+- (IBAction)addToBasket:(id)sender;
 
 @end

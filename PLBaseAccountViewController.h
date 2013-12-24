@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PLBaseSettingsViewController : UINavigationController
+@interface PLBaseAccountViewController : UINavigationController
 
 @end

@@ -9,7 +9,7 @@
 #import "PLAppDelegate.h"
 #import "PLOrderNavigationController.h"
 #import "PLBaseRewardsViewController.h"
-#import "PLBaseSettingsViewController.h"
+#import "PLBaseAccountViewController.h"
 #import "PLBaseMenuViewController.h"
 #import "TestFlight.h"
 
@@ -26,7 +26,7 @@
     PLOrderNavigationController *plhvc = [[PLOrderNavigationController alloc]initWithNibName:@"PLOrderNavigationController" bundle:nil];
     PLBaseMenuViewController *plmvc = [[PLBaseMenuViewController alloc]init];
     PLBaseRewardsViewController *plrvc = [[PLBaseRewardsViewController alloc]init];
-    PLBaseSettingsViewController *plsvc = [[PLBaseSettingsViewController alloc]init];
+    PLBaseAccountViewController *plsvc = [[PLBaseAccountViewController alloc]init];
     
     UITabBarController *tabBarController = [[UITabBarController alloc]init];
 

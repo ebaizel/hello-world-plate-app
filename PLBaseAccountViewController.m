@@ -6,14 +6,14 @@
 //  Copyright (c) 2013 Plate SF. All rights reserved.
 //
 
-#import "PLBaseSettingsViewController.h"
-#import "PLSettingsViewController.h"
+#import "PLBaseAccountViewController.h"
+#import "PLAccountViewController.h"
 
-@interface PLBaseSettingsViewController ()
+@interface PLBaseAccountViewController ()
 
 @end
 
-@implementation PLBaseSettingsViewController
+@implementation PLBaseAccountViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -21,7 +21,7 @@
     if (self) {
         // Custom initialization
         UITabBarItem *tbi = [self tabBarItem];
-        [tbi setTitle:@"Settings"];
+        [tbi setTitle:@"Account"];
         [[self view] setBackgroundColor:[UIColor purpleColor]];
     }
     return self;
@@ -31,7 +31,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    [self pushViewController:[[PLSettingsViewController alloc] init] animated:YES];
+    [self pushViewController:[[PLAccountViewController alloc] init] animated:YES];
     self.navigationBar.barStyle = UIBarStyleBlackTranslucent;
     self.navigationBar.tintColor = [UIColor whiteColor];
 }
