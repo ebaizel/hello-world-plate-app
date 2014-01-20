@@ -9,6 +9,7 @@
 #import "PLOrderSummaryViewController.h"
 #import "PLBasketStore.h"
 #import "PLStartOrderViewController.h"
+#import "PLPlate.h"
 
 @interface PLOrderSummaryViewController ()
 
@@ -40,6 +41,25 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     self.navigationController.toolbarHidden = NO;
+    
+    NSString *plateSummary = [NSString stringWithFormat:@""];
+    plateSummary = [plateSummary stringByAppendingString:@"Main:\n"];
+    PLMenuItem *main = [[[PLBasketStore sharedStore]plateBuilder] main];
+    if (main != nil) {
+        plateSummary = [plateSummary stringByAppendingString:[[[[PLBasketStore sharedStore]plateBuilder]main]name]];
+    } else {
+        plateSummary = [plateSummary stringByAppendingString:@"no mains"];
+    }
+
+    plateSummary = [plateSummary stringByAppendingString:@"\n"];
+    plateSummary = [plateSummary stringByAppendingString:@"Sides:\n"];
+    
+    for (PLMenuItem *side in [[[PLBasketStore sharedStore] plateBuilder]sides]) {
+        plateSummary = [plateSummary stringByAppendingString:[side name]];
+        plateSummary = [plateSummary stringByAppendingString:@"\n"];
+    }
+    
+    [[self textSummary] setText:plateSummary];
 }
 
 - (void)actionContinue:(id)sender
@@ -48,7 +68,7 @@
 }
 
 - (IBAction)addToBasket:(id)sender {
+    [[PLBasketStore sharedStore] addPlateToBasket];
     [[self navigationController] popToRootViewControllerAnimated:YES];
-//    [[self navigationController] pushViewController:[[PLStartOrderViewController alloc] init] animated:YES];
 }
 @end

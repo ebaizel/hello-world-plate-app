@@ -9,6 +9,10 @@
 #import "PLSelectSidesViewController.h"
 #import "PLOrderSummaryViewController.h"
 #import "PLPlateStore.h"
+#import "PLMenuItemTableViewCell.h"
+#import "PLBasketStore.h"
+#import "PLMenuItem.h"
+#import "PLPlate.h"
 
 @interface PLSelectSidesViewController ()
 
@@ -62,29 +66,25 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
 
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SidesViewCell"];
+    PLMenuItemTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PLMenuItemTableViewCell"];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"SidesViewCell"];
+        cell = [[PLMenuItemTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"PLMenuItemTableViewCell"];
     }
     
-    cell.layer.borderWidth = 1.0f;
-    cell.layer.borderColor = [[UIColor blackColor] CGColor];
-    cell.layer.masksToBounds = YES;
-    cell.layer.cornerRadius = 12.0f;
-    cell.layer.backgroundColor = [[UIColor grayColor] CGColor];
-
-    [[cell textLabel] setText:[[sides objectAtIndex:[indexPath row]]name]];
+    [cell setupDelegate:self parentTable:tableView];
+    PLMenuItem *item = [sides objectAtIndex:[indexPath row]];
+    
+    cell.itemNameLabel.text = [item name];
+    cell.quantityLabel.text = [NSString stringWithFormat:@"%d",[[PLBasketStore sharedStore] quantityOfSideInPlateBuilder: item]];
+    cell.itemId = [item plateId];
     
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if([tableView cellForRowAtIndexPath:indexPath].accessoryType == UITableViewCellAccessoryCheckmark){
-        [tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryNone;
-    }else{
-        [tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryCheckmark;
-    }
+    [[PLBasketStore sharedStore] addPlateSide:[sides objectAtIndex:[indexPath row]]];
+    [tableView reloadData];
 }
 
 - (void)viewDidLoad
@@ -92,9 +92,52 @@
     [super viewDidLoad];
     self.title = @"Sides";
     self.orderSummaryController = [[PLOrderSummaryViewController alloc]init];
+
+    UINib *nib = [UINib nibWithNibName:@"PLMenuItemTableViewCell" bundle:nil];
+    [[self tableSides] registerNib:nib forCellReuseIdentifier:@"PLMenuItemTableViewCell"];
     
     [self fetchSides];
 
+    int numSides = 0;
+    if ([[[PLBasketStore sharedStore] plateBuilder] type] == OneMain) {
+        numSides = 2;
+    } else if ([[[PLBasketStore sharedStore] plateBuilder] type] == FourSides) {
+        numSides = 4;
+    }
+    self.labelSelectSides.text = [NSString stringWithFormat:@"Select %d sides", numSides];
+    
+    
+}
+
+-(int)addItemWithCell:(PLMenuItemTableViewCell *)cell
+{
+    PLMenuItem *item = nil;
+    for (PLMenuItem *side in sides) {
+        if ([cell.itemId isEqualToString:[side plateId]]) {
+            item = side;
+            break;
+        }
+    }
+    
+    [[PLBasketStore sharedStore] addPlateSide:item];
+    [cell.parentTableView reloadData];
+    return [[PLBasketStore sharedStore] quantityOfSideInPlateBuilder:item];
+}
+
+-(int)removeItemWithCell:(PLMenuItemTableViewCell *)cell
+{
+    PLMenuItem *item = nil;
+    for (PLMenuItem *side in sides) {
+        if ([cell.itemId isEqualToString:[side plateId]]) {
+            item = side;
+            break;
+        }
+    }
+    
+    [[PLBasketStore sharedStore] removePlateSide:item];
+    [cell.parentTableView reloadData];
+    return [[PLBasketStore sharedStore] quantityOfSideInPlateBuilder:item];
+    
 }
 
 
@@ -114,6 +157,29 @@
 }
 
 - (IBAction)actionContinue:(id)sender {
-    [[self navigationController] pushViewController:[self orderSummaryController] animated:YES];
+
+    PLPlate *plate = [[PLBasketStore sharedStore] plateBuilder];
+    int numSidesNeeded = 0;
+    
+    if ([plate type] == OneMain) {
+        numSidesNeeded = 2;
+    } else if ([plate type] == FourSides) {
+        numSidesNeeded = 4;
+    }
+    
+    int numSidesAdded = [[plate sides] count];
+    
+    if  (numSidesNeeded != numSidesAdded) {
+        NSString *msg = [NSString stringWithFormat:@"Select %d sides", numSidesNeeded];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:msg
+                                                        message:@"Please select additional sides"
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        
+        [alert show];
+    } else {
+        [[self navigationController] pushViewController:[self orderSummaryController] animated:YES];
+    }
 }
 @end

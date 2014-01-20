@@ -10,6 +10,8 @@
 #import "PLSelectSidesViewController.h"
 #import "PLPlateStore.h"
 #import "PLMenu.h"
+#import "PLBasketStore.h"
+#import "PLPlate.h"
 
 @interface PLSelectMainsViewController ()
 
@@ -33,6 +35,12 @@
     cell.layer.backgroundColor = [[UIColor grayColor] CGColor];
     
     [[cell textLabel] setText:[[mains objectAtIndex:[indexPath row]] name]];
+    
+    if ((PLMenuItem *)[mains objectAtIndex:[indexPath row]] == [[[PLBasketStore sharedStore] plateBuilder] main]) {
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    } else {
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }
 
     return cell;
     
@@ -48,11 +56,15 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if([tableView cellForRowAtIndexPath:indexPath].accessoryType == UITableViewCellAccessoryCheckmark){
-        [tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryNone;
-    }else{
-        [tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryCheckmark;
-    }
+    [[PLBasketStore sharedStore] setPlateMain:[mains objectAtIndex:[indexPath row]]];
+    
+    [tableView reloadData];
+    
+//    if([tableView cellForRowAtIndexPath:indexPath].accessoryType == UITableViewCellAccessoryCheckmark){
+//        [tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryNone;
+//    }else{
+//        [tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryCheckmark;
+//    }
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -106,6 +118,12 @@
     return self;
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [self.tableMains reloadData];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -126,7 +144,20 @@
 }
 
 - (IBAction)actionContinue:(id)sender {
-    self.sidesController = [[PLSelectSidesViewController alloc] init];
-    [[self navigationController] pushViewController:[self sidesController] animated:YES];
+    
+    PLPlate *plate = [[PLBasketStore sharedStore] plateBuilder];
+    if  ([plate main] == nil) {
+        NSString *msg = [NSString stringWithFormat:@"Select a Main"];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:msg
+                                                        message:@"Please select a main entree"
+                                                       delegate:nil
+                                              cancelButtonTitle:@"OK"
+                                              otherButtonTitles:nil];
+        
+        [alert show];
+    } else {
+        self.sidesController = [[PLSelectSidesViewController alloc] init];
+        [[self navigationController] pushViewController:[self sidesController] animated:YES];
+    }
 }
 @end

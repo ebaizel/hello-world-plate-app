@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "PLBaseOrderViewController.h"
 #import "PLALaCarteViewController.h"
+#import "PLAddOnViewController.h"
 
 @class PLSelectPlateSizeViewController;
 
@@ -22,5 +23,6 @@
 
 @property (nonatomic, strong) PLSelectPlateSizeViewController *selectSizeController;
 @property (nonatomic, strong) PLALaCarteViewController *alaCarteViewController;
+@property (nonatomic, strong) PLAddOnViewController *addOnViewController;
 
 @end

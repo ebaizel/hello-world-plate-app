@@ -10,5 +10,7 @@
 
 @interface PLALaCarteSummaryViewController : UIViewController
 - (IBAction)addToBasket:(id)sender;
+@property (weak, nonatomic) IBOutlet UILabel *mainsToBeAdded;
+@property (weak, nonatomic) IBOutlet UILabel *sidesToBeAdded;
 
 @end

@@ -8,6 +8,9 @@
 
 #import "PLSelectPlateSizeViewController.h"
 #import "PLSelectMainsViewController.h"
+#import "PLSelectSidesViewController.h"
+#import "PLBasketStore.h"
+#import "PLPlate.h"
 
 @interface PLSelectPlateSizeViewController ()
 
@@ -19,11 +22,23 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if([tableView cellForRowAtIndexPath:indexPath].accessoryType == UITableViewCellAccessoryCheckmark){
-        [tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryNone;
-    }else{
-        [tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryCheckmark;
+    if (tableView == [self plateTypeTable]) {  // Plate Type
+        if ([indexPath row] == 0) {
+            [[[PLBasketStore sharedStore] plateBuilder] setType:OneMain];
+        } else {
+            [[[PLBasketStore sharedStore] plateBuilder] setType:FourSides];
+        }
+    } else {  // Plate Size
+        if ([indexPath row] == 0) {
+            [[[PLBasketStore sharedStore] plateBuilder] setSize:Fit];
+        } else if ([indexPath row] == 1) {
+            [[[PLBasketStore sharedStore] plateBuilder] setSize:Ultra];
+        } else if ([indexPath row] == 2) {
+            [[[PLBasketStore sharedStore] plateBuilder] setSize:Kids];
+        }
     }
+    
+    [self reloadTableViewData];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -33,6 +48,12 @@
     } else {
         return [plateType count];
     }
+}
+
+- (void)reloadTableViewData
+{
+    [self.plateTypeTable reloadData];
+    [self.plateSizeTable reloadData];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -47,11 +68,34 @@
     cell.layer.masksToBounds = YES;
     cell.layer.cornerRadius = 12.0f;
     cell.layer.backgroundColor = [[UIColor grayColor] CGColor];
+    cell.accessoryType = UITableViewCellAccessoryNone;
     
-    if ([self plateSizeTable] == tableView) {
-        [[cell textLabel] setText:[plateSize objectAtIndex:[indexPath row]]];
-    } else {
+    if (tableView == [self plateTypeTable]) {  // Plate Type
+
         [[cell textLabel] setText:[plateType objectAtIndex:[indexPath row]]];
+
+        // Add the checkmark if a type has been set
+        PlateType currentType = [[[PLBasketStore sharedStore] plateBuilder] type];
+        if (([indexPath row] == 0) && (currentType == OneMain)) {
+            cell.accessoryType = UITableViewCellAccessoryCheckmark;
+        } else if (([indexPath row] == 1) && (currentType == FourSides)) {
+            cell.accessoryType = UITableViewCellAccessoryCheckmark;
+        }
+
+    } else {  // Plate Size
+
+        [[cell textLabel] setText:[plateSize objectAtIndex:[indexPath row]]];
+        
+        // Add the checkmark if a size has been set
+        PlateSize currentSize = [[[PLBasketStore sharedStore] plateBuilder] size];
+        if (([indexPath row] == 0) && (currentSize == Fit)) {
+            cell.accessoryType = UITableViewCellAccessoryCheckmark;
+        } else if (([indexPath row] == 1) && (currentSize == Ultra)) {
+            cell.accessoryType = UITableViewCellAccessoryCheckmark;
+        } else if (([indexPath row] == 2) && (currentSize == Kids)) {
+            cell.accessoryType = UITableViewCellAccessoryCheckmark;
+        }
+
     }
     
     return cell;
@@ -66,6 +110,7 @@
     if (self) {
         // Custom initialization
         self.mainsViewController = [[PLSelectMainsViewController alloc] init];
+        self.sidesViewController = [[PLSelectSidesViewController alloc] init];
     }
     return self;
 }
@@ -94,8 +139,35 @@
 }
 
 - (IBAction)actionContinue:(id)sender {
-//    [[self mainsViewController] setPlateSize: [self.plateSizeTable [[self plateSizeTable] indexPathForSelectedRow]];
-    [[self mainsViewController] setPlateType:@""];
-    [[self navigationController] pushViewController:[self mainsViewController] animated:YES];
+
+    PLPlate *plate = [[PLBasketStore sharedStore] plateBuilder];
+    if  (([plate size] == UndefinedSize) || ([plate type] == UndefinedType)) {
+        NSString *msg = [NSString stringWithFormat:@"Select a type and size"];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:msg
+                                                        message:@"Please select your Plate's size and type"
+                                                        delegate:nil
+                                                        cancelButtonTitle:@"OK"
+                                                        otherButtonTitles:nil];
+
+        [alert show];
+    } else {
+        
+        // Empty out the plate builder before continuing
+        [plate setMain:nil];
+        [plate setSides:[[NSMutableArray alloc]init]];
+        
+        if ([plate type] == OneMain) {
+            [[self navigationController] pushViewController:[self mainsViewController] animated:YES];
+        } else if ([plate type] == FourSides) {
+            [[self navigationController] pushViewController:[self sidesViewController] animated:YES];
+        }
+    }
 }
 @end
+
+
+
+
+
+
+

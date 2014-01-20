@@ -9,24 +9,17 @@
 #import <Foundation/Foundation.h>
 #import "JSONSerializable.h"
 
-typedef enum {
-    MenuItemMain,
-    MenuItemSide
-} MenuItemType;
-
 @interface PLMenuItem : NSObject <JSONSerializable>
-{
-    MenuItemType itemType;
-}
 
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *plateId;
 @property (nonatomic, strong) NSString *description;
 @property (nonatomic, strong) NSString *allergies;
+@property (nonatomic) MenuItemType itemType;
 @property (assign) BOOL isGlutenFree;
 @property (assign) BOOL isVegan;
 @property (assign) BOOL isVegetarian;
 
--(id)initWithName:(NSString *)itemName itemType:(int)type;
+-(id)initWithName:(NSString *)itemName itemType:(MenuItemType)type itemId:(NSString *)itemId;
 
 @end

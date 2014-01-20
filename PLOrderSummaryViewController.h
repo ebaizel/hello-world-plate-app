@@ -11,5 +11,6 @@
 
 @interface PLOrderSummaryViewController : PLBaseOrderViewController
 - (IBAction)addToBasket:(id)sender;
+@property (weak, nonatomic) IBOutlet UITextView *textSummary;
 
 @end

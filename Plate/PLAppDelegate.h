@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+@class PLPlate;
+
 @interface PLAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;

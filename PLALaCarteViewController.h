@@ -7,9 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PLMenuItemTableViewCell.h"
 
-@interface PLALaCarteViewController : UIViewController
+@interface PLALaCarteViewController : UIViewController <ALaCarteCellDelegate>
+
 @property (weak, nonatomic) IBOutlet UITableView *alaCarteMains;
 @property (weak, nonatomic) IBOutlet UITableView *alaCarteSides;
+
+@property (nonatomic, strong) NSMutableArray *mains;
+@property (nonatomic, strong) NSMutableArray *sides;
 
 @end

@@ -7,13 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "PLOrderSummaryViewController.h"
 #import "PLBaseOrderViewController.h"
+#import "PLMenuItemTableViewCell.h"
+@class PLOrderSummaryViewController;
 
-@interface PLSelectSidesViewController : PLBaseOrderViewController
+@interface PLSelectSidesViewController : PLBaseOrderViewController <ALaCarteCellDelegate>
 {
     NSArray *sides;
 }
+@property (weak, nonatomic) IBOutlet UILabel *labelSelectSides;
 @property (weak, nonatomic) IBOutlet UITableView *tableSides;
 @property (nonatomic, strong) PLOrderSummaryViewController *orderSummaryController;
 @end

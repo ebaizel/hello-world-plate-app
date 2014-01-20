@@ -9,6 +9,8 @@
 #import "PLStartOrderViewController.h"
 #import "PLSelectPlateSizeViewController.h"
 #import "PLALaCarteViewController.h"
+#import "PLAddOnViewController.h"
+#import "PLBasketStore.h"
 
 @interface PLStartOrderViewController ()
 
@@ -25,8 +27,8 @@
             [[self navigationController] pushViewController:[self selectSizeController] animated:YES];
         } else if ([indexPath row] == 1) {
             [[self navigationController] pushViewController:[self alaCarteViewController] animated:YES];
-        } else {
-
+        } else if ([indexPath row] == 2) {
+            [[self navigationController] pushViewController:[self addOnViewController] animated:YES];
         }
     } else {  // basket
         
@@ -38,7 +40,7 @@
     if (tableView == [self orderTypeTableView]) {
         return [startingOptions count];
     } else {
-        return 3;
+        return 1;
     }
 }
 
@@ -62,12 +64,10 @@
         UIFont *basketFont = [ UIFont fontWithName: @"Arial" size: 12.0 ];
         cell.textLabel.font = basketFont;
         
-        if ([indexPath row] == 0) {
-            [[cell textLabel] setText:@"Basket is currently empty"];
-        } else if ([indexPath row] == 1){
-            [[cell textLabel] setText:@"Items ordered will appear here"];
+        if ([[PLBasketStore sharedStore] totalCostOfItemsInBasket] > 0) {
+            [[cell textLabel] setText:[NSString stringWithFormat:@"%f", [[PLBasketStore sharedStore] totalCostOfItemsInBasket]]];
         } else {
-            [[cell textLabel] setText:@"and can be removed from basket here"];
+            [[cell textLabel] setText:@"Basket is currently empty"];
         }
     }
     
@@ -81,9 +81,16 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(reloadTableViewData)
+                                                     name:@"BasketUpdated" object:nil];
     }
     return self;
+}
+
+- (void)reloadTableViewData
+{
+    [self.basketTableView reloadData];
 }
 
 - (void)viewDidLoad
@@ -104,7 +111,12 @@
     plalacartevc.hidesBottomBarWhenPushed = YES;
     [self setAlaCarteViewController:plalacartevc];
     
+    PLAddOnViewController *plaovc = [[PLAddOnViewController alloc]init];
+    plaovc.hidesBottomBarWhenPushed = YES;
+    [self setAddOnViewController:plaovc];
+    
     self.basketTableView.backgroundColor = [UIColor clearColor];
+
 }
 
 - (void)viewDidAppear:(BOOL)animated

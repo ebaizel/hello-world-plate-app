@@ -10,6 +10,7 @@
 #import "PLBaseOrderViewController.h"
 @class PLSelectPlateSizeViewController;
 @class PLSelectMainsViewController;
+@class PLSelectSidesViewController;
 
 @interface PLSelectPlateSizeViewController : PLBaseOrderViewController <UITableViewDelegate, UITableViewDataSource>
 {
@@ -18,6 +19,7 @@
 }
 @property (weak, nonatomic) IBOutlet UITableView *plateTypeTable;
 @property (weak, nonatomic) IBOutlet UITableView *plateSizeTable;
-@property (strong, nonatomic) IBOutlet PLSelectMainsViewController *mainsViewController;
+@property (strong, nonatomic) PLSelectMainsViewController *mainsViewController;
+@property (strong, nonatomic) PLSelectSidesViewController *sidesViewController;
 
 @end

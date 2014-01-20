@@ -18,11 +18,13 @@
 
 }
 
--(id)initWithName:(NSString *)itemName itemType:(int)type
+-(id)initWithName:(NSString *)itemName itemType:(MenuItemType)type itemId:(NSString *)itemId
 {
     self = [super init];
     if (self) {
         [self setName:itemName];
+        [self setPlateId:itemId];
+        [self setItemType:type];
     }
     return self;
 }

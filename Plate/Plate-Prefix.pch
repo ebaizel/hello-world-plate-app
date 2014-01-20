@@ -5,6 +5,7 @@
 //
 
 #import <Availability.h>
+#import "PLAppDelegate.h"
 
 #ifndef __IPHONE_3_0
 #warning "This project uses features only available in iOS SDK 3.0 and later."
@@ -14,3 +15,24 @@
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
 #endif
+
+#define AppDelegate (PLAppDelegate *)[[UIApplication sharedApplication] delegate]
+
+typedef enum {
+    MenuItemMain,
+    MenuItemSide,
+    MenuItemAddOn
+} MenuItemType;
+
+typedef enum {
+    UndefinedType,
+    OneMain,
+    FourSides
+} PlateType;
+
+typedef enum {
+    UndefinedSize,
+    Fit,
+    Ultra,
+    Kids
+} PlateSize;

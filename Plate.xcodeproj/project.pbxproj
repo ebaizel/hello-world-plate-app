@@ -18,6 +18,10 @@
 		0A0D16A71851114F0057F538 /* bg-grey.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0A0D16A61851114F0057F538 /* bg-grey.jpg */; };
 		0A0D16AC185131680057F538 /* PLBaseOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A0D16AA185131680057F538 /* PLBaseOrderViewController.m */; };
 		0A0D16AD185131680057F538 /* PLBaseOrderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A0D16AB185131680057F538 /* PLBaseOrderViewController.xib */; };
+		0A2E0B4A1888A21200DF3A85 /* PLAddOnViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A2E0B481888A21200DF3A85 /* PLAddOnViewController.m */; };
+		0A2E0B4B1888A21200DF3A85 /* PLAddOnViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A2E0B491888A21200DF3A85 /* PLAddOnViewController.xib */; };
+		0A2E0B4F1888B5B600DF3A85 /* PLAddOnSummaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A2E0B4D1888B5B600DF3A85 /* PLAddOnSummaryViewController.m */; };
+		0A2E0B501888B5B600DF3A85 /* PLAddOnSummaryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A2E0B4E1888B5B600DF3A85 /* PLAddOnSummaryViewController.xib */; };
 		0A318C63184532250023FFF5 /* PLStartOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A318C61184532250023FFF5 /* PLStartOrderViewController.m */; };
 		0A318C64184532250023FFF5 /* PLStartOrderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A318C62184532250023FFF5 /* PLStartOrderViewController.xib */; };
 		0A495EEF1852824800C14B03 /* bg-scones.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0A495EED1852824800C14B03 /* bg-scones.jpg */; };
@@ -30,12 +34,15 @@
 		0A5FC52D1868D06B00F69BA5 /* PLALaCarteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A5FC52B1868D06B00F69BA5 /* PLALaCarteViewController.xib */; };
 		0A5FC531186A2EFB00F69BA5 /* PLALaCarteSummaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A5FC52F186A2EFB00F69BA5 /* PLALaCarteSummaryViewController.m */; };
 		0A5FC532186A2EFB00F69BA5 /* PLALaCarteSummaryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A5FC530186A2EFB00F69BA5 /* PLALaCarteSummaryViewController.xib */; };
+		0A5FC53C18860B9D00F69BA5 /* PLALaCarteItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A5FC53B18860B9D00F69BA5 /* PLALaCarteItem.m */; };
+		0A5FC53E1886161400F69BA5 /* PLMenuItemTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A5FC53D1886161400F69BA5 /* PLMenuItemTableViewCell.xib */; };
+		0A5FC5411886199800F69BA5 /* PLMenuItemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A5FC5401886199800F69BA5 /* PLMenuItemTableViewCell.m */; };
+		0A5FC58B188865EA00F69BA5 /* Plate.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0A5FC589188865EA00F69BA5 /* Plate.xcdatamodeld */; };
+		0A5FC58E18886C4900F69BA5 /* PLAddOnItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A5FC58D18886C4900F69BA5 /* PLAddOnItem.m */; };
 		0A9D7DCE18470F5F00BAE38D /* PLSelectPlateSizeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D7DCC18470F5F00BAE38D /* PLSelectPlateSizeViewController.m */; };
 		0A9D7DCF18470F5F00BAE38D /* PLSelectPlateSizeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A9D7DCD18470F5F00BAE38D /* PLSelectPlateSizeViewController.xib */; };
 		0A9D7DDA184A93C800BAE38D /* PLSelectMainsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D7DD8184A93C800BAE38D /* PLSelectMainsViewController.m */; };
 		0A9D7DDB184A93C800BAE38D /* PLSelectMainsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A9D7DD9184A93C800BAE38D /* PLSelectMainsViewController.xib */; };
-		0A9D7DDF184BA6D000BAE38D /* PLSelectMainsViewControllerDELETEME.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D7DDD184BA6D000BAE38D /* PLSelectMainsViewControllerDELETEME.m */; };
-		0A9D7DE0184BA6D000BAE38D /* PLSelectMainsViewControllerDELETEME.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A9D7DDE184BA6D000BAE38D /* PLSelectMainsViewControllerDELETEME.xib */; };
 		0A9D7DE8184C5C6700BAE38D /* PlateStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A9D7DE7184C5C6700BAE38D /* PlateStoryboard.storyboard */; };
 		0A9D7DEC184C62CA00BAE38D /* PLSelectSidesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D7DEA184C62CA00BAE38D /* PLSelectSidesViewController.m */; };
 		0A9D7DED184C62CA00BAE38D /* PLSelectSidesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A9D7DEB184C62CA00BAE38D /* PLSelectSidesViewController.xib */; };
@@ -57,7 +64,7 @@
 		0ABBE40F1843D0390031D3E2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ABBE3F71843D0390031D3E2 /* UIKit.framework */; };
 		0ABBE4171843D0390031D3E2 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0ABBE4151843D0390031D3E2 /* InfoPlist.strings */; };
 		0ABBE4191843D0390031D3E2 /* PlateTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ABBE4181843D0390031D3E2 /* PlateTests.m */; };
-		0AC187F3185F872D00A0DD9F /* PLOrderItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC187F2185F872D00A0DD9F /* PLOrderItem.m */; };
+		0AC187F3185F872D00A0DD9F /* PLPlate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC187F2185F872D00A0DD9F /* PLPlate.m */; };
 		0AC187F6185F8D4D00A0DD9F /* PLOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC187F5185F8D4D00A0DD9F /* PLOrder.m */; };
 		0ADC532D185671A700258E1E /* PLMenuItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ADC532C185671A700258E1E /* PLMenuItem.m */; };
 		0ADC53301856738400258E1E /* PLPlateStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ADC532F1856738400258E1E /* PLPlateStore.m */; };
@@ -92,6 +99,12 @@
 		0A0D16A9185131680057F538 /* PLBaseOrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLBaseOrderViewController.h; sourceTree = "<group>"; };
 		0A0D16AA185131680057F538 /* PLBaseOrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLBaseOrderViewController.m; sourceTree = "<group>"; };
 		0A0D16AB185131680057F538 /* PLBaseOrderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PLBaseOrderViewController.xib; sourceTree = "<group>"; };
+		0A2E0B471888A21200DF3A85 /* PLAddOnViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLAddOnViewController.h; sourceTree = "<group>"; };
+		0A2E0B481888A21200DF3A85 /* PLAddOnViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLAddOnViewController.m; sourceTree = "<group>"; };
+		0A2E0B491888A21200DF3A85 /* PLAddOnViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PLAddOnViewController.xib; sourceTree = "<group>"; };
+		0A2E0B4C1888B5B600DF3A85 /* PLAddOnSummaryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLAddOnSummaryViewController.h; sourceTree = "<group>"; };
+		0A2E0B4D1888B5B600DF3A85 /* PLAddOnSummaryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLAddOnSummaryViewController.m; sourceTree = "<group>"; };
+		0A2E0B4E1888B5B600DF3A85 /* PLAddOnSummaryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PLAddOnSummaryViewController.xib; sourceTree = "<group>"; };
 		0A318C60184532250023FFF5 /* PLStartOrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLStartOrderViewController.h; sourceTree = "<group>"; };
 		0A318C61184532250023FFF5 /* PLStartOrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLStartOrderViewController.m; sourceTree = "<group>"; };
 		0A318C62184532250023FFF5 /* PLStartOrderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PLStartOrderViewController.xib; sourceTree = "<group>"; };
@@ -111,15 +124,20 @@
 		0A5FC52E186A2EFB00F69BA5 /* PLALaCarteSummaryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLALaCarteSummaryViewController.h; sourceTree = "<group>"; };
 		0A5FC52F186A2EFB00F69BA5 /* PLALaCarteSummaryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLALaCarteSummaryViewController.m; sourceTree = "<group>"; };
 		0A5FC530186A2EFB00F69BA5 /* PLALaCarteSummaryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PLALaCarteSummaryViewController.xib; sourceTree = "<group>"; };
+		0A5FC53A18860B9D00F69BA5 /* PLALaCarteItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLALaCarteItem.h; sourceTree = "<group>"; };
+		0A5FC53B18860B9D00F69BA5 /* PLALaCarteItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLALaCarteItem.m; sourceTree = "<group>"; };
+		0A5FC53D1886161400F69BA5 /* PLMenuItemTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PLMenuItemTableViewCell.xib; sourceTree = "<group>"; };
+		0A5FC53F1886199800F69BA5 /* PLMenuItemTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLMenuItemTableViewCell.h; sourceTree = "<group>"; };
+		0A5FC5401886199800F69BA5 /* PLMenuItemTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLMenuItemTableViewCell.m; sourceTree = "<group>"; };
+		0A5FC58A188865EA00F69BA5 /* Plate.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Plate.xcdatamodel; sourceTree = "<group>"; };
+		0A5FC58C18886C4900F69BA5 /* PLAddOnItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLAddOnItem.h; sourceTree = "<group>"; };
+		0A5FC58D18886C4900F69BA5 /* PLAddOnItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLAddOnItem.m; sourceTree = "<group>"; };
 		0A9D7DCB18470F5E00BAE38D /* PLSelectPlateSizeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLSelectPlateSizeViewController.h; sourceTree = "<group>"; };
 		0A9D7DCC18470F5F00BAE38D /* PLSelectPlateSizeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLSelectPlateSizeViewController.m; sourceTree = "<group>"; };
 		0A9D7DCD18470F5F00BAE38D /* PLSelectPlateSizeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PLSelectPlateSizeViewController.xib; sourceTree = "<group>"; };
 		0A9D7DD7184A93C800BAE38D /* PLSelectMainsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLSelectMainsViewController.h; sourceTree = "<group>"; };
 		0A9D7DD8184A93C800BAE38D /* PLSelectMainsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLSelectMainsViewController.m; sourceTree = "<group>"; };
 		0A9D7DD9184A93C800BAE38D /* PLSelectMainsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PLSelectMainsViewController.xib; sourceTree = "<group>"; };
-		0A9D7DDC184BA6D000BAE38D /* PLSelectMainsViewControllerDELETEME.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLSelectMainsViewControllerDELETEME.h; sourceTree = "<group>"; };
-		0A9D7DDD184BA6D000BAE38D /* PLSelectMainsViewControllerDELETEME.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLSelectMainsViewControllerDELETEME.m; sourceTree = "<group>"; };
-		0A9D7DDE184BA6D000BAE38D /* PLSelectMainsViewControllerDELETEME.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PLSelectMainsViewControllerDELETEME.xib; sourceTree = "<group>"; };
 		0A9D7DE7184C5C6700BAE38D /* PlateStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PlateStoryboard.storyboard; sourceTree = "<group>"; };
 		0A9D7DE9184C62CA00BAE38D /* PLSelectSidesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLSelectSidesViewController.h; sourceTree = "<group>"; };
 		0A9D7DEA184C62CA00BAE38D /* PLSelectSidesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLSelectSidesViewController.m; sourceTree = "<group>"; };
@@ -150,8 +168,8 @@
 		0ABBE4141843D0390031D3E2 /* PlateTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PlateTests-Info.plist"; sourceTree = "<group>"; };
 		0ABBE4161843D0390031D3E2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		0ABBE4181843D0390031D3E2 /* PlateTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlateTests.m; sourceTree = "<group>"; };
-		0AC187F1185F872D00A0DD9F /* PLOrderItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLOrderItem.h; sourceTree = "<group>"; };
-		0AC187F2185F872D00A0DD9F /* PLOrderItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLOrderItem.m; sourceTree = "<group>"; };
+		0AC187F1185F872D00A0DD9F /* PLPlate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLPlate.h; sourceTree = "<group>"; };
+		0AC187F2185F872D00A0DD9F /* PLPlate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLPlate.m; sourceTree = "<group>"; };
 		0AC187F4185F8D4D00A0DD9F /* PLOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLOrder.h; sourceTree = "<group>"; };
 		0AC187F5185F8D4D00A0DD9F /* PLOrder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLOrder.m; sourceTree = "<group>"; };
 		0ADC532B185671A700258E1E /* PLMenuItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLMenuItem.h; sourceTree = "<group>"; };
@@ -226,6 +244,19 @@
 			name = assets;
 			sourceTree = "<group>";
 		};
+		0A2E0B461888A1A900DF3A85 /* Add Ons */ = {
+			isa = PBXGroup;
+			children = (
+				0A2E0B471888A21200DF3A85 /* PLAddOnViewController.h */,
+				0A2E0B481888A21200DF3A85 /* PLAddOnViewController.m */,
+				0A2E0B491888A21200DF3A85 /* PLAddOnViewController.xib */,
+				0A2E0B4C1888B5B600DF3A85 /* PLAddOnSummaryViewController.h */,
+				0A2E0B4D1888B5B600DF3A85 /* PLAddOnSummaryViewController.m */,
+				0A2E0B4E1888B5B600DF3A85 /* PLAddOnSummaryViewController.xib */,
+			);
+			name = "Add Ons";
+			sourceTree = "<group>";
+		};
 		0A5FC5281868D01C00F69BA5 /* A La Carte */ = {
 			isa = PBXGroup;
 			children = (
@@ -237,6 +268,18 @@
 				0A5FC530186A2EFB00F69BA5 /* PLALaCarteSummaryViewController.xib */,
 			);
 			name = "A La Carte";
+			sourceTree = "<group>";
+		};
+		0A5FC58F1888938100F69BA5 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				0ADC533418568E3600258E1E /* JSONSerializable.h */,
+				0ADC53311856808E00258E1E /* PLConnection.h */,
+				0ADC53321856808F00258E1E /* PLConnection.m */,
+				0ADC532E1856738400258E1E /* PLPlateStore.h */,
+				0ADC532F1856738400258E1E /* PLPlateStore.m */,
+			);
+			name = Networking;
 			sourceTree = "<group>";
 		};
 		0A9D7DD018470F8C00BAE38D /* Ordering */ = {
@@ -269,6 +312,9 @@
 		0A9D7DD118470FA100BAE38D /* View Menu */ = {
 			isa = PBXGroup;
 			children = (
+				0A5FC53D1886161400F69BA5 /* PLMenuItemTableViewCell.xib */,
+				0A5FC53F1886199800F69BA5 /* PLMenuItemTableViewCell.h */,
+				0A5FC5401886199800F69BA5 /* PLMenuItemTableViewCell.m */,
 				0A495EF11852905200C14B03 /* PLBaseMenuViewController.h */,
 				0A495EF21852905200C14B03 /* PLBaseMenuViewController.m */,
 				0A0D16901850FC9E0057F538 /* PLMenuViewController.h */,
@@ -281,9 +327,6 @@
 		0A9D7DE1184BA6E800BAE38D /* Stash Bin */ = {
 			isa = PBXGroup;
 			children = (
-				0A9D7DDC184BA6D000BAE38D /* PLSelectMainsViewControllerDELETEME.h */,
-				0A9D7DDD184BA6D000BAE38D /* PLSelectMainsViewControllerDELETEME.m */,
-				0A9D7DDE184BA6D000BAE38D /* PLSelectMainsViewControllerDELETEME.xib */,
 			);
 			name = "Stash Bin";
 			sourceTree = "<group>";
@@ -305,18 +348,12 @@
 		0ABBE3E71843D0390031D3E2 = {
 			isa = PBXGroup;
 			children = (
+				0A5FC589188865EA00F69BA5 /* Plate.xcdatamodeld */,
+				0A2E0B461888A1A900DF3A85 /* Add Ons */,
 				0A5FC5281868D01C00F69BA5 /* A La Carte */,
 				0AC187FA185F934100A0DD9F /* Shopping Cart */,
 				0AC187F0185F871100A0DD9F /* Models */,
-				0ADC533518579C6300258E1E /* PLMenu.h */,
-				0ADC533618579C6300258E1E /* PLMenu.m */,
-				0ADC533418568E3600258E1E /* JSONSerializable.h */,
-				0ADC53311856808E00258E1E /* PLConnection.h */,
-				0ADC53321856808F00258E1E /* PLConnection.m */,
-				0ADC532E1856738400258E1E /* PLPlateStore.h */,
-				0ADC532F1856738400258E1E /* PLPlateStore.m */,
-				0ADC532B185671A700258E1E /* PLMenuItem.h */,
-				0ADC532C185671A700258E1E /* PLMenuItem.m */,
+				0A5FC58F1888938100F69BA5 /* Networking */,
 				0A0D16A0185102A90057F538 /* Rewards */,
 				0A0D169F185102890057F538 /* Settings */,
 				0A9D7DD118470FA100BAE38D /* View Menu */,
@@ -396,10 +433,18 @@
 		0AC187F0185F871100A0DD9F /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				0AC187F1185F872D00A0DD9F /* PLOrderItem.h */,
-				0AC187F2185F872D00A0DD9F /* PLOrderItem.m */,
+				0ADC533518579C6300258E1E /* PLMenu.h */,
+				0ADC533618579C6300258E1E /* PLMenu.m */,
+				0AC187F1185F872D00A0DD9F /* PLPlate.h */,
+				0AC187F2185F872D00A0DD9F /* PLPlate.m */,
 				0AC187F4185F8D4D00A0DD9F /* PLOrder.h */,
 				0AC187F5185F8D4D00A0DD9F /* PLOrder.m */,
+				0ADC532B185671A700258E1E /* PLMenuItem.h */,
+				0ADC532C185671A700258E1E /* PLMenuItem.m */,
+				0A5FC53A18860B9D00F69BA5 /* PLALaCarteItem.h */,
+				0A5FC53B18860B9D00F69BA5 /* PLALaCarteItem.m */,
+				0A5FC58C18886C4900F69BA5 /* PLAddOnItem.h */,
+				0A5FC58D18886C4900F69BA5 /* PLAddOnItem.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -492,6 +537,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A2E0B501888B5B600DF3A85 /* PLAddOnSummaryViewController.xib in Resources */,
 				0ABBE3FE1843D0390031D3E2 /* InfoPlist.strings in Resources */,
 				0A5FC52D1868D06B00F69BA5 /* PLALaCarteViewController.xib in Resources */,
 				0A9D7DDB184A93C800BAE38D /* PLSelectMainsViewController.xib in Resources */,
@@ -502,16 +548,17 @@
 				0A0D16AD185131680057F538 /* PLBaseOrderViewController.xib in Resources */,
 				0A0D16A518510F790057F538 /* bg-tomatoes.png in Resources */,
 				0A9D7E08184D602500BAE38D /* release_notes.md in Resources */,
+				0A5FC53E1886161400F69BA5 /* PLMenuItemTableViewCell.xib in Resources */,
 				0A0D16A71851114F0057F538 /* bg-grey.jpg in Resources */,
 				0A9D7DED184C62CA00BAE38D /* PLSelectSidesViewController.xib in Resources */,
 				0A9D7DCF18470F5F00BAE38D /* PLSelectPlateSizeViewController.xib in Resources */,
 				0A318C64184532250023FFF5 /* PLStartOrderViewController.xib in Resources */,
 				0ABBE4061843D0390031D3E2 /* Images.xcassets in Resources */,
 				0A5FC532186A2EFB00F69BA5 /* PLALaCarteSummaryViewController.xib in Resources */,
+				0A2E0B4B1888A21200DF3A85 /* PLAddOnViewController.xib in Resources */,
 				0A0D16991850FE750057F538 /* PLRewardsViewController.xib in Resources */,
 				0A0D16941850FC9E0057F538 /* PLMenuViewController.xib in Resources */,
 				0A9D7DF4184D19C400BAE38D /* PLOrderSummaryViewController.xib in Resources */,
-				0A9D7DE0184BA6D000BAE38D /* PLSelectMainsViewControllerDELETEME.xib in Resources */,
 				0A495EEF1852824800C14B03 /* bg-scones.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -538,7 +585,6 @@
 				0ADC53301856738400258E1E /* PLPlateStore.m in Sources */,
 				0A0D16931850FC9E0057F538 /* PLMenuViewController.m in Sources */,
 				0ABBE4041843D0390031D3E2 /* PLAppDelegate.m in Sources */,
-				0A9D7DDF184BA6D000BAE38D /* PLSelectMainsViewControllerDELETEME.m in Sources */,
 				0ADC53331856808F00258E1E /* PLConnection.m in Sources */,
 				0A318C63184532250023FFF5 /* PLStartOrderViewController.m in Sources */,
 				0A9D7DDA184A93C800BAE38D /* PLSelectMainsViewController.m in Sources */,
@@ -546,16 +592,22 @@
 				0AC187F6185F8D4D00A0DD9F /* PLOrder.m in Sources */,
 				0ADC533718579C6300258E1E /* PLMenu.m in Sources */,
 				0A0D169D185102140057F538 /* PLAccountViewController.m in Sources */,
+				0A2E0B4A1888A21200DF3A85 /* PLAddOnViewController.m in Sources */,
 				0A5FC531186A2EFB00F69BA5 /* PLALaCarteSummaryViewController.m in Sources */,
+				0A5FC5411886199800F69BA5 /* PLMenuItemTableViewCell.m in Sources */,
 				0ABBE4001843D0390031D3E2 /* main.m in Sources */,
 				0A9D7DEC184C62CA00BAE38D /* PLSelectSidesViewController.m in Sources */,
+				0A5FC58B188865EA00F69BA5 /* Plate.xcdatamodeld in Sources */,
+				0A2E0B4F1888B5B600DF3A85 /* PLAddOnSummaryViewController.m in Sources */,
 				0A0D16AC185131680057F538 /* PLBaseOrderViewController.m in Sources */,
 				0A9D7DF3184D19C400BAE38D /* PLOrderSummaryViewController.m in Sources */,
 				0A9D7DCE18470F5F00BAE38D /* PLSelectPlateSizeViewController.m in Sources */,
+				0A5FC53C18860B9D00F69BA5 /* PLALaCarteItem.m in Sources */,
 				0A5FC5271868CE5600F69BA5 /* PLBasketStore.m in Sources */,
+				0A5FC58E18886C4900F69BA5 /* PLAddOnItem.m in Sources */,
 				0A5FC52C1868D06B00F69BA5 /* PLALaCarteViewController.m in Sources */,
 				0A495EF61852925D00C14B03 /* PLBaseRewardsViewController.m in Sources */,
-				0AC187F3185F872D00A0DD9F /* PLOrderItem.m in Sources */,
+				0AC187F3185F872D00A0DD9F /* PLPlate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -787,6 +839,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		0A5FC589188865EA00F69BA5 /* Plate.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				0A5FC58A188865EA00F69BA5 /* Plate.xcdatamodel */,
+			);
+			currentVersion = 0A5FC58A188865EA00F69BA5 /* Plate.xcdatamodel */;
+			path = Plate.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 0ABBE3E81843D0390031D3E2 /* Project object */;
 }
