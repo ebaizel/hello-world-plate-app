@@ -42,7 +42,7 @@
 
             PLMenuItem *plmi = [[PLMenuItem alloc] init];
             [plmi setName:[mainModifier objectForKey:@"name"]];
-            [plmi setPlateId:[PLMenu generateRandomID]];
+            [plmi setPlateId:[PLMenu generateRandomID]];  // probably need to remove this
 // ### UNCOMMENT BELOW WHEN META IS WORKING
 //            [plmi setName:[mainItem objectForKey:@"name"]];
 //            [plmi setDescription:[mainItem objectForKey:@"description"]];

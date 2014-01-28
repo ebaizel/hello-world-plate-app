@@ -17,9 +17,9 @@
 {
     NSArray *startingOptions;
 }
-@property (weak, nonatomic) IBOutlet UITableView *basketTableView;
+
 @property (weak, nonatomic) IBOutlet UITableView *orderTypeTableView;
-- (IBAction)checkout:(id)sender;
+@property (weak, nonatomic) IBOutlet UITableView *basketSummaryTable;
 
 @property (nonatomic, strong) PLSelectPlateSizeViewController *selectSizeController;
 @property (nonatomic, strong) PLALaCarteViewController *alaCarteViewController;

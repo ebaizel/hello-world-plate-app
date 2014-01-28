@@ -13,6 +13,7 @@
 #import "PLBasketStore.h"
 #import "PLMenuItem.h"
 #import "PLPlate.h"
+#import "Colours.h"
 
 @interface PLSelectSidesViewController ()
 
@@ -77,6 +78,7 @@
     cell.itemNameLabel.text = [item name];
     cell.quantityLabel.text = [NSString stringWithFormat:@"%d",[[PLBasketStore sharedStore] quantityOfSideInPlateBuilder: item]];
     cell.itemId = [item plateId];
+    cell.textLabel.textColor = [UIColor moneyGreenColor];
     
     return cell;
 }

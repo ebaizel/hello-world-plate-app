@@ -8,7 +8,7 @@
 
 #import "PLMenuItem.h"
 
-@interface PLALaCarteItem : PLMenuItem
+@interface PLALaCarteItem : PLMenuItem <NSCopying>
 
 @property (nonatomic) int quantity;
 @end

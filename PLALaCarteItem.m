@@ -10,4 +10,15 @@
 
 @implementation PLALaCarteItem
 
+@synthesize quantity;
+
+-(id)copyWithZone:(NSZone *)zone
+{
+    PLALaCarteItem *another = (PLALaCarteItem *)[super copyWithZone:zone];
+//    another.quantity = 5;
+    
+//    [another setQuantity:self.quantity];
+    another.quantity = self.quantity;
+    return another;
+}
 @end

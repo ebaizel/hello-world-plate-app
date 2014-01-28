@@ -18,6 +18,8 @@
 		0A0D16A71851114F0057F538 /* bg-grey.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0A0D16A61851114F0057F538 /* bg-grey.jpg */; };
 		0A0D16AC185131680057F538 /* PLBaseOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A0D16AA185131680057F538 /* PLBaseOrderViewController.m */; };
 		0A0D16AD185131680057F538 /* PLBaseOrderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A0D16AB185131680057F538 /* PLBaseOrderViewController.xib */; };
+		0A21869D1896E00E00F79E4A /* Colours.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A21869C1896E00E00F79E4A /* Colours.m */; };
+		0A2186A01896EC8F00F79E4A /* PLBasketViewTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A21869F1896EC8F00F79E4A /* PLBasketViewTableCell.m */; };
 		0A2E0B4A1888A21200DF3A85 /* PLAddOnViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A2E0B481888A21200DF3A85 /* PLAddOnViewController.m */; };
 		0A2E0B4B1888A21200DF3A85 /* PLAddOnViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A2E0B491888A21200DF3A85 /* PLAddOnViewController.xib */; };
 		0A2E0B4F1888B5B600DF3A85 /* PLAddOnSummaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A2E0B4D1888B5B600DF3A85 /* PLAddOnSummaryViewController.m */; };
@@ -39,6 +41,12 @@
 		0A5FC5411886199800F69BA5 /* PLMenuItemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A5FC5401886199800F69BA5 /* PLMenuItemTableViewCell.m */; };
 		0A5FC58B188865EA00F69BA5 /* Plate.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0A5FC589188865EA00F69BA5 /* Plate.xcdatamodeld */; };
 		0A5FC58E18886C4900F69BA5 /* PLAddOnItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A5FC58D18886C4900F69BA5 /* PLAddOnItem.m */; };
+		0A6D138C189310D100C8F977 /* PLPlateType.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6D138B189310D100C8F977 /* PLPlateType.m */; };
+		0A6D138F189310E000C8F977 /* PLPlateSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6D138E189310E000C8F977 /* PLPlateSize.m */; };
+		0A6D13931893286F00C8F977 /* PLBasketViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6D13911893286F00C8F977 /* PLBasketViewController.m */; };
+		0A6D13941893286F00C8F977 /* PLBasketViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A6D13921893286F00C8F977 /* PLBasketViewController.xib */; };
+		0A6D1396189328E200C8F977 /* PLBasketViewTableCellPlate.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A6D1395189328E200C8F977 /* PLBasketViewTableCellPlate.xib */; };
+		0A6D139818932A9700C8F977 /* PLBasketViewTableCellAddOn.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A6D139718932A9700C8F977 /* PLBasketViewTableCellAddOn.xib */; };
 		0A9D7DCE18470F5F00BAE38D /* PLSelectPlateSizeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D7DCC18470F5F00BAE38D /* PLSelectPlateSizeViewController.m */; };
 		0A9D7DCF18470F5F00BAE38D /* PLSelectPlateSizeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A9D7DCD18470F5F00BAE38D /* PLSelectPlateSizeViewController.xib */; };
 		0A9D7DDA184A93C800BAE38D /* PLSelectMainsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A9D7DD8184A93C800BAE38D /* PLSelectMainsViewController.m */; };
@@ -99,6 +107,10 @@
 		0A0D16A9185131680057F538 /* PLBaseOrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLBaseOrderViewController.h; sourceTree = "<group>"; };
 		0A0D16AA185131680057F538 /* PLBaseOrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLBaseOrderViewController.m; sourceTree = "<group>"; };
 		0A0D16AB185131680057F538 /* PLBaseOrderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PLBaseOrderViewController.xib; sourceTree = "<group>"; };
+		0A21869B1896E00E00F79E4A /* Colours.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Colours.h; sourceTree = "<group>"; };
+		0A21869C1896E00E00F79E4A /* Colours.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Colours.m; sourceTree = "<group>"; };
+		0A21869E1896EC8F00F79E4A /* PLBasketViewTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLBasketViewTableCell.h; sourceTree = "<group>"; };
+		0A21869F1896EC8F00F79E4A /* PLBasketViewTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLBasketViewTableCell.m; sourceTree = "<group>"; };
 		0A2E0B471888A21200DF3A85 /* PLAddOnViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLAddOnViewController.h; sourceTree = "<group>"; };
 		0A2E0B481888A21200DF3A85 /* PLAddOnViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLAddOnViewController.m; sourceTree = "<group>"; };
 		0A2E0B491888A21200DF3A85 /* PLAddOnViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PLAddOnViewController.xib; sourceTree = "<group>"; };
@@ -132,6 +144,15 @@
 		0A5FC58A188865EA00F69BA5 /* Plate.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Plate.xcdatamodel; sourceTree = "<group>"; };
 		0A5FC58C18886C4900F69BA5 /* PLAddOnItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLAddOnItem.h; sourceTree = "<group>"; };
 		0A5FC58D18886C4900F69BA5 /* PLAddOnItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLAddOnItem.m; sourceTree = "<group>"; };
+		0A6D138A189310D100C8F977 /* PLPlateType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLPlateType.h; sourceTree = "<group>"; };
+		0A6D138B189310D100C8F977 /* PLPlateType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLPlateType.m; sourceTree = "<group>"; };
+		0A6D138D189310E000C8F977 /* PLPlateSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLPlateSize.h; sourceTree = "<group>"; };
+		0A6D138E189310E000C8F977 /* PLPlateSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLPlateSize.m; sourceTree = "<group>"; };
+		0A6D13901893286F00C8F977 /* PLBasketViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLBasketViewController.h; sourceTree = "<group>"; };
+		0A6D13911893286F00C8F977 /* PLBasketViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLBasketViewController.m; sourceTree = "<group>"; };
+		0A6D13921893286F00C8F977 /* PLBasketViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PLBasketViewController.xib; sourceTree = "<group>"; };
+		0A6D1395189328E200C8F977 /* PLBasketViewTableCellPlate.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PLBasketViewTableCellPlate.xib; sourceTree = "<group>"; };
+		0A6D139718932A9700C8F977 /* PLBasketViewTableCellAddOn.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PLBasketViewTableCellAddOn.xib; sourceTree = "<group>"; };
 		0A9D7DCB18470F5E00BAE38D /* PLSelectPlateSizeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLSelectPlateSizeViewController.h; sourceTree = "<group>"; };
 		0A9D7DCC18470F5F00BAE38D /* PLSelectPlateSizeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLSelectPlateSizeViewController.m; sourceTree = "<group>"; };
 		0A9D7DCD18470F5F00BAE38D /* PLSelectPlateSizeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PLSelectPlateSizeViewController.xib; sourceTree = "<group>"; };
@@ -312,9 +333,9 @@
 		0A9D7DD118470FA100BAE38D /* View Menu */ = {
 			isa = PBXGroup;
 			children = (
-				0A5FC53D1886161400F69BA5 /* PLMenuItemTableViewCell.xib */,
 				0A5FC53F1886199800F69BA5 /* PLMenuItemTableViewCell.h */,
 				0A5FC5401886199800F69BA5 /* PLMenuItemTableViewCell.m */,
+				0A5FC53D1886161400F69BA5 /* PLMenuItemTableViewCell.xib */,
 				0A495EF11852905200C14B03 /* PLBaseMenuViewController.h */,
 				0A495EF21852905200C14B03 /* PLBaseMenuViewController.m */,
 				0A0D16901850FC9E0057F538 /* PLMenuViewController.h */,
@@ -403,6 +424,8 @@
 		0ABBE3FA1843D0390031D3E2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				0A21869B1896E00E00F79E4A /* Colours.h */,
+				0A21869C1896E00E00F79E4A /* Colours.m */,
 				0ABBE3FB1843D0390031D3E2 /* Plate-Info.plist */,
 				0ABBE3FC1843D0390031D3E2 /* InfoPlist.strings */,
 				0ABBE3FF1843D0390031D3E2 /* main.m */,
@@ -445,6 +468,10 @@
 				0A5FC53B18860B9D00F69BA5 /* PLALaCarteItem.m */,
 				0A5FC58C18886C4900F69BA5 /* PLAddOnItem.h */,
 				0A5FC58D18886C4900F69BA5 /* PLAddOnItem.m */,
+				0A6D138A189310D100C8F977 /* PLPlateType.h */,
+				0A6D138B189310D100C8F977 /* PLPlateType.m */,
+				0A6D138D189310E000C8F977 /* PLPlateSize.h */,
+				0A6D138E189310E000C8F977 /* PLPlateSize.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -454,6 +481,13 @@
 			children = (
 				0A5FC5251868CE5600F69BA5 /* PLBasketStore.h */,
 				0A5FC5261868CE5600F69BA5 /* PLBasketStore.m */,
+				0A6D13901893286F00C8F977 /* PLBasketViewController.h */,
+				0A6D13911893286F00C8F977 /* PLBasketViewController.m */,
+				0A6D13921893286F00C8F977 /* PLBasketViewController.xib */,
+				0A21869E1896EC8F00F79E4A /* PLBasketViewTableCell.h */,
+				0A21869F1896EC8F00F79E4A /* PLBasketViewTableCell.m */,
+				0A6D1395189328E200C8F977 /* PLBasketViewTableCellPlate.xib */,
+				0A6D139718932A9700C8F977 /* PLBasketViewTableCellAddOn.xib */,
 			);
 			name = "Shopping Cart";
 			sourceTree = "<group>";
@@ -537,7 +571,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A6D13941893286F00C8F977 /* PLBasketViewController.xib in Resources */,
 				0A2E0B501888B5B600DF3A85 /* PLAddOnSummaryViewController.xib in Resources */,
+				0A6D1396189328E200C8F977 /* PLBasketViewTableCellPlate.xib in Resources */,
 				0ABBE3FE1843D0390031D3E2 /* InfoPlist.strings in Resources */,
 				0A5FC52D1868D06B00F69BA5 /* PLALaCarteViewController.xib in Resources */,
 				0A9D7DDB184A93C800BAE38D /* PLSelectMainsViewController.xib in Resources */,
@@ -545,6 +581,7 @@
 				0A495EF01852824800C14B03 /* bg-salmon.jpg in Resources */,
 				0A0D169E185102140057F538 /* PLAccountViewController.xib in Resources */,
 				0A9D7DE8184C5C6700BAE38D /* PlateStoryboard.storyboard in Resources */,
+				0A6D139818932A9700C8F977 /* PLBasketViewTableCellAddOn.xib in Resources */,
 				0A0D16AD185131680057F538 /* PLBaseOrderViewController.xib in Resources */,
 				0A0D16A518510F790057F538 /* bg-tomatoes.png in Resources */,
 				0A9D7E08184D602500BAE38D /* release_notes.md in Resources */,
@@ -585,6 +622,7 @@
 				0ADC53301856738400258E1E /* PLPlateStore.m in Sources */,
 				0A0D16931850FC9E0057F538 /* PLMenuViewController.m in Sources */,
 				0ABBE4041843D0390031D3E2 /* PLAppDelegate.m in Sources */,
+				0A21869D1896E00E00F79E4A /* Colours.m in Sources */,
 				0ADC53331856808F00258E1E /* PLConnection.m in Sources */,
 				0A318C63184532250023FFF5 /* PLStartOrderViewController.m in Sources */,
 				0A9D7DDA184A93C800BAE38D /* PLSelectMainsViewController.m in Sources */,
@@ -593,18 +631,22 @@
 				0ADC533718579C6300258E1E /* PLMenu.m in Sources */,
 				0A0D169D185102140057F538 /* PLAccountViewController.m in Sources */,
 				0A2E0B4A1888A21200DF3A85 /* PLAddOnViewController.m in Sources */,
+				0A2186A01896EC8F00F79E4A /* PLBasketViewTableCell.m in Sources */,
 				0A5FC531186A2EFB00F69BA5 /* PLALaCarteSummaryViewController.m in Sources */,
 				0A5FC5411886199800F69BA5 /* PLMenuItemTableViewCell.m in Sources */,
 				0ABBE4001843D0390031D3E2 /* main.m in Sources */,
 				0A9D7DEC184C62CA00BAE38D /* PLSelectSidesViewController.m in Sources */,
 				0A5FC58B188865EA00F69BA5 /* Plate.xcdatamodeld in Sources */,
 				0A2E0B4F1888B5B600DF3A85 /* PLAddOnSummaryViewController.m in Sources */,
+				0A6D138F189310E000C8F977 /* PLPlateSize.m in Sources */,
 				0A0D16AC185131680057F538 /* PLBaseOrderViewController.m in Sources */,
 				0A9D7DF3184D19C400BAE38D /* PLOrderSummaryViewController.m in Sources */,
 				0A9D7DCE18470F5F00BAE38D /* PLSelectPlateSizeViewController.m in Sources */,
 				0A5FC53C18860B9D00F69BA5 /* PLALaCarteItem.m in Sources */,
 				0A5FC5271868CE5600F69BA5 /* PLBasketStore.m in Sources */,
+				0A6D138C189310D100C8F977 /* PLPlateType.m in Sources */,
 				0A5FC58E18886C4900F69BA5 /* PLAddOnItem.m in Sources */,
+				0A6D13931893286F00C8F977 /* PLBasketViewController.m in Sources */,
 				0A5FC52C1868D06B00F69BA5 /* PLALaCarteViewController.m in Sources */,
 				0A495EF61852925D00C14B03 /* PLBaseRewardsViewController.m in Sources */,
 				0AC187F3185F872D00A0DD9F /* PLPlate.m in Sources */,
@@ -735,7 +777,6 @@
 				INFOPLIST_FILE = "Plate/Plate-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/emileleon/Downloads/TestFlightSDK2.0.2,
 					"/Users/emileleon/Documents/workspace/ios/Plate/TestFlightSDK2.0.2\\ (1)",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -757,7 +798,6 @@
 				INFOPLIST_FILE = "Plate/Plate-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/emileleon/Downloads/TestFlightSDK2.0.2,
 					"/Users/emileleon/Documents/workspace/ios/Plate/TestFlightSDK2.0.2\\ (1)",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";

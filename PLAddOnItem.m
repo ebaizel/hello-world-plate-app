@@ -10,4 +10,11 @@
 
 @implementation PLAddOnItem
 
+-(id)copyWithZone:(NSZone *)zone
+{
+    PLAddOnItem *another = (PLAddOnItem *)[super copyWithZone:zone];
+    another.quantity = self.quantity;
+    return another;
+}
+
 @end

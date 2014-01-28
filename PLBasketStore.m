@@ -16,6 +16,7 @@
 -(int)addAddOnItem:(PLAddOnItem *)item
 {
     PLAddOnItem *addOnItem = nil;
+    
     for (PLAddOnItem *basketItem in [self addOnBuilder]) {
         if ([[item plateId] isEqualToString:[basketItem plateId]]) {
             addOnItem = basketItem;
@@ -24,7 +25,7 @@
     }
 
     if (addOnItem == nil) {
-        addOnItem = item;
+        addOnItem = [item copy];
         addOnItem.quantity = 0;
         [[[PLBasketStore sharedStore] addOnBuilder] addObject:addOnItem];
     }
@@ -41,9 +42,8 @@
 {
     PLAddOnItem *addOnItem = nil;
     
-    for (PLAddOnItem *basketItem in [self addOnBuilder]) {
-        if ([[item plateId] isEqualToString:[basketItem plateId]]) {
-            addOnItem = basketItem;
+    for (addOnItem in [self addOnBuilder]) {
+        if ([[item plateId] isEqualToString:[addOnItem plateId]]) {
             break;
         }
     }
@@ -53,8 +53,9 @@
     }
     
     addOnItem.quantity--;
-    if (addOnItem.quantity < 0) {
-        addOnItem.quantity = 0;
+    if (addOnItem.quantity <= 0) {
+        [[self addOnBuilder] removeObject:addOnItem];
+        return 0;
     }
     
     return addOnItem.quantity;
@@ -72,7 +73,7 @@
     }
     
     if (acItem == nil) {
-        acItem = item;
+        acItem = [item copy];
         acItem.quantity = 0;
         [[[PLBasketStore sharedStore] alaCarteBuilder] addObject:acItem];
     }
@@ -83,16 +84,14 @@
     }
     
     return acItem.quantity;
-
 }
 
 -(int)removeALaCarteItem:(PLALaCarteItem *)item
 {
     PLALaCarteItem *acItem = nil;
     
-    for (PLALaCarteItem *basketItem in [self alaCarteBuilder]) {
-        if ([[item plateId] isEqualToString:[basketItem plateId]]) {
-            acItem = basketItem;
+    for (acItem in [self alaCarteBuilder]) {
+        if ([[item plateId] isEqualToString:[acItem plateId]]) {
             break;
         }
     }
@@ -102,8 +101,9 @@
     }
     
     acItem.quantity--;
-    if (acItem.quantity < 0) {
-        acItem.quantity = 0;
+    if (acItem.quantity <= 0) {
+        [[self alaCarteBuilder] removeObject:acItem];
+        return 0;
     }
     
     return acItem.quantity;
@@ -119,7 +119,21 @@
 
 -(void)addALaCarteItemsToBasket
 {
-    self.alaCarteItems = [[self.alaCarteItems arrayByAddingObjectsFromArray:[self alaCarteBuilder]] mutableCopy];
+    // Iterate over the items in the builder.  If they exist, only update the quantity
+    for (PLALaCarteItem *builderItem in [self alaCarteBuilder]) {
+        BOOL itemExists = false;
+        for (PLALaCarteItem *item in [self alaCarteItems]) {
+            if ([builderItem plateId] == [item plateId]) {
+                item.quantity = item.quantity + builderItem.quantity;
+                itemExists = true;
+                break;
+            }
+        }
+        if (!itemExists) {
+            [[self alaCarteItems] addObject:[builderItem copy]];
+        }
+    }
+        
     self.alaCarteBuilder = [[NSMutableArray alloc] init];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"BasketUpdated" object:self];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"ALaCarteBuilderEmptied" object:self];
@@ -127,7 +141,21 @@
 
 -(void)addAddOnItemsToBasket
 {
-    self.addOns = [[self.addOns arrayByAddingObjectsFromArray:[self addOnBuilder]] mutableCopy];
+    // Iterate over the items in the builder.  If they exist, only update the quantity
+    for (PLAddOnItem *builderItem in [self addOnBuilder]) {
+        BOOL itemExists = false;
+        for (PLAddOnItem *item in [self addOns]) {
+            if ([builderItem plateId] == [item plateId]) {
+                item.quantity = item.quantity + builderItem.quantity;
+                itemExists = true;
+                break;
+            }
+        }
+        if (!itemExists) {
+            [[self addOns] addObject:[builderItem copy]];
+        }
+    }
+
     self.addOnBuilder = [[NSMutableArray alloc]init];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"BasketUpdated" object:self];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"AddOnBuilderEmptied" object:self];
@@ -201,7 +229,7 @@
 {
     for (PLALaCarteItem *aLaCarteItem in [self alaCarteBuilder]) {
         if ([[aLaCarteItem plateId] isEqualToString:[item plateId]]) {
-            return [item quantity];
+            return [aLaCarteItem quantity];
         }
     }
     return 0;
@@ -211,7 +239,7 @@
 {
     for (PLAddOnItem *addOnItem in [self addOnBuilder]) {
         if ([[addOnItem plateId] isEqualToString:[item plateId]]) {
-            return [item quantity];
+            return [addOnItem quantity];
         }
     }
     return 0;
@@ -221,21 +249,98 @@
 {
     int count = 0;
     for (PLMenuItem *side in [[self plateBuilder] sides]) {
-        if (side == item) {
+        if ([side plateId] == [item plateId]) {
             count++;
         }
     }
     return count;
 }
 
+-(NSString *)printContentsOfBasket
+{
+    NSString *summary = @"";
+    // Plates
+    if ([[self plates] count] > 0) {
+        summary = [summary stringByAppendingString:@"PLATES:\n"];
+        for (PLPlate *plate in [self plates]) {
+            if ([plate main] != nil) {
+                summary = [summary stringByAppendingString:@"Main:\n"];
+                summary = [summary stringByAppendingString:[[plate main] name]];
+                summary = [summary stringByAppendingString:@"\n"];
+            }
+            summary = [summary stringByAppendingString:@"Sides:\n"];
+            for (PLMenuItem *side in [plate sides]) {
+                summary = [summary stringByAppendingString:[side name]];
+                summary = [summary stringByAppendingString:@"\n"];
+            }
+        }
+    }
+    
+    // Add Ons
+    if ([[self addOns] count] > 0) {
+        summary = [summary stringByAppendingString:@"ADD ONS:\n"];
+        for (PLAddOnItem *item in [self addOns]) {
+            NSString *addOnSummary = [NSString stringWithFormat:@"%@: Qty %d\n", [item name], [item quantity]];
+            summary = [summary stringByAppendingString:addOnSummary];
+        }
+    }
+    // A La Carte
+    if ([[self alaCarteItems] count] > 0) {
+        summary = [summary stringByAppendingString:@"A LA CARTE:\n"];
+        for (PLALaCarteItem *item in [self alaCarteItems]) {
+            NSString *alacSummary = [NSString stringWithFormat:@"%@: Qty %d\n", [item name], [item quantity]];
+            summary = [summary stringByAppendingString:alacSummary];
+        }
+    }
+    
+    if ([summary length] == 0) {
+        summary = [NSString stringWithFormat:@"Basket is empty"];
+    }
+    
+    return summary;
+}
+
 
 -(float)totalCostOfItemsInBasket
 {
     float total = 0.0;
-    total = total + (1.0 * [[self plates] count]);
-    total = total + (0.1 * [[self addOns] count]);
-    total = total + (0.01 * [[self alaCarteItems] count]);
+    for (PLPlate *plate in [self plates]) {
+        if ([plate size] == Ultra) {
+            total += 15.0;
+        } else if ([plate size] == Fit) {
+            total += 12.0;
+        } else if ([plate size] == Kids) {
+            total += 8.0;
+        }
+    }
+    
+    for (PLALaCarteItem *item in [self alaCarteItems]) {
+        if ([item itemType] == MenuItemMain) {
+            total += (10 * [item quantity]);
+        } else if ([item itemType] == MenuItemSide) {
+            total += (4 * [item quantity]);
+        }
+    }
+
+    for (PLAddOnItem *item in [self addOns]) {
+        total += (2 * [item quantity]);
+    }
+
     return total;
+}
+
+-(int)quantityOfAllItemsInBasket
+{
+    int count = 0;
+    count += [[self plates] count];
+    for (PLALaCarteItem *item in [self alaCarteItems]) {
+        count += [item quantity];
+    }
+    for (PLAddOnItem *item in [self addOns]) {
+        count += [item quantity];
+    }
+
+    return count;
 }
 
 #pragma Singleton setup

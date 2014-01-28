@@ -12,25 +12,28 @@
 #import "PLBaseAccountViewController.h"
 #import "PLBaseMenuViewController.h"
 #import "TestFlight.h"
+#import "Colours.h"
 
 @implementation PLAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [TestFlight takeOff:@"7e7b66b2-35a9-4033-b76e-c6c1f0c9581c"];
-    
+    [TestFlight takeOff:@"742d1013-3ac7-4063-b1e3-0b2994a7c7cc"];
+    // old code: 7e7b66b2-35a9-4033-b76e-c6c1f0c9581c
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
 
     //Init each of the tab bar's controllers
     PLOrderNavigationController *plhvc = [[PLOrderNavigationController alloc]initWithNibName:@"PLOrderNavigationController" bundle:nil];
+    [[plhvc navigationBar] setBarTintColor:[UIColor moneyGreenColor]];
     PLBaseMenuViewController *plmvc = [[PLBaseMenuViewController alloc]init];
     PLBaseRewardsViewController *plrvc = [[PLBaseRewardsViewController alloc]init];
     PLBaseAccountViewController *plsvc = [[PLBaseAccountViewController alloc]init];
     
     UITabBarController *tabBarController = [[UITabBarController alloc]init];
 
-    //    UINavigationController *masterNav = [[UINavigationController alloc] initWithRootViewController:plhvc];
+    //tabBarController.tabBar.barTintColor = [UIColor blackColor];  // sets the bar color
+    tabBarController.tabBar.tintColor = [UIColor moneyGreenColor];  // sets the font color
 
     NSArray *viewControllers = [NSArray arrayWithObjects:plhvc, plmvc, plrvc, plsvc, nil];
     [tabBarController setViewControllers:viewControllers];

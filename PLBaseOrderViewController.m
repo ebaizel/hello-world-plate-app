@@ -7,6 +7,7 @@
 //
 
 #import "PLBaseOrderViewController.h"
+#import "Colours.h"
 
 @interface PLBaseOrderViewController ()
 
@@ -38,13 +39,18 @@
 
     // Setup the navigation bar
     [[self navigationItem] setTitle:@"Create a Plate"];
+    NSDictionary *attributes = [NSDictionary dictionaryWithObjectsAndKeys:[UIFont
+                                                                           fontWithName:@"Helvetica" size:24], NSFontAttributeName,
+                                [UIColor whiteColor], NSForegroundColorAttributeName, nil];
+    self.navigationController.navigationBar.titleTextAttributes = attributes;
+    
     
     // Setup the bottom toolbar
     UIBarButtonItem *flexibleSpaceLeft = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
     UIBarButtonItem *barButton = [[UIBarButtonItem alloc] initWithTitle:@"Continue" style:UIBarButtonItemStylePlain target:self action:@selector(actionContinue:)];
     [barButton setTitleTextAttributes:@{
-                                        NSFontAttributeName: [UIFont fontWithName:@"Helvetica" size:24.0],
-                                        NSForegroundColorAttributeName: [UIColor blackColor]
+                                        NSFontAttributeName: [UIFont fontWithName:@"Helvetica" size:18.0],
+                                        NSForegroundColorAttributeName: [UIColor moneyGreenColor]
                                         } forState:UIControlStateNormal];
 
     self.toolbarItems = [NSArray arrayWithObjects: flexibleSpaceLeft, barButton, nil];

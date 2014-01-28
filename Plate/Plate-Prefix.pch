@@ -36,3 +36,9 @@ typedef enum {
     Ultra,
     Kids
 } PlateSize;
+
+typedef enum {
+    Plate,
+    ALaCarte,
+    AddOn
+} BasketItemType;

@@ -46,9 +46,13 @@
 -(void)clearBasket;
 
 // Helper methods
+-(int)quantityOfAllItemsInBasket;
 -(int)quantityOfItemInALaCarteBuilder:(PLALaCarteItem *)item;
 -(int)quantityOfItemInAddOnBuilder:(PLAddOnItem *)item;
 -(int)quantityOfSideInPlateBuilder:(PLMenuItem *)item;
+
+// Debugging helper
+-(NSString *)printContentsOfBasket;
 
 -(float)totalCostOfItemsInBasket;
 

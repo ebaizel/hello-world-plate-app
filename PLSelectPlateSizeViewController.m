@@ -11,6 +11,7 @@
 #import "PLSelectSidesViewController.h"
 #import "PLBasketStore.h"
 #import "PLPlate.h"
+#import "Colours.h"
 
 @interface PLSelectPlateSizeViewController ()
 
@@ -69,6 +70,7 @@
     cell.layer.cornerRadius = 12.0f;
     cell.layer.backgroundColor = [[UIColor grayColor] CGColor];
     cell.accessoryType = UITableViewCellAccessoryNone;
+    cell.textLabel.textColor = [UIColor moneyGreenColor];
     
     if (tableView == [self plateTypeTable]) {  // Plate Type
 
@@ -111,6 +113,10 @@
         // Custom initialization
         self.mainsViewController = [[PLSelectMainsViewController alloc] init];
         self.sidesViewController = [[PLSelectSidesViewController alloc] init];
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(reloadTableViewData)
+                                                     name:@"PlateBuilderEmptied" object:nil];
     }
     return self;
 }

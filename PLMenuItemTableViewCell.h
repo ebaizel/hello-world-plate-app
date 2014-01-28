@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-
 @protocol ALaCarteCellDelegate;
 
 @interface PLMenuItemTableViewCell : UITableViewCell
@@ -20,8 +19,6 @@
 @property (weak, nonatomic) UITableView *parentTableView;
 
 @property (assign, nonatomic) id <ALaCarteCellDelegate> delegate;
-
-//- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier cellDelegate:(id <ALaCarteCellDelegate>)cellDelegate tableView:(UITableView *)tableView;
 
 -(void)setupDelegate:(id<ALaCarteCellDelegate>)delegate parentTable:(UITableView *)tableView;
 

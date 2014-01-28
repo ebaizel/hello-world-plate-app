@@ -12,6 +12,7 @@
 #import "PLMenuItemTableViewCell.h"
 #import "PLALaCarteSummaryViewController.h"
 #import "PLAddOnSummaryViewController.h"
+#import "Colours.h"
 
 @interface PLAddOnViewController ()
 
@@ -117,16 +118,35 @@
     UINib *nib = [UINib nibWithNibName:@"PLMenuItemTableViewCell" bundle:nil];
     [[self addOnsTable] registerNib:nib forCellReuseIdentifier:@"PLMenuItemTableViewCell"];
     [self fetchAddOnItems];
+    [self setTitle:@"Add Ons"];
+
+    // Setup the navigation bar
+    [[self navigationItem] setTitle:@"Add Ons"];
+    NSDictionary *attributes = [NSDictionary dictionaryWithObjectsAndKeys:[UIFont
+                                                                           fontWithName:@"Helvetica" size:24], NSFontAttributeName,
+                                [UIColor whiteColor], NSForegroundColorAttributeName, nil];
+    self.navigationController.navigationBar.titleTextAttributes = attributes;
+    
     
     // Setup the bottom toolbar
     UIBarButtonItem *flexibleSpaceLeft = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
     UIBarButtonItem *barButton = [[UIBarButtonItem alloc] initWithTitle:@"Continue" style:UIBarButtonItemStylePlain target:self action:@selector(actionContinue:)];
     [barButton setTitleTextAttributes:@{
-                                        NSFontAttributeName: [UIFont fontWithName:@"Helvetica" size:24.0],
-                                        NSForegroundColorAttributeName: [UIColor blackColor]
+                                        NSFontAttributeName: [UIFont fontWithName:@"Helvetica" size:18.0],
+                                        NSForegroundColorAttributeName: [UIColor moneyGreenColor]
                                         } forState:UIControlStateNormal];
     
     self.toolbarItems = [NSArray arrayWithObjects: flexibleSpaceLeft, barButton, nil];
+    
+//    // Setup the bottom toolbar
+//    UIBarButtonItem *flexibleSpaceLeft = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+//    UIBarButtonItem *barButton = [[UIBarButtonItem alloc] initWithTitle:@"Continue" style:UIBarButtonItemStylePlain target:self action:@selector(actionContinue:)];
+//    [barButton setTitleTextAttributes:@{
+//                                        NSFontAttributeName: [UIFont fontWithName:@"Helvetica" size:24.0],
+//                                        NSForegroundColorAttributeName: [UIColor blackColor]
+//                                        } forState:UIControlStateNormal];
+//    
+//    self.toolbarItems = [NSArray arrayWithObjects: flexibleSpaceLeft, barButton, nil];
 }
 
 -(void)fetchAddOnItems
@@ -140,6 +160,10 @@
     [addOnItems addObject:[[PLAddOnItem alloc]initWithName:@"Chips Ahoy" itemType:MenuItemAddOn itemId:@"5"]];
     [addOnItems addObject:[[PLAddOnItem alloc]initWithName:@"Saltines" itemType:MenuItemAddOn itemId:@"6"]];
     [addOnItems addObject:[[PLAddOnItem alloc]initWithName:@"Vanilla Wafers" itemType:MenuItemAddOn itemId:@"7"]];
+    
+    for (PLAddOnItem *item in addOnItems) {
+        item.price = 2.0;
+    }
     
     [self setAddOns:addOnItems];
 }

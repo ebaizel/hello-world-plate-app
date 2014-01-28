@@ -11,6 +11,7 @@
 #import "PLALaCarteItem.h"
 #import "PLMenuItemTableViewCell.h"
 #import "PLBasketStore.h"
+#import "Colours.h"
 
 @interface PLALaCarteViewController ()
 
@@ -149,15 +150,23 @@
     UINib *nib = [UINib nibWithNibName:@"PLMenuItemTableViewCell" bundle:nil];
     [[self alaCarteMains] registerNib:nib forCellReuseIdentifier:@"PLMenuItemTableViewCell"];
     [[self alaCarteSides] registerNib:nib forCellReuseIdentifier:@"PLMenuItemTableViewCell"];
-    
+    [self setTitle:@"A La Carte"];
     [self fetchALaCarteItems];
+    
+    // Setup the navigation bar
+    [[self navigationItem] setTitle:@"A La Carte"];
+    NSDictionary *attributes = [NSDictionary dictionaryWithObjectsAndKeys:[UIFont
+                                                                           fontWithName:@"Helvetica" size:24], NSFontAttributeName,
+                                [UIColor whiteColor], NSForegroundColorAttributeName, nil];
+    self.navigationController.navigationBar.titleTextAttributes = attributes;
+    
     
     // Setup the bottom toolbar
     UIBarButtonItem *flexibleSpaceLeft = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
     UIBarButtonItem *barButton = [[UIBarButtonItem alloc] initWithTitle:@"Continue" style:UIBarButtonItemStylePlain target:self action:@selector(actionContinue:)];
     [barButton setTitleTextAttributes:@{
-                                        NSFontAttributeName: [UIFont fontWithName:@"Helvetica" size:24.0],
-                                        NSForegroundColorAttributeName: [UIColor blackColor]
+                                        NSFontAttributeName: [UIFont fontWithName:@"Helvetica" size:18.0],
+                                        NSForegroundColorAttributeName: [UIColor moneyGreenColor]
                                         } forState:UIControlStateNormal];
     
     self.toolbarItems = [NSArray arrayWithObjects: flexibleSpaceLeft, barButton, nil];
@@ -182,6 +191,14 @@
     [sideItems addObject:[[PLALaCarteItem alloc] initWithName:@"Side of Spinach" itemType:MenuItemSide itemId:@"9"]];
     [sideItems addObject:[[PLALaCarteItem alloc] initWithName:@"Side of Artichokes" itemType:MenuItemSide itemId:@"10"]];
     [sideItems addObject:[[PLALaCarteItem alloc] initWithName:@"Side of Sardines" itemType:MenuItemSide itemId:@"11"]];
+    
+    for (PLALaCarteItem *item in mainItems) {
+        item.price = 10.0;
+    }
+    
+    for (PLALaCarteItem *item in sideItems) {
+        item.price = 4.0;
+    }
     
     [self setMains:mainItems];
     [self setSides:sideItems];

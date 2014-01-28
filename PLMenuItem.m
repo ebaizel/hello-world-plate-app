@@ -29,4 +29,19 @@
     return self;
 }
 
+-(id)copyWithZone:(NSZone *)zone
+{
+    PLMenuItem *another = [[[self class] alloc]init];
+    another.name = [name copyWithZone: zone];
+    another.plateId = [plateId copyWithZone: zone];
+    another.itemType = [self itemType];
+    another.description = [description copyWithZone: zone];
+    another.allergies = [allergies copyWithZone:zone];
+    another.isGlutenFree = [self isGlutenFree];
+    another.isVegan = [self isVegan];
+    another.isVegetarian = [self isVegetarian];
+    another.price = [self price];
+    return another;
+}
+
 @end

@@ -12,6 +12,7 @@
 #import "PLMenu.h"
 #import "PLBasketStore.h"
 #import "PLPlate.h"
+#import "Colours.h"
 
 @interface PLSelectMainsViewController ()
 
@@ -33,7 +34,7 @@
     cell.layer.masksToBounds = YES;
     cell.layer.cornerRadius = 12.0f;
     cell.layer.backgroundColor = [[UIColor grayColor] CGColor];
-    
+    cell.textLabel.textColor = [UIColor moneyGreenColor];
     [[cell textLabel] setText:[[mains objectAtIndex:[indexPath row]] name]];
     
     if ((PLMenuItem *)[mains objectAtIndex:[indexPath row]] == [[[PLBasketStore sharedStore] plateBuilder] main]) {
@@ -86,8 +87,11 @@
     [aiView startAnimating];
     
     __weak PLSelectMainsViewController *weakSelf = self;
+    
+    // Determine the sizeTypeId
+//    [[Pla]]
 
-    [[PLPlateStore sharedStore] getMenu:^(PLMenu *menuResult, NSError *err) {
+    [[PLPlateStore sharedStore] getPlateMenu:2 forBlock:^(PLMenu *menuResult, NSError *err) {
         
         [[weakSelf navigationItem] setTitleView:currentTitleView];
         

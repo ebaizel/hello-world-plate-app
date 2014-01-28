@@ -15,11 +15,11 @@
     if (self) {
         self.parentTableView = tableView;
         self.delegate = cellDelegate;
-        self.layer.borderWidth = 1.0f;
-        self.layer.borderColor = [[UIColor blackColor] CGColor];
-        self.layer.masksToBounds = YES;
-        self.layer.cornerRadius = 12.0f;
-        self.layer.backgroundColor = [[UIColor grayColor] CGColor];
+//        self.layer.borderWidth = 1.0f;
+//        self.layer.borderColor = [[UIColor blackColor] CGColor];
+//        self.layer.masksToBounds = YES;
+//        self.layer.cornerRadius = 12.0f;
+//        self.layer.backgroundColor = [[UIColor grayColor] CGColor];
     }
 }
 

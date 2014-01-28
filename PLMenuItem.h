@@ -9,12 +9,13 @@
 #import <Foundation/Foundation.h>
 #import "JSONSerializable.h"
 
-@interface PLMenuItem : NSObject <JSONSerializable>
+@interface PLMenuItem : NSObject <JSONSerializable, NSCopying>
 
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *plateId;
 @property (nonatomic, strong) NSString *description;
 @property (nonatomic, strong) NSString *allergies;
+@property (nonatomic, assign) float price;
 @property (nonatomic) MenuItemType itemType;
 @property (assign) BOOL isGlutenFree;
 @property (assign) BOOL isVegan;

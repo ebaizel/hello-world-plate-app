@@ -11,6 +11,8 @@
 #import "PLALaCarteViewController.h"
 #import "PLAddOnViewController.h"
 #import "PLBasketStore.h"
+#import "PLBasketViewController.h"
+#import "Colours.h"
 
 @interface PLStartOrderViewController ()
 
@@ -30,8 +32,10 @@
         } else if ([indexPath row] == 2) {
             [[self navigationController] pushViewController:[self addOnViewController] animated:YES];
         }
-    } else {  // basket
-        
+    } else if (tableView == [self basketSummaryTable]) {
+        if ([[PLBasketStore sharedStore] quantityOfAllItemsInBasket] >0) {
+            [self viewBasket];
+        }
     }
 }
 
@@ -51,23 +55,41 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"UITableViewCell"];
     }
     
-    cell.layer.borderWidth = 1.0f;
-    cell.layer.borderColor = [[UIColor blackColor] CGColor];
-    cell.layer.masksToBounds = YES;
-    cell.layer.cornerRadius = 12.0f;
-    cell.layer.backgroundColor = [[UIColor grayColor] CGColor];
+    //    cell.layer.borderWidth = 1.0f;
+    //    cell.layer.borderColor = [[UIColor blackColor] CGColor];
+    //    cell.layer.masksToBounds = YES;
+    //    cell.layer.cornerRadius = 12.0f;
+    //    cell.layer.backgroundColor = [[UIColor grayColor] CGColor];
 
     if (tableView == [self orderTypeTableView]) {
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        cell.textLabel.textColor = [UIColor moneyGreenColor];
         [[cell textLabel] setText:[startingOptions objectAtIndex:[indexPath row]]];
     } else {
-        
-        UIFont *basketFont = [ UIFont fontWithName: @"Arial" size: 12.0 ];
-        cell.textLabel.font = basketFont;
-        
-        if ([[PLBasketStore sharedStore] totalCostOfItemsInBasket] > 0) {
-            [[cell textLabel] setText:[NSString stringWithFormat:@"%f", [[PLBasketStore sharedStore] totalCostOfItemsInBasket]]];
+
+        //        UIFont *basketFont = [ UIFont fontWithName: @"Arial" size: 12.0 ];
+        //        cell.textLabel.font = basketFont;
+
+        int quantity = [[PLBasketStore sharedStore] quantityOfAllItemsInBasket];
+
+        if  (quantity > 0) {
+            cell.textLabel.textColor = [UIColor moneyGreenColor];
+            NSString *basketText = [NSString stringWithFormat:@"%d items in basket", quantity];
+            cell.textLabel.text = basketText;
+            
+            cell.detailTextLabel.textColor = [UIColor moneyGreenColor];
+
+            NSString *displayCost = [NSString localizedStringWithFormat:@"%.2F", [[PLBasketStore sharedStore] totalCostOfItemsInBasket]];
+            cell.detailTextLabel.text = [NSString stringWithFormat:@"Total Cost: $%@", displayCost];
+            cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+            cell.selectionStyle = UITableViewCellSelectionStyleBlue;
         } else {
-            [[cell textLabel] setText:@"Basket is currently empty"];
+            cell.textLabel.textColor = [UIColor grayColor];
+            cell.textLabel.text = @"Basket is currently empty";
+            cell.detailTextLabel.text = nil;
+            cell.accessoryType = UITableViewCellAccessoryNone;
+            cell.selectionStyle = UITableViewCellSelectionStyleNone;
         }
     }
     
@@ -90,7 +112,8 @@
 
 - (void)reloadTableViewData
 {
-    [self.basketTableView reloadData];
+    [[self orderTypeTableView] reloadData];
+    [[self basketSummaryTable] reloadData];
 }
 
 - (void)viewDidLoad
@@ -101,7 +124,7 @@
         startingOptions = [[NSArray alloc]initWithObjects:@"Create a Plate", @"A la carte", @"Add ons", nil];
     }
 
-    [self setTitle:@"Order"];
+    [self setTitle:@"PLATE"];
 
     PLSelectPlateSizeViewController *plpsvc = [[PLSelectPlateSizeViewController alloc]init];
     plpsvc.hidesBottomBarWhenPushed = YES;
@@ -114,8 +137,6 @@
     PLAddOnViewController *plaovc = [[PLAddOnViewController alloc]init];
     plaovc.hidesBottomBarWhenPushed = YES;
     [self setAddOnViewController:plaovc];
-    
-    self.basketTableView.backgroundColor = [UIColor clearColor];
 
 }
 
@@ -130,6 +151,10 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)checkout:(id)sender {
+- (void)viewBasket {
+    // Display contents of basket
+    PLBasketViewController *bvc = [[PLBasketViewController alloc] init];
+    bvc.hidesBottomBarWhenPushed = YES;
+    [[self navigationController] pushViewController:bvc animated:YES];
 }
 @end

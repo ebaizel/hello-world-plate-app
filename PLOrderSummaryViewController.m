@@ -40,7 +40,7 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
-    self.navigationController.toolbarHidden = NO;
+    self.navigationController.toolbarHidden = YES;
     
     NSString *plateSummary = [NSString stringWithFormat:@""];
     plateSummary = [plateSummary stringByAppendingString:@"Main:\n"];
