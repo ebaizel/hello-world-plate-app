@@ -56,8 +56,8 @@
                     cell.side2Label.text = @"";
                 }
                 
-                if ([plate type] == FourSides) {
-
+                NSString *slug = [[[[PLBasketStore sharedStore] plateBuilder] plateTypeSize] typeSlug];
+                if ([slug isEqualToString:FourSides]) {
                     side = [[plate sides] objectAtIndex:2];
                     cell.side3Label.text = [side name];
                 

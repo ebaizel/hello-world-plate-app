@@ -12,9 +12,10 @@
 
 -(void)readFromJSONDictionary:(NSDictionary *)d
 {
+    self.slug = [d objectForKey:@"slug"];
+    self.price = [[d objectForKey:@"price"] floatValue];
+    self.id = [[d objectForKey:@"id"] stringValue];
     self.name = [d objectForKey:@"name"];
-    self.price = [[d objectForKey:@"price"]floatValue];
-    self.id = [[d objectForKey:@"id"] intValue];
 }
 
 @end

@@ -13,6 +13,7 @@
 {
     NSURLConnection *internalConnection;
     NSMutableData *container;
+    NSURLSessionDataTask *task;
 }
 
 @property (nonatomic, copy) NSURLRequest *request;

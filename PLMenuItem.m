@@ -41,6 +41,7 @@
     another.isVegan = [self isVegan];
     another.isVegetarian = [self isVegetarian];
     another.price = [self price];
+    another.quantity = [self quantity];
     return another;
 }
 

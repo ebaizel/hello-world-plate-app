@@ -35,7 +35,8 @@
     
     __weak PLSelectSidesViewController *weakSelf = self;
     
-    [[PLPlateStore sharedStore] getMenu:^(PLMenu *menuResult, NSError *err) {
+    PLPlate *plate = [[PLBasketStore sharedStore] plateBuilder];
+    [[PLPlateStore sharedStore] getPlateMenu:[plate plateSize] plateType:[plate plateTypeSize] forBlock:^(PLMenu *menuResult, NSError *err) {
         
         [[weakSelf navigationItem] setTitleView:currentTitleView];
         
@@ -94,22 +95,41 @@
     [super viewDidLoad];
     self.title = @"Sides";
     self.orderSummaryController = [[PLOrderSummaryViewController alloc]init];
-
+    
     UINib *nib = [UINib nibWithNibName:@"PLMenuItemTableViewCell" bundle:nil];
     [[self tableSides] registerNib:nib forCellReuseIdentifier:@"PLMenuItemTableViewCell"];
     
     [self fetchSides];
-
+    
     int numSides = 0;
-    if ([[[PLBasketStore sharedStore] plateBuilder] type] == OneMain) {
+    NSString *slug = [[[[PLBasketStore sharedStore] plateBuilder] plateTypeSize] typeSlug];
+    if ([slug isEqualToString:OneMainTwoSides]) {
         numSides = 2;
-    } else if ([[[PLBasketStore sharedStore] plateBuilder] type] == FourSides) {
+    } else if ([slug isEqualToString:FourSides]) {
         numSides = 4;
     }
     self.labelSelectSides.text = [NSString stringWithFormat:@"Select %d sides", numSides];
-    
-    
 }
+
+//- (void)viewDidLoad
+//{
+//    [super viewDidLoad];
+//    self.title = @"Sides";
+//    self.orderSummaryController = [[PLOrderSummaryViewController alloc]init];
+//
+//    UINib *nib = [UINib nibWithNibName:@"PLMenuItemTableViewCell" bundle:nil];
+//    [[self tableSides] registerNib:nib forCellReuseIdentifier:@"PLMenuItemTableViewCell"];
+//    
+//    [self fetchSides];
+//
+//    int numSides = 0;
+//    if ([[[PLBasketStore sharedStore] plateBuilder] type] == OneMain) {
+//        numSides = 2;
+//    } else if ([[[PLBasketStore sharedStore] plateBuilder] type] == FourSides) {
+//        numSides = 4;
+//    }
+//    self.labelSelectSides.text = [NSString stringWithFormat:@"Select %d sides", numSides];
+//}
 
 -(int)addItemWithCell:(PLMenuItemTableViewCell *)cell
 {
@@ -162,13 +182,14 @@
 
     PLPlate *plate = [[PLBasketStore sharedStore] plateBuilder];
     int numSidesNeeded = 0;
-    
-    if ([plate type] == OneMain) {
+
+    NSString *slug = [[[[PLBasketStore sharedStore] plateBuilder] plateTypeSize] typeSlug];
+    if ([slug isEqualToString:OneMainTwoSides]) {
         numSidesNeeded = 2;
-    } else if ([plate type] == FourSides) {
+    } else if ([slug isEqualToString:FourSides]) {
         numSidesNeeded = 4;
     }
-    
+
     int numSidesAdded = [[plate sides] count];
     
     if  (numSidesNeeded != numSidesAdded) {

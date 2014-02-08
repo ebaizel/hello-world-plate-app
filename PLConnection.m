@@ -29,6 +29,12 @@ static NSMutableArray *sharedConnectionList = nil;
     container = [[NSMutableData alloc]init];
     internalConnection = [[NSURLConnection alloc] initWithRequest:[self request] delegate:self startImmediately:YES];
     
+//    NSURLSession *session = [NSURLSession sharedSession];
+//    task = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+//        
+//    }];
+//    [task resume];
+    
     if (!sharedConnectionList) {
         sharedConnectionList = [[NSMutableArray alloc]init];
     }

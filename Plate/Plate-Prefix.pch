@@ -17,6 +17,8 @@
 #endif
 
 #define AppDelegate (PLAppDelegate *)[[UIApplication sharedApplication] delegate]
+#define OneMainTwoSides @"1-main-2-sides"
+#define FourSides @"4-sides"
 
 typedef enum {
     MenuItemMain,
@@ -27,7 +29,7 @@ typedef enum {
 typedef enum {
     UndefinedType,
     OneMain,
-    FourSides
+    FourSidesX
 } PlateType;
 
 typedef enum {
@@ -42,3 +44,9 @@ typedef enum {
     ALaCarte,
     AddOn
 } BasketItemType;
+
+typedef enum {
+    MenuTypePlate,
+    MenuTypeALaCarte,
+    MenuTypeAddOn
+} MenuType;

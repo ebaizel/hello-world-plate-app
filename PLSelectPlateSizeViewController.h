@@ -14,8 +14,8 @@
 
 @interface PLSelectPlateSizeViewController : PLBaseOrderViewController <UITableViewDelegate, UITableViewDataSource>
 {
-    NSArray *plateType; // main with two sides, or 4 sides
-    NSArray *plateSize; // ultra, fit, kids
+    NSArray *plateTypes; // main with two sides, or 4 sides
+    NSArray *plateSizes; // ultra, fit, kids
 }
 @property (weak, nonatomic) IBOutlet UITableView *plateTypeTable;
 @property (weak, nonatomic) IBOutlet UITableView *plateSizeTable;

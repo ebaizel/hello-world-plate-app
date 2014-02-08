@@ -10,11 +10,16 @@
 #import "PLMenuItem.h"
 #import "PLPlateType.h"
 #import "PLPlateSize.h"
+#import "PLPlateTypeSize.h"
 
 @interface PLPlate : NSObject
 
 @property (nonatomic, assign) PlateType type; //onemain, foursides
 @property (nonatomic, assign) PlateSize size; //fit, ultra
+
+@property (nonatomic, assign) PLPlateSize *plateSize;
+@property (nonatomic, assign) PLPlateTypeSize *plateTypeSize;
+
 //@property (nonatomic, strong) PLPlateType *type;
 //@property (nonatomic, strong) PLPlateSize *size;
 @property (nonatomic, strong) PLMenuItem *main;

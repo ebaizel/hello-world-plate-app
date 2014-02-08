@@ -13,5 +13,6 @@
 
 @property (nonatomic, strong) NSString *name; //fit, ultra
 @property (nonatomic) float price;
-@property (nonatomic) int id;
+@property (nonatomic, strong) NSString *id;
+@property (nonatomic, strong) NSString *slug;
 @end

@@ -41,7 +41,7 @@
 		0A5FC5411886199800F69BA5 /* PLMenuItemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A5FC5401886199800F69BA5 /* PLMenuItemTableViewCell.m */; };
 		0A5FC58B188865EA00F69BA5 /* Plate.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0A5FC589188865EA00F69BA5 /* Plate.xcdatamodeld */; };
 		0A5FC58E18886C4900F69BA5 /* PLAddOnItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A5FC58D18886C4900F69BA5 /* PLAddOnItem.m */; };
-		0A6D138C189310D100C8F977 /* PLPlateType.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6D138B189310D100C8F977 /* PLPlateType.m */; };
+		0A6D138C189310D100C8F977 /* PLPlatesTypesAndSizes.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6D138B189310D100C8F977 /* PLPlatesTypesAndSizes.m */; };
 		0A6D138F189310E000C8F977 /* PLPlateSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6D138E189310E000C8F977 /* PLPlateSize.m */; };
 		0A6D13931893286F00C8F977 /* PLBasketViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A6D13911893286F00C8F977 /* PLBasketViewController.m */; };
 		0A6D13941893286F00C8F977 /* PLBasketViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A6D13921893286F00C8F977 /* PLBasketViewController.xib */; };
@@ -60,6 +60,8 @@
 		0A9D7E07184D602500BAE38D /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 0A9D7E01184D602500BAE38D /* README.md */; };
 		0A9D7E08184D602500BAE38D /* release_notes.md in Resources */ = {isa = PBXBuildFile; fileRef = 0A9D7E02184D602500BAE38D /* release_notes.md */; };
 		0A9D7E0A184D606200BAE38D /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A9D7E09184D606200BAE38D /* libz.dylib */; };
+		0AB66E0B18A4137B00441562 /* PLPlateTypeSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AB66E0A18A4137B00441562 /* PLPlateTypeSize.m */; };
+		0AB66E0E18A41AAD00441562 /* PLPlateType.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AB66E0D18A41AAD00441562 /* PLPlateType.m */; };
 		0ABBE3F41843D0390031D3E2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ABBE3F31843D0390031D3E2 /* Foundation.framework */; };
 		0ABBE3F61843D0390031D3E2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ABBE3F51843D0390031D3E2 /* CoreGraphics.framework */; };
 		0ABBE3F81843D0390031D3E2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ABBE3F71843D0390031D3E2 /* UIKit.framework */; };
@@ -144,8 +146,8 @@
 		0A5FC58A188865EA00F69BA5 /* Plate.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Plate.xcdatamodel; sourceTree = "<group>"; };
 		0A5FC58C18886C4900F69BA5 /* PLAddOnItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLAddOnItem.h; sourceTree = "<group>"; };
 		0A5FC58D18886C4900F69BA5 /* PLAddOnItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLAddOnItem.m; sourceTree = "<group>"; };
-		0A6D138A189310D100C8F977 /* PLPlateType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLPlateType.h; sourceTree = "<group>"; };
-		0A6D138B189310D100C8F977 /* PLPlateType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLPlateType.m; sourceTree = "<group>"; };
+		0A6D138A189310D100C8F977 /* PLPlatesTypesAndSizes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLPlatesTypesAndSizes.h; sourceTree = "<group>"; };
+		0A6D138B189310D100C8F977 /* PLPlatesTypesAndSizes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLPlatesTypesAndSizes.m; sourceTree = "<group>"; };
 		0A6D138D189310E000C8F977 /* PLPlateSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLPlateSize.h; sourceTree = "<group>"; };
 		0A6D138E189310E000C8F977 /* PLPlateSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLPlateSize.m; sourceTree = "<group>"; };
 		0A6D13901893286F00C8F977 /* PLBasketViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLBasketViewController.h; sourceTree = "<group>"; };
@@ -173,6 +175,10 @@
 		0A9D7E04184D602500BAE38D /* TestFlight+ManualSessions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestFlight+ManualSessions.h"; sourceTree = "<group>"; };
 		0A9D7E05184D602500BAE38D /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFlight.h; sourceTree = "<group>"; };
 		0A9D7E09184D606200BAE38D /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		0AB66E0918A4137B00441562 /* PLPlateTypeSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLPlateTypeSize.h; sourceTree = "<group>"; };
+		0AB66E0A18A4137B00441562 /* PLPlateTypeSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLPlateTypeSize.m; sourceTree = "<group>"; };
+		0AB66E0C18A41AAD00441562 /* PLPlateType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLPlateType.h; sourceTree = "<group>"; };
+		0AB66E0D18A41AAD00441562 /* PLPlateType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLPlateType.m; sourceTree = "<group>"; };
 		0ABBE3F01843D0390031D3E2 /* Plate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Plate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0ABBE3F31843D0390031D3E2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0ABBE3F51843D0390031D3E2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -348,6 +354,8 @@
 		0A9D7DE1184BA6E800BAE38D /* Stash Bin */ = {
 			isa = PBXGroup;
 			children = (
+				0AB66E0C18A41AAD00441562 /* PLPlateType.h */,
+				0AB66E0D18A41AAD00441562 /* PLPlateType.m */,
 			);
 			name = "Stash Bin";
 			sourceTree = "<group>";
@@ -468,8 +476,10 @@
 				0A5FC53B18860B9D00F69BA5 /* PLALaCarteItem.m */,
 				0A5FC58C18886C4900F69BA5 /* PLAddOnItem.h */,
 				0A5FC58D18886C4900F69BA5 /* PLAddOnItem.m */,
-				0A6D138A189310D100C8F977 /* PLPlateType.h */,
-				0A6D138B189310D100C8F977 /* PLPlateType.m */,
+				0A6D138A189310D100C8F977 /* PLPlatesTypesAndSizes.h */,
+				0A6D138B189310D100C8F977 /* PLPlatesTypesAndSizes.m */,
+				0AB66E0918A4137B00441562 /* PLPlateTypeSize.h */,
+				0AB66E0A18A4137B00441562 /* PLPlateTypeSize.m */,
 				0A6D138D189310E000C8F977 /* PLPlateSize.h */,
 				0A6D138E189310E000C8F977 /* PLPlateSize.m */,
 			);
@@ -622,6 +632,7 @@
 				0ADC53301856738400258E1E /* PLPlateStore.m in Sources */,
 				0A0D16931850FC9E0057F538 /* PLMenuViewController.m in Sources */,
 				0ABBE4041843D0390031D3E2 /* PLAppDelegate.m in Sources */,
+				0AB66E0B18A4137B00441562 /* PLPlateTypeSize.m in Sources */,
 				0A21869D1896E00E00F79E4A /* Colours.m in Sources */,
 				0ADC53331856808F00258E1E /* PLConnection.m in Sources */,
 				0A318C63184532250023FFF5 /* PLStartOrderViewController.m in Sources */,
@@ -644,10 +655,11 @@
 				0A9D7DCE18470F5F00BAE38D /* PLSelectPlateSizeViewController.m in Sources */,
 				0A5FC53C18860B9D00F69BA5 /* PLALaCarteItem.m in Sources */,
 				0A5FC5271868CE5600F69BA5 /* PLBasketStore.m in Sources */,
-				0A6D138C189310D100C8F977 /* PLPlateType.m in Sources */,
+				0A6D138C189310D100C8F977 /* PLPlatesTypesAndSizes.m in Sources */,
 				0A5FC58E18886C4900F69BA5 /* PLAddOnItem.m in Sources */,
 				0A6D13931893286F00C8F977 /* PLBasketViewController.m in Sources */,
 				0A5FC52C1868D06B00F69BA5 /* PLALaCarteViewController.m in Sources */,
+				0AB66E0E18A41AAD00441562 /* PLPlateType.m in Sources */,
 				0A495EF61852925D00C14B03 /* PLBaseRewardsViewController.m in Sources */,
 				0AC187F3185F872D00A0DD9F /* PLPlate.m in Sources */,
 			);

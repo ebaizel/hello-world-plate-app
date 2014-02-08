@@ -13,6 +13,8 @@
 #import "PLALaCarteSummaryViewController.h"
 #import "PLAddOnSummaryViewController.h"
 #import "Colours.h"
+#import "PLPlateStore.h"
+#import "PLMenu.h"
 
 @interface PLAddOnViewController ()
 
@@ -149,24 +151,54 @@
 //    self.toolbarItems = [NSArray arrayWithObjects: flexibleSpaceLeft, barButton, nil];
 }
 
--(void)fetchAddOnItems
+- (void)fetchAddOnItems
 {
-    NSMutableArray *addOnItems = [[NSMutableArray alloc]init];
     
-    [addOnItems addObject:[[PLAddOnItem alloc]initWithName:@"Coca Cola" itemType:MenuItemAddOn itemId:@"1"]];
-    [addOnItems addObject:[[PLAddOnItem alloc]initWithName:@"Cheez Whiz" itemType:MenuItemAddOn itemId:@"2"]];
-    [addOnItems addObject:[[PLAddOnItem alloc]initWithName:@"Faygo" itemType:MenuItemAddOn itemId:@"3"]];
-    [addOnItems addObject:[[PLAddOnItem alloc]initWithName:@"Frito Lays" itemType:MenuItemAddOn itemId:@"4"]];
-    [addOnItems addObject:[[PLAddOnItem alloc]initWithName:@"Chips Ahoy" itemType:MenuItemAddOn itemId:@"5"]];
-    [addOnItems addObject:[[PLAddOnItem alloc]initWithName:@"Saltines" itemType:MenuItemAddOn itemId:@"6"]];
-    [addOnItems addObject:[[PLAddOnItem alloc]initWithName:@"Vanilla Wafers" itemType:MenuItemAddOn itemId:@"7"]];
+    UIView *currentTitleView = [[self navigationItem] titleView];
+    UIActivityIndicatorView *aiView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
+    [[self navigationItem] setTitleView:aiView];
+    [aiView startAnimating];
     
-    for (PLAddOnItem *item in addOnItems) {
-        item.price = 2.0;
-    }
+    __weak PLAddOnViewController *weakSelf = self;
     
-    [self setAddOns:addOnItems];
+//    PLPlate *plate = [[PLBasketStore sharedStore] plateBuilder];
+    [[PLPlateStore sharedStore]getAddOnMenu:^(PLMenu *menuResult, NSError *err) {
+        
+        [[weakSelf navigationItem] setTitleView:currentTitleView];
+        
+        if (!err) {
+            _addOns = [menuResult addons];
+            [[weakSelf addOnsTable] reloadData];
+        } else {
+            UIAlertView *av =[[UIAlertView alloc]
+                              initWithTitle:@"Error"
+                              message:[err localizedDescription]
+                              delegate:nil
+                              cancelButtonTitle:@"OK"
+                              otherButtonTitles:nil];
+            [av show];
+        }
+    }];
 }
+
+//-(void)fetchAddOnItems
+//{
+//    NSMutableArray *addOnItems = [[NSMutableArray alloc]init];
+//    
+//    [addOnItems addObject:[[PLAddOnItem alloc]initWithName:@"Coca Cola" itemType:MenuItemAddOn itemId:@"1"]];
+//    [addOnItems addObject:[[PLAddOnItem alloc]initWithName:@"Cheez Whiz" itemType:MenuItemAddOn itemId:@"2"]];
+//    [addOnItems addObject:[[PLAddOnItem alloc]initWithName:@"Faygo" itemType:MenuItemAddOn itemId:@"3"]];
+//    [addOnItems addObject:[[PLAddOnItem alloc]initWithName:@"Frito Lays" itemType:MenuItemAddOn itemId:@"4"]];
+//    [addOnItems addObject:[[PLAddOnItem alloc]initWithName:@"Chips Ahoy" itemType:MenuItemAddOn itemId:@"5"]];
+//    [addOnItems addObject:[[PLAddOnItem alloc]initWithName:@"Saltines" itemType:MenuItemAddOn itemId:@"6"]];
+//    [addOnItems addObject:[[PLAddOnItem alloc]initWithName:@"Vanilla Wafers" itemType:MenuItemAddOn itemId:@"7"]];
+//    
+//    for (PLAddOnItem *item in addOnItems) {
+//        item.price = 2.0;
+//    }
+//    
+//    [self setAddOns:addOnItems];
+//}
 
 - (IBAction)actionContinue:(id)sender {
     [[self navigationController] pushViewController:[[PLAddOnSummaryViewController alloc]init] animated:YES];

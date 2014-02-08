@@ -8,20 +8,25 @@
 
 #import <Foundation/Foundation.h>
 #import "PLMenu.h"
+#import "PLMenuItem.h"
+#import "PLPlatesTypesAndSizes.h"
+#import "PLPlateSize.h"
 
 @interface PLPlateStore : NSObject
 {
-    PLMenu *menu;
-    NSMutableArray *plates;
+    PLPlatesTypesAndSizes *plateTypesSizes;
+    NSMutableArray *plateMenus;
+    PLMenu *aLaCarteMenu;
+    PLMenu *addOnsMenu;
 }
 
 + (PLPlateStore *)sharedStore;
 - (void)clearCache;
-- (void)getMenu:(void (^)(PLMenu *menuResult, NSError *err))block;
-- (void)getPlateMenu:(int)sizeTypeId forBlock:(void (^)(PLMenu *menuResult, NSError *))block;
+
+- (void)getPlateMenu:(PLPlateSize *)plateSize plateType:(PLPlateTypeSize *)plateTypeSize forBlock:(void (^)(PLMenu *menuResult, NSError *))block;
 - (void)getAddOnMenu:(void (^)(PLMenu *menuResult, NSError *err))block;
 - (void)getALaCarteMenu:(void (^)(PLMenu *menuResult, NSError *))block;
-- (void)getPlateSizesAndTypes:(void (^)(NSMutableArray *plates, NSError *err))block;
-- (int)getPlateSizeTypeId:(int)typeId sizeId:(int)sizeId;
+- (void)getPlateSizesAndTypes:(void (^)(PLPlatesTypesAndSizes *plateTypesSizes, NSError *err))block;
+//- (void)getProductDetail:(PLMenuItem *)menuItem forBlock:(void (^)(PLMenuItem))
 
 @end

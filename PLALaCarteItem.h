@@ -10,5 +10,4 @@
 
 @interface PLALaCarteItem : PLMenuItem <NSCopying>
 
-@property (nonatomic) int quantity;
 @end

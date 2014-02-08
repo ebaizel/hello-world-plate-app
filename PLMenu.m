@@ -27,50 +27,79 @@
 
 -(void)readFromJSONDictionary:(NSDictionary *)d
 {
-    NSDictionary *response = [d objectForKey:@"response"];
-    NSDictionary *mainModifiers = [response valueForKeyPath:@"3.modifiers"];
-    if (mainModifiers) {
-
-        if (!mains) {
-            mains = [[NSMutableArray alloc]init];
-        }
+    
+    if ([self menuType] == MenuTypePlate) {
+    
+        NSString *sizeSlug = [[self plateSize] slug];
+        NSString *mainKey = [sizeSlug stringByAppendingString:@"-main"];
+        NSString *sideKey = [sizeSlug stringByAppendingString:@"-side"];
         
-        for (NSString *key in mainModifiers) {
+        NSDictionary *mainKeys = [d objectForKey:mainKey];
+        if (mainKeys && [mainKeys count] > 0) {
+            NSMutableArray *modifiersArray = (NSMutableArray *)[mainKeys objectForKey:@"modifiers"];
+            NSMutableArray *mainModifiers = [self parseModifiers:(modifiersArray)];
+            [self setMains:mainModifiers];
+        }
 
-            NSDictionary *mainModifier = [mainModifiers objectForKey:key];
-            NSDictionary *mainItem = [mainModifier objectForKey:@"meta"];
-
-            PLMenuItem *plmi = [[PLMenuItem alloc] init];
-            [plmi setName:[mainModifier objectForKey:@"name"]];
-            [plmi setPlateId:[PLMenu generateRandomID]];  // probably need to remove this
-// ### UNCOMMENT BELOW WHEN META IS WORKING
-//            [plmi setName:[mainItem objectForKey:@"name"]];
-//            [plmi setDescription:[mainItem objectForKey:@"description"]];
-//            [plmi setAllergies:[mainItem objectForKey:@"alergies"]];
-//            [plmi setIsGlutenFree:[[mainItem objectForKey:@"is_gluten_free"] boolValue]];
-//            [plmi setIsVegan:[[mainItem objectForKey:@"is_vegan"] boolValue]];
-//            [plmi setIsVegetarian:[[mainItem objectForKey:@"is_vegetarian"] boolValue]];
-            
-            [mains addObject:plmi];
+        NSDictionary *sideKeys = [d objectForKey:sideKey];
+        if (sideKeys && [sideKeys count] > 0) {
+            NSMutableArray *modifiersArray = (NSMutableArray *)[sideKeys objectForKey:@"modifiers"];
+            NSMutableArray *sideModifiers = [self parseModifiers:(modifiersArray)];
+            [self setSides:sideModifiers];
+        }
+    } else if ([self menuType] == MenuTypeALaCarte) {
+        NSArray *menus = [d objectForKey:@"menus"];
+        for (NSDictionary * menuDict in menus) {
+            NSMutableArray *productsDicts = [menuDict objectForKey:@"products"];
+            NSMutableArray *products = [self parseModifiers:productsDicts];
+            NSString *slug = [menuDict objectForKey:@"slug"];
+            if ([slug isEqualToString:@"main-entrees"]) {
+                for (PLMenuItem *menuItem in products) {
+                    [menuItem setItemType:MenuItemMain];
+                }
+                [self setMains:products];
+            } else if ([slug isEqualToString:@"sides"]) {
+                for (PLMenuItem *menuItem in products) {
+                    [menuItem setItemType:MenuItemSide];
+                }
+                [self setSides:products];
+            }
+        }
+    } else if ([self menuType] == MenuTypeAddOn) {
+        NSArray *menus = [d objectForKey:@"menus"];
+        [self setAddons:[[NSMutableArray alloc]init]];
+        for (NSDictionary * menuDict in menus) {
+            NSMutableArray *productsDicts = [menuDict objectForKey:@"products"];
+            NSMutableArray *products = [self parseModifiers:productsDicts];
+            [[self addons] addObjectsFromArray:products];
         }
     }
     
-    NSDictionary *sideModifiers = [response valueForKeyPath:@"4.modifiers"];
-    if (sideModifiers) {
+}
+
+-(NSMutableArray *)parseModifiers:(NSMutableArray *)modifiersArray
+{
+    NSMutableArray *result = [[NSMutableArray alloc]init];
+    for (NSDictionary *modifierDict in modifiersArray) {
+        PLMenuItem *plmi = [[PLMenuItem alloc] init];
+        [plmi setName:[modifierDict objectForKey:@"name"]];
+        [plmi setSlug:[modifierDict objectForKey:@"slug"]];
+        [plmi setPrice:[[modifierDict objectForKey:@"price"] floatValue]];
         
-        if (!sides) {
-            sides = [[NSMutableArray alloc]init];
-        }
+        NSDictionary *metaDict = [modifierDict objectForKey:@"meta"];
+        [plmi setName:[metaDict objectForKey:@"name"]];
+        [plmi setDescription:[metaDict objectForKey:@"description"]];
+        [plmi setAllergies:[metaDict objectForKey:@"alergies"]];
+        [plmi setIsGlutenFree:[[metaDict objectForKey:@"is_gluten_free"] boolValue]];
+        [plmi setIsVegan:[[metaDict objectForKey:@"is_vegan"] boolValue]];
+        [plmi setIsVegetarian:[[metaDict objectForKey:@"is_vegetarian"] boolValue]];
+        [plmi setIngredients:[metaDict objectForKey:@"ingredients"]];
+        [plmi setPlateId:(NSString *)[metaDict objectForKey:@"id"]];
+        [plmi setImageURL:[metaDict objectForKey:@"image"]];
         
-        for (NSString *key in sideModifiers) {
-            NSDictionary *sideItem = [sideModifiers objectForKey:key];
-            PLMenuItem *plmi = [[PLMenuItem alloc] init];
-            [plmi setName:[sideItem objectForKey:@"name"]];
-            [plmi setPlateId:[PLMenu generateRandomID]];            
-            [sides addObject:plmi];
-        }
+        [result addObject:plmi];
     }
-    
+    return result;
 }
 
 @end

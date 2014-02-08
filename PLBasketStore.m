@@ -10,6 +10,7 @@
 #import "PLALaCarteItem.h"
 #import "PLPlate.h"
 #import "PLAddOnItem.h"
+#import "PLPlateSize.h"
 
 @implementation PLBasketStore
 
@@ -184,6 +185,17 @@
     [[self plateBuilder] setSize:plateSize];
 }
 
+-(void)setPlateType2:(PlateType)plateType
+{
+    [[self plateBuilder] setType:plateType];
+}
+
+-(void)setPlateSize2:(PlateSize)plateSize
+{
+    [[self plateBuilder] setSize:plateSize];
+}
+
+
 -(void)setPlateMain:(PLMenuItem *)mainEntree
 {
     [[self plateBuilder] setMain:mainEntree];
@@ -194,9 +206,10 @@
     // Make sure we do not exceed the allowed number of sides
 
     int numSides = 0;
-    if ([[self plateBuilder] type] == OneMain) {
+    NSString *slug = [[[[PLBasketStore sharedStore] plateBuilder] plateTypeSize] typeSlug];
+    if ([slug isEqualToString:OneMainTwoSides]) {
         numSides = 2;
-    } else if ([[self plateBuilder] type] == FourSides) {
+    } else if ([slug isEqualToString:FourSides]) {
         numSides = 4;
     }
     
@@ -305,25 +318,28 @@
 {
     float total = 0.0;
     for (PLPlate *plate in [self plates]) {
-        if ([plate size] == Ultra) {
-            total += 15.0;
-        } else if ([plate size] == Fit) {
-            total += 12.0;
-        } else if ([plate size] == Kids) {
-            total += 8.0;
-        }
+        total += [[plate plateSize] price];
+//        if ([plate size] == Ultra) {
+//            total += 15.0;
+//        } else if ([plate size] == Fit) {
+//            total += 12.0;
+//        } else if ([plate size] == Kids) {
+//            total += 8.0;
+//        }
     }
     
     for (PLALaCarteItem *item in [self alaCarteItems]) {
-        if ([item itemType] == MenuItemMain) {
-            total += (10 * [item quantity]);
-        } else if ([item itemType] == MenuItemSide) {
-            total += (4 * [item quantity]);
-        }
+        total += [item price] * [item quantity];
+//        if ([item itemType] == MenuItemMain) {
+//            total += (10 * [item quantity]);
+//        } else if ([item itemType] == MenuItemSide) {
+//            total += (4 * [item quantity]);
+//        }
     }
 
     for (PLAddOnItem *item in [self addOns]) {
-        total += (2 * [item quantity]);
+        total += [item price] * [item quantity];
+//        total += (2 * [item quantity]);
     }
 
     return total;

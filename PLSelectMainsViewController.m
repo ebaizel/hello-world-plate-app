@@ -13,6 +13,8 @@
 #import "PLBasketStore.h"
 #import "PLPlate.h"
 #import "Colours.h"
+#import "PLPlateTypeSize.h"
+#import "PLPlateSize.h"
 
 @interface PLSelectMainsViewController ()
 
@@ -58,14 +60,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [[PLBasketStore sharedStore] setPlateMain:[mains objectAtIndex:[indexPath row]]];
-    
     [tableView reloadData];
-    
-//    if([tableView cellForRowAtIndexPath:indexPath].accessoryType == UITableViewCellAccessoryCheckmark){
-//        [tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryNone;
-//    }else{
-//        [tableView cellForRowAtIndexPath:indexPath].accessoryType = UITableViewCellAccessoryCheckmark;
-//    }
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -88,10 +83,8 @@
     
     __weak PLSelectMainsViewController *weakSelf = self;
     
-    // Determine the sizeTypeId
-//    [[Pla]]
-
-    [[PLPlateStore sharedStore] getPlateMenu:2 forBlock:^(PLMenu *menuResult, NSError *err) {
+    PLPlate *plate = [[PLBasketStore sharedStore] plateBuilder];
+    [[PLPlateStore sharedStore] getPlateMenu:[plate plateSize] plateType:[plate plateTypeSize] forBlock:^(PLMenu *menuResult, NSError *err) {
         
         [[weakSelf navigationItem] setTitleView:currentTitleView];
         
@@ -135,9 +128,6 @@
     [self setTitle:@"Mains"];
     [[self tableMains] setTableHeaderView:nil];
     [self fetchMains];
-
-    //    self.automaticallyAdjustsScrollViewInsets = NO;
-    //    self.edgesForExtendedLayout=UIRectEdgeNone;
     
 }
 

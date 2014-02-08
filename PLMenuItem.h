@@ -15,7 +15,11 @@
 @property (nonatomic, strong) NSString *plateId;
 @property (nonatomic, strong) NSString *description;
 @property (nonatomic, strong) NSString *allergies;
+@property (nonatomic, strong) NSString *ingredients;
+@property (nonatomic, strong) NSString *imageURL;
+@property (nonatomic, strong) NSString *slug;
 @property (nonatomic, assign) float price;
+@property (nonatomic) int quantity;
 @property (nonatomic) MenuItemType itemType;
 @property (assign) BOOL isGlutenFree;
 @property (assign) BOOL isVegan;

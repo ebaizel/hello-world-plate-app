@@ -12,6 +12,7 @@
 #import "PLMenuItemTableViewCell.h"
 #import "PLBasketStore.h"
 #import "Colours.h"
+#import "PLPlateStore.h"
 
 @interface PLALaCarteViewController ()
 
@@ -174,36 +175,66 @@
 
 - (void)fetchALaCarteItems
 {
-    // This will be a call out to server
     
-    NSMutableArray *mainItems = [[NSMutableArray alloc] init];
-    NSMutableArray *sideItems = [[NSMutableArray alloc] init];
+    UIView *currentTitleView = [[self navigationItem] titleView];
+    UIActivityIndicatorView *aiView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
+    [[self navigationItem] setTitleView:aiView];
+    [aiView startAnimating];
     
-    [mainItems addObject:[[PLALaCarteItem alloc] initWithName:@"Beef Stroganoff" itemType:MenuItemMain itemId:@"1"]];
-    [mainItems addObject:[[PLALaCarteItem alloc] initWithName:@"Wild Salmon" itemType:MenuItemMain itemId:@"2"]];
-    [mainItems addObject:[[PLALaCarteItem alloc] initWithName:@"Moo Goo Gai Pan" itemType:MenuItemMain itemId:@"3"]];
-
-    [sideItems addObject:[[PLALaCarteItem alloc] initWithName:@"Side of Eggplant" itemType:MenuItemSide itemId:@"4"]];
-    [sideItems addObject:[[PLALaCarteItem alloc] initWithName:@"Side of Zucchini" itemType:MenuItemSide itemId:@"5"]];
-    [sideItems addObject:[[PLALaCarteItem alloc] initWithName:@"Side of Broccoli" itemType:MenuItemSide itemId:@"6"]];
-    [sideItems addObject:[[PLALaCarteItem alloc] initWithName:@"Side of Animal Crackers" itemType:MenuItemSide itemId:@"7"]];
-    [sideItems addObject:[[PLALaCarteItem alloc] initWithName:@"Side of Fudge Ice Cream" itemType:MenuItemSide itemId:@"8"]];
-    [sideItems addObject:[[PLALaCarteItem alloc] initWithName:@"Side of Spinach" itemType:MenuItemSide itemId:@"9"]];
-    [sideItems addObject:[[PLALaCarteItem alloc] initWithName:@"Side of Artichokes" itemType:MenuItemSide itemId:@"10"]];
-    [sideItems addObject:[[PLALaCarteItem alloc] initWithName:@"Side of Sardines" itemType:MenuItemSide itemId:@"11"]];
+    __weak PLALaCarteViewController *weakSelf = self;
     
-    for (PLALaCarteItem *item in mainItems) {
-        item.price = 10.0;
-    }
-    
-    for (PLALaCarteItem *item in sideItems) {
-        item.price = 4.0;
-    }
-    
-    [self setMains:mainItems];
-    [self setSides:sideItems];
-    
+    [[PLPlateStore sharedStore]getALaCarteMenu:^(PLMenu *menuResult, NSError *err) {
+        
+        [[weakSelf navigationItem] setTitleView:currentTitleView];
+        
+        if (!err) {
+            _mains = [menuResult mains];
+            _sides = [menuResult sides];
+            [weakSelf reloadTableViewData];
+        } else {
+            UIAlertView *av =[[UIAlertView alloc]
+                              initWithTitle:@"Error"
+                              message:[err localizedDescription]
+                              delegate:nil
+                              cancelButtonTitle:@"OK"
+                              otherButtonTitles:nil];
+            [av show];
+        }
+    }];
 }
+
+//- (void)fetchALaCarteItems
+//{
+//    // This will be a call out to server
+//    
+//    NSMutableArray *mainItems = [[NSMutableArray alloc] init];
+//    NSMutableArray *sideItems = [[NSMutableArray alloc] init];
+//    
+//    [mainItems addObject:[[PLALaCarteItem alloc] initWithName:@"Beef Stroganoff" itemType:MenuItemMain itemId:@"1"]];
+//    [mainItems addObject:[[PLALaCarteItem alloc] initWithName:@"Wild Salmon" itemType:MenuItemMain itemId:@"2"]];
+//    [mainItems addObject:[[PLALaCarteItem alloc] initWithName:@"Moo Goo Gai Pan" itemType:MenuItemMain itemId:@"3"]];
+//
+//    [sideItems addObject:[[PLALaCarteItem alloc] initWithName:@"Side of Eggplant" itemType:MenuItemSide itemId:@"4"]];
+//    [sideItems addObject:[[PLALaCarteItem alloc] initWithName:@"Side of Zucchini" itemType:MenuItemSide itemId:@"5"]];
+//    [sideItems addObject:[[PLALaCarteItem alloc] initWithName:@"Side of Broccoli" itemType:MenuItemSide itemId:@"6"]];
+//    [sideItems addObject:[[PLALaCarteItem alloc] initWithName:@"Side of Animal Crackers" itemType:MenuItemSide itemId:@"7"]];
+//    [sideItems addObject:[[PLALaCarteItem alloc] initWithName:@"Side of Fudge Ice Cream" itemType:MenuItemSide itemId:@"8"]];
+//    [sideItems addObject:[[PLALaCarteItem alloc] initWithName:@"Side of Spinach" itemType:MenuItemSide itemId:@"9"]];
+//    [sideItems addObject:[[PLALaCarteItem alloc] initWithName:@"Side of Artichokes" itemType:MenuItemSide itemId:@"10"]];
+//    [sideItems addObject:[[PLALaCarteItem alloc] initWithName:@"Side of Sardines" itemType:MenuItemSide itemId:@"11"]];
+//    
+//    for (PLALaCarteItem *item in mainItems) {
+//        item.price = 10.0;
+//    }
+//    
+//    for (PLALaCarteItem *item in sideItems) {
+//        item.price = 4.0;
+//    }
+//    
+//    [self setMains:mainItems];
+//    [self setSides:sideItems];
+//    
+//}
 
 - (IBAction)actionContinue:(id)sender {
     [[self navigationController] pushViewController:[[PLALaCarteSummaryViewController alloc]init] animated:YES];
