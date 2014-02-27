@@ -10,6 +10,7 @@
 #import "PLOrderNavigationController.h"
 #import "PLBaseRewardsViewController.h"
 #import "PLBaseAccountViewController.h"
+#import "PLBaseAboutViewController.h"
 #import "PLBaseMenuViewController.h"
 #import "TestFlight.h"
 #import "Colours.h"
@@ -29,13 +30,14 @@
     PLBaseMenuViewController *plmvc = [[PLBaseMenuViewController alloc]init];
     PLBaseRewardsViewController *plrvc = [[PLBaseRewardsViewController alloc]init];
     PLBaseAccountViewController *plsvc = [[PLBaseAccountViewController alloc]init];
+    PLBaseAboutViewController *plbavc = [[PLBaseAboutViewController alloc] init];
     
     UITabBarController *tabBarController = [[UITabBarController alloc]init];
 
     //tabBarController.tabBar.barTintColor = [UIColor blackColor];  // sets the bar color
     tabBarController.tabBar.tintColor = [UIColor moneyGreenColor];  // sets the font color
 
-    NSArray *viewControllers = [NSArray arrayWithObjects:plhvc, plmvc, plrvc, plsvc, nil];
+    NSArray *viewControllers = [NSArray arrayWithObjects:plhvc, plmvc, plrvc, plsvc, plbavc, nil];
     [tabBarController setViewControllers:viewControllers];
 
     [[self window] setRootViewController:tabBarController];

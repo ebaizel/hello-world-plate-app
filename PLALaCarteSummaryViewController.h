@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PLBaseOrderViewController.h"
 
-@interface PLALaCarteSummaryViewController : UIViewController
+@interface PLALaCarteSummaryViewController : PLBaseOrderViewController
+
 - (IBAction)addToBasket:(id)sender;
 @property (weak, nonatomic) IBOutlet UILabel *mainsToBeAdded;
 @property (weak, nonatomic) IBOutlet UILabel *sidesToBeAdded;

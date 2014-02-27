@@ -111,6 +111,8 @@
     self.automaticallyAdjustsScrollViewInsets = NO;
     self.addOnsTable.backgroundColor = [UIColor clearColor];
     [self.addOnsTable reloadData];
+    
+    [super displayBasketInNavBar];
 }
 
 - (void)viewDidLoad

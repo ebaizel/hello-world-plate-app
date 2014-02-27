@@ -217,6 +217,12 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [super displayBasketInNavBar];
+}
+
 - (IBAction)actionContinue:(id)sender {
 
     PLPlate *plate = [[PLBasketStore sharedStore] plateBuilder];

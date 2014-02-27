@@ -119,6 +119,7 @@
 {
     [super viewDidAppear:animated];
     [self.tableMains reloadData];
+    [super displayBasketInNavBar];    
 }
 
 - (void)viewDidLoad

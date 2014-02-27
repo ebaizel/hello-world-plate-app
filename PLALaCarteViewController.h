@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "PLMenuItemTableViewCell.h"
+#import "PLBaseOrderViewController.h"
 
-@interface PLALaCarteViewController : UIViewController <ALaCarteCellDelegate>
+@interface PLALaCarteViewController : PLBaseOrderViewController <ALaCarteCellDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *alaCarteMains;
 @property (weak, nonatomic) IBOutlet UITableView *alaCarteSides;

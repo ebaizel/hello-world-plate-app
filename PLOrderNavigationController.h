@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PLWelcomeViewController.h"
+@class PLStartOrderViewController;
 
-@interface PLOrderNavigationController : UINavigationController
+@interface PLOrderNavigationController : UINavigationController <WelcomeViewDelegate>
+{
+    BOOL skipWelcome;
+    PLStartOrderViewController *plsovc;
+}
 
+@property (nonatomic, strong) PLWelcomeViewController *plwvc;
 @end

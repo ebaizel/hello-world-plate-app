@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PLBaseOrderViewController.h"
 
-@interface PLAddOnSummaryViewController : UIViewController
+@interface PLAddOnSummaryViewController : PLBaseOrderViewController
 
 @property (weak, nonatomic) IBOutlet UITextView *summary;
 - (IBAction)addToBasket:(id)sender;

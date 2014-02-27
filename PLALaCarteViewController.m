@@ -13,6 +13,7 @@
 #import "PLBasketStore.h"
 #import "Colours.h"
 #import "PLPlateStore.h"
+#import "PLBasketViewController.h"
 
 @interface PLALaCarteViewController ()
 
@@ -142,6 +143,8 @@
     
     [self.alaCarteMains reloadData];
     [self.alaCarteSides reloadData];
+    
+    [self displayBasketInNavBar];
 }
 
 - (void)viewDidLoad

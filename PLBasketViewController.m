@@ -251,7 +251,6 @@
     }
 }
 
-
 -(void)removeItemWithCell:(PLBasketViewTableCell *)cell
 {
     if (cell.itemType == Plate) {

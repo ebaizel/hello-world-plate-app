@@ -60,6 +60,15 @@
 		0A9D7E07184D602500BAE38D /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 0A9D7E01184D602500BAE38D /* README.md */; };
 		0A9D7E08184D602500BAE38D /* release_notes.md in Resources */ = {isa = PBXBuildFile; fileRef = 0A9D7E02184D602500BAE38D /* release_notes.md */; };
 		0A9D7E0A184D606200BAE38D /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A9D7E09184D606200BAE38D /* libz.dylib */; };
+		0AA3D7E318BD3B7000AA7DBB /* PLBaseAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AA3D7E218BD3B7000AA7DBB /* PLBaseAboutViewController.m */; };
+		0AA3D7E718BD3C9B00AA7DBB /* PLAboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AA3D7E518BD3C9B00AA7DBB /* PLAboutViewController.m */; };
+		0AA3D7E818BD3C9B00AA7DBB /* PLAboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AA3D7E618BD3C9B00AA7DBB /* PLAboutViewController.xib */; };
+		0AA3D7ED18BD41A600AA7DBB /* PLWelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AA3D7EB18BD41A600AA7DBB /* PLWelcomeViewController.m */; };
+		0AA3D7EE18BD41A600AA7DBB /* PLWelcomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AA3D7EC18BD41A600AA7DBB /* PLWelcomeViewController.xib */; };
+		0AA3D7F318BD4BE000AA7DBB /* PLLoginSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AA3D7F118BD4BE000AA7DBB /* PLLoginSignUpViewController.m */; };
+		0AA3D7F418BD4BE000AA7DBB /* PLLoginSignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AA3D7F218BD4BE000AA7DBB /* PLLoginSignUpViewController.xib */; };
+		0AA3D7F718BD555100AA7DBB /* PLAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AA3D7F618BD555100AA7DBB /* PLAccount.m */; };
+		0AA3D7FA18BD584300AA7DBB /* PLAccountStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AA3D7F918BD584300AA7DBB /* PLAccountStore.m */; };
 		0AB66E0B18A4137B00441562 /* PLPlateTypeSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AB66E0A18A4137B00441562 /* PLPlateTypeSize.m */; };
 		0AB66E0E18A41AAD00441562 /* PLPlateType.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AB66E0D18A41AAD00441562 /* PLPlateType.m */; };
 		0ABBE3F41843D0390031D3E2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ABBE3F31843D0390031D3E2 /* Foundation.framework */; };
@@ -175,6 +184,21 @@
 		0A9D7E04184D602500BAE38D /* TestFlight+ManualSessions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestFlight+ManualSessions.h"; sourceTree = "<group>"; };
 		0A9D7E05184D602500BAE38D /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFlight.h; sourceTree = "<group>"; };
 		0A9D7E09184D606200BAE38D /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		0AA3D7E118BD3B7000AA7DBB /* PLBaseAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLBaseAboutViewController.h; sourceTree = "<group>"; };
+		0AA3D7E218BD3B7000AA7DBB /* PLBaseAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLBaseAboutViewController.m; sourceTree = "<group>"; };
+		0AA3D7E418BD3C9B00AA7DBB /* PLAboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLAboutViewController.h; sourceTree = "<group>"; };
+		0AA3D7E518BD3C9B00AA7DBB /* PLAboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLAboutViewController.m; sourceTree = "<group>"; };
+		0AA3D7E618BD3C9B00AA7DBB /* PLAboutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PLAboutViewController.xib; sourceTree = "<group>"; };
+		0AA3D7EA18BD41A600AA7DBB /* PLWelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLWelcomeViewController.h; sourceTree = "<group>"; };
+		0AA3D7EB18BD41A600AA7DBB /* PLWelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLWelcomeViewController.m; sourceTree = "<group>"; };
+		0AA3D7EC18BD41A600AA7DBB /* PLWelcomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PLWelcomeViewController.xib; sourceTree = "<group>"; };
+		0AA3D7F018BD4BE000AA7DBB /* PLLoginSignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLLoginSignUpViewController.h; sourceTree = "<group>"; };
+		0AA3D7F118BD4BE000AA7DBB /* PLLoginSignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLLoginSignUpViewController.m; sourceTree = "<group>"; };
+		0AA3D7F218BD4BE000AA7DBB /* PLLoginSignUpViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PLLoginSignUpViewController.xib; sourceTree = "<group>"; };
+		0AA3D7F518BD555100AA7DBB /* PLAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLAccount.h; sourceTree = "<group>"; };
+		0AA3D7F618BD555100AA7DBB /* PLAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLAccount.m; sourceTree = "<group>"; };
+		0AA3D7F818BD584200AA7DBB /* PLAccountStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLAccountStore.h; sourceTree = "<group>"; };
+		0AA3D7F918BD584300AA7DBB /* PLAccountStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLAccountStore.m; sourceTree = "<group>"; };
 		0AB66E0918A4137B00441562 /* PLPlateTypeSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLPlateTypeSize.h; sourceTree = "<group>"; };
 		0AB66E0A18A4137B00441562 /* PLPlateTypeSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLPlateTypeSize.m; sourceTree = "<group>"; };
 		0AB66E0C18A41AAD00441562 /* PLPlateType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLPlateType.h; sourceTree = "<group>"; };
@@ -236,7 +260,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0A0D169F185102890057F538 /* Settings */ = {
+		0A0D169F185102890057F538 /* Account */ = {
 			isa = PBXGroup;
 			children = (
 				0A495EF71852931300C14B03 /* PLBaseAccountViewController.h */,
@@ -245,7 +269,7 @@
 				0A0D169B185102140057F538 /* PLAccountViewController.m */,
 				0A0D169C185102140057F538 /* PLAccountViewController.xib */,
 			);
-			name = Settings;
+			name = Account;
 			sourceTree = "<group>";
 		};
 		0A0D16A0185102A90057F538 /* Rewards */ = {
@@ -374,9 +398,47 @@
 			path = "TestFlightSDK2.0.2 (1)";
 			sourceTree = "<group>";
 		};
+		0AA3D7E018BD3AE800AA7DBB /* About */ = {
+			isa = PBXGroup;
+			children = (
+				0AA3D7E118BD3B7000AA7DBB /* PLBaseAboutViewController.h */,
+				0AA3D7E218BD3B7000AA7DBB /* PLBaseAboutViewController.m */,
+				0AA3D7E418BD3C9B00AA7DBB /* PLAboutViewController.h */,
+				0AA3D7E518BD3C9B00AA7DBB /* PLAboutViewController.m */,
+				0AA3D7E618BD3C9B00AA7DBB /* PLAboutViewController.xib */,
+			);
+			name = About;
+			sourceTree = "<group>";
+		};
+		0AA3D7E918BD416E00AA7DBB /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				0AA3D7EA18BD41A600AA7DBB /* PLWelcomeViewController.h */,
+				0AA3D7EB18BD41A600AA7DBB /* PLWelcomeViewController.m */,
+				0AA3D7EC18BD41A600AA7DBB /* PLWelcomeViewController.xib */,
+			);
+			name = Welcome;
+			sourceTree = "<group>";
+		};
+		0AA3D7EF18BD4B6800AA7DBB /* Login and Signup */ = {
+			isa = PBXGroup;
+			children = (
+				0AA3D7F018BD4BE000AA7DBB /* PLLoginSignUpViewController.h */,
+				0AA3D7F118BD4BE000AA7DBB /* PLLoginSignUpViewController.m */,
+				0AA3D7F218BD4BE000AA7DBB /* PLLoginSignUpViewController.xib */,
+				0AA3D7F818BD584200AA7DBB /* PLAccountStore.h */,
+				0AA3D7F918BD584300AA7DBB /* PLAccountStore.m */,
+			);
+			name = "Login and Signup";
+			sourceTree = "<group>";
+		};
 		0ABBE3E71843D0390031D3E2 = {
 			isa = PBXGroup;
 			children = (
+				0A0D169F185102890057F538 /* Account */,
+				0AA3D7EF18BD4B6800AA7DBB /* Login and Signup */,
+				0AA3D7E918BD416E00AA7DBB /* Welcome */,
+				0AA3D7E018BD3AE800AA7DBB /* About */,
 				0A5FC589188865EA00F69BA5 /* Plate.xcdatamodeld */,
 				0A2E0B461888A1A900DF3A85 /* Add Ons */,
 				0A5FC5281868D01C00F69BA5 /* A La Carte */,
@@ -384,7 +446,6 @@
 				0AC187F0185F871100A0DD9F /* Models */,
 				0A5FC58F1888938100F69BA5 /* Networking */,
 				0A0D16A0185102A90057F538 /* Rewards */,
-				0A0D169F185102890057F538 /* Settings */,
 				0A9D7DD118470FA100BAE38D /* View Menu */,
 				0A9D7DD018470F8C00BAE38D /* Ordering */,
 				0ABBE3F91843D0390031D3E2 /* Plate */,
@@ -482,6 +543,8 @@
 				0AB66E0A18A4137B00441562 /* PLPlateTypeSize.m */,
 				0A6D138D189310E000C8F977 /* PLPlateSize.h */,
 				0A6D138E189310E000C8F977 /* PLPlateSize.m */,
+				0AA3D7F518BD555100AA7DBB /* PLAccount.h */,
+				0AA3D7F618BD555100AA7DBB /* PLAccount.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -584,16 +647,19 @@
 				0A6D13941893286F00C8F977 /* PLBasketViewController.xib in Resources */,
 				0A2E0B501888B5B600DF3A85 /* PLAddOnSummaryViewController.xib in Resources */,
 				0A6D1396189328E200C8F977 /* PLBasketViewTableCellPlate.xib in Resources */,
+				0AA3D7EE18BD41A600AA7DBB /* PLWelcomeViewController.xib in Resources */,
 				0ABBE3FE1843D0390031D3E2 /* InfoPlist.strings in Resources */,
 				0A5FC52D1868D06B00F69BA5 /* PLALaCarteViewController.xib in Resources */,
 				0A9D7DDB184A93C800BAE38D /* PLSelectMainsViewController.xib in Resources */,
 				0A9D7E07184D602500BAE38D /* README.md in Resources */,
 				0A495EF01852824800C14B03 /* bg-salmon.jpg in Resources */,
 				0A0D169E185102140057F538 /* PLAccountViewController.xib in Resources */,
+				0AA3D7F418BD4BE000AA7DBB /* PLLoginSignUpViewController.xib in Resources */,
 				0A9D7DE8184C5C6700BAE38D /* PlateStoryboard.storyboard in Resources */,
 				0A6D139818932A9700C8F977 /* PLBasketViewTableCellAddOn.xib in Resources */,
 				0A0D16AD185131680057F538 /* PLBaseOrderViewController.xib in Resources */,
 				0A0D16A518510F790057F538 /* bg-tomatoes.png in Resources */,
+				0AA3D7E818BD3C9B00AA7DBB /* PLAboutViewController.xib in Resources */,
 				0A9D7E08184D602500BAE38D /* release_notes.md in Resources */,
 				0A5FC53E1886161400F69BA5 /* PLMenuItemTableViewCell.xib in Resources */,
 				0A0D16A71851114F0057F538 /* bg-grey.jpg in Resources */,
@@ -634,12 +700,15 @@
 				0ABBE4041843D0390031D3E2 /* PLAppDelegate.m in Sources */,
 				0AB66E0B18A4137B00441562 /* PLPlateTypeSize.m in Sources */,
 				0A21869D1896E00E00F79E4A /* Colours.m in Sources */,
+				0AA3D7E318BD3B7000AA7DBB /* PLBaseAboutViewController.m in Sources */,
 				0ADC53331856808F00258E1E /* PLConnection.m in Sources */,
+				0AA3D7ED18BD41A600AA7DBB /* PLWelcomeViewController.m in Sources */,
 				0A318C63184532250023FFF5 /* PLStartOrderViewController.m in Sources */,
 				0A9D7DDA184A93C800BAE38D /* PLSelectMainsViewController.m in Sources */,
 				0A0D16981850FE750057F538 /* PLRewardsViewController.m in Sources */,
 				0AC187F6185F8D4D00A0DD9F /* PLOrder.m in Sources */,
 				0ADC533718579C6300258E1E /* PLMenu.m in Sources */,
+				0AA3D7FA18BD584300AA7DBB /* PLAccountStore.m in Sources */,
 				0A0D169D185102140057F538 /* PLAccountViewController.m in Sources */,
 				0A2E0B4A1888A21200DF3A85 /* PLAddOnViewController.m in Sources */,
 				0A2186A01896EC8F00F79E4A /* PLBasketViewTableCell.m in Sources */,
@@ -648,6 +717,7 @@
 				0ABBE4001843D0390031D3E2 /* main.m in Sources */,
 				0A9D7DEC184C62CA00BAE38D /* PLSelectSidesViewController.m in Sources */,
 				0A5FC58B188865EA00F69BA5 /* Plate.xcdatamodeld in Sources */,
+				0AA3D7F718BD555100AA7DBB /* PLAccount.m in Sources */,
 				0A2E0B4F1888B5B600DF3A85 /* PLAddOnSummaryViewController.m in Sources */,
 				0A6D138F189310E000C8F977 /* PLPlateSize.m in Sources */,
 				0A0D16AC185131680057F538 /* PLBaseOrderViewController.m in Sources */,
@@ -656,6 +726,8 @@
 				0A5FC53C18860B9D00F69BA5 /* PLALaCarteItem.m in Sources */,
 				0A5FC5271868CE5600F69BA5 /* PLBasketStore.m in Sources */,
 				0A6D138C189310D100C8F977 /* PLPlatesTypesAndSizes.m in Sources */,
+				0AA3D7F318BD4BE000AA7DBB /* PLLoginSignUpViewController.m in Sources */,
+				0AA3D7E718BD3C9B00AA7DBB /* PLAboutViewController.m in Sources */,
 				0A5FC58E18886C4900F69BA5 /* PLAddOnItem.m in Sources */,
 				0A6D13931893286F00C8F977 /* PLBasketViewController.m in Sources */,
 				0A5FC52C1868D06B00F69BA5 /* PLALaCarteViewController.m in Sources */,

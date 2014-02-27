@@ -143,6 +143,8 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     self.navigationController.toolbarHidden = YES;
+    self.navigationController.navigationBar.hidden = NO;
+    [super displayBasketInNavBar];
 }
 
 - (void)didReceiveMemoryWarning

@@ -10,6 +10,7 @@
 @class PLALaCarteItem;
 @class PLAddOnItem;
 @class PLMenuItem;
+@class PLPlate;
 
 @interface PLBasketStore : NSObject
 

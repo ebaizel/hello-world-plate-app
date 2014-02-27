@@ -46,6 +46,7 @@
     }
     
     [[self summary] setText:addOnSummary];
+    [super displayBasketInNavBar];    
 }
 
 - (void)didReceiveMemoryWarning
@@ -56,7 +57,6 @@
 
 - (IBAction)addToBasket:(id)sender {
     [[PLBasketStore sharedStore] addAddOnItemsToBasket];
-    
     [[self navigationController] popToRootViewControllerAnimated:YES];
 }
 @end

@@ -9,6 +9,7 @@
 #import "PLALaCarteSummaryViewController.h"
 #import "PLALaCarteItem.h"
 #import "PLBasketStore.h"
+#import "PLBasketViewController.h"
 
 @interface PLALaCarteSummaryViewController ()
 
@@ -52,6 +53,12 @@
     
     self.mainsToBeAdded.text = mainsSummary;
     self.sidesToBeAdded.text = sidesSummary;
+}
+
+-(void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [super displayBasketInNavBar];
 }
 
 - (IBAction)addToBasket:(id)sender {

@@ -41,6 +41,7 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     self.navigationController.toolbarHidden = YES;
+    [super displayBasketInNavBar];
     
     NSString *plateSummary = [NSString stringWithFormat:@""];
     plateSummary = [plateSummary stringByAppendingString:@"Main:\n"];

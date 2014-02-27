@@ -8,6 +8,7 @@
 
 #import "PLBaseOrderViewController.h"
 #import "Colours.h"
+#import "PLBasketViewController.h"
 
 @interface PLBaseOrderViewController ()
 
@@ -70,10 +71,23 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)displayBasketInNavBar
+{
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemBookmarks target:self action:@selector(displayBasket)];
+}
+
 - (void)actionContinue:(id)sender
 {
     // do nothing
     NSLog(@"***** ActionContinue must be implemented! *****");
+}
+
+- (void)displayBasket
+{
+    // Display contents of basket
+    PLBasketViewController *bvc = [[PLBasketViewController alloc] init];
+    bvc.hidesBottomBarWhenPushed = YES;
+    [[self navigationController] pushViewController:bvc animated:YES];
 }
 
 @end

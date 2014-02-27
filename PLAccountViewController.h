@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PLLoginSignUpViewController.h"
 
-@interface PLAccountViewController : UIViewController
+@interface PLAccountViewController : UIViewController <LoginModalDelegate>
+
+@property (strong, nonatomic) PLLoginSignUpViewController *pllsvc;
+@property (weak, nonatomic) IBOutlet UILabel *labelUsername;
+- (IBAction)login:(id)sender;
+- (IBAction)logout:(id)sender;
 
 @end
