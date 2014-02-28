@@ -69,6 +69,9 @@
 		0AA3D7F418BD4BE000AA7DBB /* PLLoginSignUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AA3D7F218BD4BE000AA7DBB /* PLLoginSignUpViewController.xib */; };
 		0AA3D7F718BD555100AA7DBB /* PLAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AA3D7F618BD555100AA7DBB /* PLAccount.m */; };
 		0AA3D7FA18BD584300AA7DBB /* PLAccountStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AA3D7F918BD584300AA7DBB /* PLAccountStore.m */; };
+		0AA914B118C1081000C89D6A /* PLItemDetailController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AA914AF18C1081000C89D6A /* PLItemDetailController.m */; };
+		0AA914B218C1081000C89D6A /* PLItemDetailController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0AA914B018C1081000C89D6A /* PLItemDetailController.xib */; };
+		0AA914B418C10F9000C89D6A /* ginger-pork.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0AA914B318C10F9000C89D6A /* ginger-pork.jpg */; };
 		0AB66E0B18A4137B00441562 /* PLPlateTypeSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AB66E0A18A4137B00441562 /* PLPlateTypeSize.m */; };
 		0AB66E0E18A41AAD00441562 /* PLPlateType.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AB66E0D18A41AAD00441562 /* PLPlateType.m */; };
 		0ABBE3F41843D0390031D3E2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ABBE3F31843D0390031D3E2 /* Foundation.framework */; };
@@ -199,6 +202,10 @@
 		0AA3D7F618BD555100AA7DBB /* PLAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLAccount.m; sourceTree = "<group>"; };
 		0AA3D7F818BD584200AA7DBB /* PLAccountStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLAccountStore.h; sourceTree = "<group>"; };
 		0AA3D7F918BD584300AA7DBB /* PLAccountStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLAccountStore.m; sourceTree = "<group>"; };
+		0AA914AE18C1081000C89D6A /* PLItemDetailController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLItemDetailController.h; sourceTree = "<group>"; };
+		0AA914AF18C1081000C89D6A /* PLItemDetailController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLItemDetailController.m; sourceTree = "<group>"; };
+		0AA914B018C1081000C89D6A /* PLItemDetailController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PLItemDetailController.xib; sourceTree = "<group>"; };
+		0AA914B318C10F9000C89D6A /* ginger-pork.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "ginger-pork.jpg"; sourceTree = "<group>"; };
 		0AB66E0918A4137B00441562 /* PLPlateTypeSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLPlateTypeSize.h; sourceTree = "<group>"; };
 		0AB66E0A18A4137B00441562 /* PLPlateTypeSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLPlateTypeSize.m; sourceTree = "<group>"; };
 		0AB66E0C18A41AAD00441562 /* PLPlateType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLPlateType.h; sourceTree = "<group>"; };
@@ -287,6 +294,7 @@
 		0A0D16A8185120E10057F538 /* assets */ = {
 			isa = PBXGroup;
 			children = (
+				0AA914B318C10F9000C89D6A /* ginger-pork.jpg */,
 				0A495EED1852824800C14B03 /* bg-scones.jpg */,
 				0A495EEE1852824800C14B03 /* bg-salmon.jpg */,
 				0A0D16A61851114F0057F538 /* bg-grey.jpg */,
@@ -378,6 +386,7 @@
 		0A9D7DE1184BA6E800BAE38D /* Stash Bin */ = {
 			isa = PBXGroup;
 			children = (
+				0A5FC589188865EA00F69BA5 /* Plate.xcdatamodeld */,
 				0AB66E0C18A41AAD00441562 /* PLPlateType.h */,
 				0AB66E0D18A41AAD00441562 /* PLPlateType.m */,
 			);
@@ -423,23 +432,33 @@
 		0AA3D7EF18BD4B6800AA7DBB /* Login and Signup */ = {
 			isa = PBXGroup;
 			children = (
+				0AA3D7F818BD584200AA7DBB /* PLAccountStore.h */,
+				0AA3D7F918BD584300AA7DBB /* PLAccountStore.m */,
 				0AA3D7F018BD4BE000AA7DBB /* PLLoginSignUpViewController.h */,
 				0AA3D7F118BD4BE000AA7DBB /* PLLoginSignUpViewController.m */,
 				0AA3D7F218BD4BE000AA7DBB /* PLLoginSignUpViewController.xib */,
-				0AA3D7F818BD584200AA7DBB /* PLAccountStore.h */,
-				0AA3D7F918BD584300AA7DBB /* PLAccountStore.m */,
 			);
 			name = "Login and Signup";
+			sourceTree = "<group>";
+		};
+		0AA914AD18C107C900C89D6A /* Item Detail */ = {
+			isa = PBXGroup;
+			children = (
+				0AA914AE18C1081000C89D6A /* PLItemDetailController.h */,
+				0AA914AF18C1081000C89D6A /* PLItemDetailController.m */,
+				0AA914B018C1081000C89D6A /* PLItemDetailController.xib */,
+			);
+			name = "Item Detail";
 			sourceTree = "<group>";
 		};
 		0ABBE3E71843D0390031D3E2 = {
 			isa = PBXGroup;
 			children = (
+				0AA914AD18C107C900C89D6A /* Item Detail */,
 				0A0D169F185102890057F538 /* Account */,
 				0AA3D7EF18BD4B6800AA7DBB /* Login and Signup */,
 				0AA3D7E918BD416E00AA7DBB /* Welcome */,
 				0AA3D7E018BD3AE800AA7DBB /* About */,
-				0A5FC589188865EA00F69BA5 /* Plate.xcdatamodeld */,
 				0A2E0B461888A1A900DF3A85 /* Add Ons */,
 				0A5FC5281868D01C00F69BA5 /* A La Carte */,
 				0AC187FA185F934100A0DD9F /* Shopping Cart */,
@@ -658,11 +677,13 @@
 				0A9D7DE8184C5C6700BAE38D /* PlateStoryboard.storyboard in Resources */,
 				0A6D139818932A9700C8F977 /* PLBasketViewTableCellAddOn.xib in Resources */,
 				0A0D16AD185131680057F538 /* PLBaseOrderViewController.xib in Resources */,
+				0AA914B418C10F9000C89D6A /* ginger-pork.jpg in Resources */,
 				0A0D16A518510F790057F538 /* bg-tomatoes.png in Resources */,
 				0AA3D7E818BD3C9B00AA7DBB /* PLAboutViewController.xib in Resources */,
 				0A9D7E08184D602500BAE38D /* release_notes.md in Resources */,
 				0A5FC53E1886161400F69BA5 /* PLMenuItemTableViewCell.xib in Resources */,
 				0A0D16A71851114F0057F538 /* bg-grey.jpg in Resources */,
+				0AA914B218C1081000C89D6A /* PLItemDetailController.xib in Resources */,
 				0A9D7DED184C62CA00BAE38D /* PLSelectSidesViewController.xib in Resources */,
 				0A9D7DCF18470F5F00BAE38D /* PLSelectPlateSizeViewController.xib in Resources */,
 				0A318C64184532250023FFF5 /* PLStartOrderViewController.xib in Resources */,
@@ -730,6 +751,7 @@
 				0AA3D7E718BD3C9B00AA7DBB /* PLAboutViewController.m in Sources */,
 				0A5FC58E18886C4900F69BA5 /* PLAddOnItem.m in Sources */,
 				0A6D13931893286F00C8F977 /* PLBasketViewController.m in Sources */,
+				0AA914B118C1081000C89D6A /* PLItemDetailController.m in Sources */,
 				0A5FC52C1868D06B00F69BA5 /* PLALaCarteViewController.m in Sources */,
 				0AB66E0E18A41AAD00441562 /* PLPlateType.m in Sources */,
 				0A495EF61852925D00C14B03 /* PLBaseRewardsViewController.m in Sources */,

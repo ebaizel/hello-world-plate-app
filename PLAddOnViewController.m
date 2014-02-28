@@ -15,6 +15,7 @@
 #import "Colours.h"
 #import "PLPlateStore.h"
 #import "PLMenu.h"
+#import "PLItemDetailController.h"
 
 @interface PLAddOnViewController ()
 
@@ -43,16 +44,36 @@
     
 }
 
-// Action for + button; adds the item to the builder
--(int)addItemWithCell:(PLMenuItemTableViewCell *)cell
+- (void)displayItemDetail:(PLMenuItemTableViewCell *)cell
+{
+    PLAddOnItem *item = [self getItemFromCell:cell];
+    PLItemDetailController *plidc = [[PLItemDetailController alloc]initWithMenuItem:item];
+    [plidc setDelegate:self];
+    [self presentViewController:plidc animated:YES completion:nil];
+}
+
+- (void)dismissItemDetailView
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (PLAddOnItem *)getItemFromCell:(PLMenuItemTableViewCell *)cell
 {
     PLAddOnItem *item = nil;
+    
     for (PLAddOnItem *addOnItem in self.addOns) {
         if ([cell.itemId isEqualToString:[addOnItem plateId]]) {
             item = addOnItem;
             break;
         }
     }
+    return item;
+}
+
+// Action for + button; adds the item to the builder
+-(int)addItemWithCell:(PLMenuItemTableViewCell *)cell
+{
+    PLAddOnItem *item = [self getItemFromCell:cell];
     
     int numItems = [[PLBasketStore sharedStore] addAddOnItem:item];
     [self setStatusButton];
@@ -62,15 +83,7 @@
 // Action for - button; removes the item from the builder
 -(int)removeItemWithCell:(PLMenuItemTableViewCell *)cell
 {
-    PLAddOnItem *item = nil;
-
-    for (PLAddOnItem *mainItem in self.addOns) {
-        if ([cell.itemId isEqualToString:[mainItem plateId]]) {
-            item = mainItem;
-            break;
-        }
-    }
-    
+    PLAddOnItem *item = [self getItemFromCell:cell];
 
     int numItems = [[PLBasketStore sharedStore] removeAddOnItem:item];
     [self setStatusButton];
@@ -144,27 +157,6 @@
                                                                            fontWithName:@"Helvetica" size:24], NSFontAttributeName,
                                 [UIColor whiteColor], NSForegroundColorAttributeName, nil];
     self.navigationController.navigationBar.titleTextAttributes = attributes;
-    
-    
-    // Setup the bottom toolbar
-//    UIBarButtonItem *flexibleSpaceLeft = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
-//    UIBarButtonItem *barButton = [[UIBarButtonItem alloc] initWithTitle:@"Continue" style:UIBarButtonItemStylePlain target:self action:@selector(actionContinue:)];
-//    [barButton setTitleTextAttributes:@{
-//                                        NSFontAttributeName: [UIFont fontWithName:@"Helvetica" size:18.0],
-//                                        NSForegroundColorAttributeName: [UIColor moneyGreenColor]
-//                                        } forState:UIControlStateNormal];
-//    
-//    self.toolbarItems = [NSArray arrayWithObjects: flexibleSpaceLeft, barButton, nil];
-    
-//    // Setup the bottom toolbar
-//    UIBarButtonItem *flexibleSpaceLeft = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
-//    UIBarButtonItem *barButton = [[UIBarButtonItem alloc] initWithTitle:@"Continue" style:UIBarButtonItemStylePlain target:self action:@selector(actionContinue:)];
-//    [barButton setTitleTextAttributes:@{
-//                                        NSFontAttributeName: [UIFont fontWithName:@"Helvetica" size:24.0],
-//                                        NSForegroundColorAttributeName: [UIColor blackColor]
-//                                        } forState:UIControlStateNormal];
-//    
-//    self.toolbarItems = [NSArray arrayWithObjects: flexibleSpaceLeft, barButton, nil];
 }
 
 - (void)fetchAddOnItems
@@ -177,7 +169,6 @@
     
     __weak PLAddOnViewController *weakSelf = self;
     
-//    PLPlate *plate = [[PLBasketStore sharedStore] plateBuilder];
     [[PLPlateStore sharedStore]getAddOnMenu:^(PLMenu *menuResult, NSError *err) {
         
         [[weakSelf navigationItem] setTitleView:currentTitleView];

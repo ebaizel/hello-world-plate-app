@@ -14,6 +14,7 @@
 #import "Colours.h"
 #import "PLPlateStore.h"
 #import "PLBasketViewController.h"
+#import "PLItemDetailController.h"
 
 @interface PLALaCarteViewController ()
 
@@ -47,8 +48,20 @@
     
 }
 
-// Action for + button; adds the item to the builder
--(int)addItemWithCell:(PLMenuItemTableViewCell *)cell
+- (void)displayItemDetail:(PLMenuItemTableViewCell *)cell
+{
+    PLALaCarteItem *item = [self getItemFromCell:cell];
+    PLItemDetailController *plidc = [[PLItemDetailController alloc]initWithMenuItem:item];
+    [plidc setDelegate:self];
+    [self presentViewController:plidc animated:YES completion:nil];
+}
+
+- (void)dismissItemDetailView
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (PLALaCarteItem *)getItemFromCell:(PLMenuItemTableViewCell *)cell
 {
     PLALaCarteItem *item = nil;
     if ([cell parentTableView] == [self alaCarteMains]) {
@@ -66,8 +79,14 @@
             }
         }
     }
+    return item;
+}
 
-    [[self alaCarteMains] reloadData];
+// Action for + button; adds the item to the builder
+-(int)addItemWithCell:(PLMenuItemTableViewCell *)cell
+{
+    PLALaCarteItem *item = [self getItemFromCell:cell];
+//    [[self alaCarteMains] reloadData];
 
     int numItems = [[PLBasketStore sharedStore] addALaCarteItem:item];
     [self setStatusButton];
@@ -77,23 +96,7 @@
 // Action for - button; removes the item from the builder
 -(int)removeItemWithCell:(PLMenuItemTableViewCell *)cell
 {
-    PLALaCarteItem *item = nil;
-    if ([cell parentTableView] == [self alaCarteMains]) {
-        for (id mainItem in self.mains) {
-            if ([cell.itemId isEqualToString:[(PLALaCarteItem *) mainItem plateId]]) {
-                item = (PLALaCarteItem *) mainItem;
-                break;
-            }
-        }
-    } else if ([cell parentTableView] == [self alaCarteSides]) {
-        for (id sideItem in self.sides) {
-            if ([cell.itemId isEqualToString:[(PLALaCarteItem *) sideItem plateId]]) {
-                item = (PLALaCarteItem *) sideItem;
-                break;
-            }
-        }
-    }
-    
+    PLALaCarteItem *item = [self getItemFromCell:cell];
     int numItems = [[PLBasketStore sharedStore] removeALaCarteItem:item];
     [self setStatusButton];
     return numItems;
@@ -178,17 +181,6 @@
                                                                            fontWithName:@"Helvetica" size:24], NSFontAttributeName,
                                 [UIColor whiteColor], NSForegroundColorAttributeName, nil];
     self.navigationController.navigationBar.titleTextAttributes = attributes;
-    
-    
-    // Setup the bottom toolbar
-//    UIBarButtonItem *flexibleSpaceLeft = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
-//    UIBarButtonItem *barButton = [[UIBarButtonItem alloc] initWithTitle:@"Continue" style:UIBarButtonItemStylePlain target:self action:@selector(actionContinue:)];
-//    [barButton setTitleTextAttributes:@{
-//                                        NSFontAttributeName: [UIFont fontWithName:@"Helvetica" size:18.0],
-//                                        NSForegroundColorAttributeName: [UIColor moneyGreenColor]
-//                                        } forState:UIControlStateNormal];
-//    
-//    self.toolbarItems = [NSArray arrayWithObjects: flexibleSpaceLeft, barButton, nil];
 }
 
 - (void)fetchALaCarteItems

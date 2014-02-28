@@ -88,7 +88,7 @@
         
         NSDictionary *metaDict = [modifierDict objectForKey:@"meta"];
         [plmi setName:[metaDict objectForKey:@"name"]];
-        [plmi setDescription:[metaDict objectForKey:@"description"]];
+        [plmi setItemDescription:[metaDict objectForKey:@"description"]];
         [plmi setAllergies:[metaDict objectForKey:@"alergies"]];
         [plmi setIsGlutenFree:[[metaDict objectForKey:@"is_gluten_free"] boolValue]];
         [plmi setIsVegan:[[metaDict objectForKey:@"is_vegan"] boolValue]];

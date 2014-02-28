@@ -10,7 +10,11 @@
 
 @implementation PLMenuItemTableViewCell
 
--(void)setupDelegate:(id<ALaCarteCellDelegate>)cellDelegate parentTable:(UITableView *)tableView
+- (IBAction)viewItemDetail:(id)sender {
+    [[self delegate]displayItemDetail:self];
+}
+
+-(void)setupDelegate:(id<MenuItemTableViewCellDelegate>)cellDelegate parentTable:(UITableView *)tableView
 {
     if (self) {
         self.parentTableView = tableView;

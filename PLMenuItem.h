@@ -13,7 +13,7 @@
 
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *plateId;
-@property (nonatomic, strong) NSString *description;
+@property (nonatomic, strong) NSString *itemDescription;
 @property (nonatomic, strong) NSString *allergies;
 @property (nonatomic, strong) NSString *ingredients;
 @property (nonatomic, strong) NSString *imageURL;

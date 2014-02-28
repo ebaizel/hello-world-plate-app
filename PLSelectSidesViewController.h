@@ -9,9 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "PLBaseOrderViewController.h"
 #import "PLMenuItemTableViewCell.h"
+#import "PLItemDetailController.h"
 @class PLOrderSummaryViewController;
 
-@interface PLSelectSidesViewController : PLBaseOrderViewController <ALaCarteCellDelegate>
+@interface PLSelectSidesViewController : PLBaseOrderViewController <MenuItemTableViewCellDelegate, ItemDetailDelegate>
 {
     NSArray *sides;
 }

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@protocol ALaCarteCellDelegate;
+@protocol MenuItemTableViewCellDelegate;
 
 @interface PLMenuItemTableViewCell : UITableViewCell
 
@@ -18,16 +18,18 @@
 @property (assign, nonatomic) NSString *itemId;
 @property (weak, nonatomic) UITableView *parentTableView;
 
-@property (assign, nonatomic) id <ALaCarteCellDelegate> delegate;
+@property (assign, nonatomic) id <MenuItemTableViewCellDelegate> delegate;
+- (IBAction)viewItemDetail:(id)sender;
 
--(void)setupDelegate:(id<ALaCarteCellDelegate>)delegate parentTable:(UITableView *)tableView;
+-(void)setupDelegate:(id<MenuItemTableViewCellDelegate>)delegate parentTable:(UITableView *)tableView;
 
 @end
 
-@protocol ALaCarteCellDelegate <NSObject>
+@protocol MenuItemTableViewCellDelegate <NSObject>
 
 @optional
 - (int)addItemWithCell:(PLMenuItemTableViewCell *)cell;
 - (int)removeItemWithCell:(PLMenuItemTableViewCell *)cell;
+- (void)displayItemDetail:(PLMenuItemTableViewCell *)cell;
 
 @end

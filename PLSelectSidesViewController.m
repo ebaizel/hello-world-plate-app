@@ -133,13 +133,7 @@
 
 -(int)addItemWithCell:(PLMenuItemTableViewCell *)cell
 {
-    PLMenuItem *item = nil;
-    for (PLMenuItem *side in sides) {
-        if ([cell.itemId isEqualToString:[side plateId]]) {
-            item = side;
-            break;
-        }
-    }
+    PLMenuItem *item = [self getItemFromCell:cell];
     
     [[PLBasketStore sharedStore] addPlateSide:item];
     [cell.parentTableView reloadData];
@@ -149,6 +143,16 @@
 
 -(int)removeItemWithCell:(PLMenuItemTableViewCell *)cell
 {
+    PLMenuItem *item = [self getItemFromCell:cell];
+    
+    [[PLBasketStore sharedStore] removePlateSide:item];
+    [cell.parentTableView reloadData];
+    [self setStatusButton];    
+    return [[PLBasketStore sharedStore] quantityOfSideInPlateBuilder:item];
+}
+
+- (PLMenuItem *)getItemFromCell:(PLMenuItemTableViewCell *)cell
+{
     PLMenuItem *item = nil;
     for (PLMenuItem *side in sides) {
         if ([cell.itemId isEqualToString:[side plateId]]) {
@@ -156,11 +160,7 @@
             break;
         }
     }
-    
-    [[PLBasketStore sharedStore] removePlateSide:item];
-    [cell.parentTableView reloadData];
-    [self setStatusButton];    
-    return [[PLBasketStore sharedStore] quantityOfSideInPlateBuilder:item];
+    return item;
 }
 
 
@@ -171,6 +171,19 @@
         // Custom initialization
     }
     return self;
+}
+
+- (void)displayItemDetail:(PLMenuItemTableViewCell *)cell
+{
+    PLMenuItem *item = [self getItemFromCell:cell];
+    PLItemDetailController *plidc = [[PLItemDetailController alloc]initWithMenuItem:item];
+    [plidc setDelegate:self];
+    [self presentViewController:plidc animated:YES completion:nil];
+}
+
+- (void)dismissItemDetailView
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning

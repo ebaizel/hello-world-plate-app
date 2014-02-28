@@ -9,8 +9,9 @@
 #import <UIKit/UIKit.h>
 #import "PLMenuItemTableViewCell.h"
 #import "PLBaseOrderViewController.h"
+#import "PLItemDetailController.h"
 
-@interface PLAddOnViewController : PLBaseOrderViewController <ALaCarteCellDelegate>
+@interface PLAddOnViewController : PLBaseOrderViewController <MenuItemTableViewCellDelegate, ItemDetailDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *addOnsTable;
 @property (nonatomic, strong) NSMutableArray *addOns;

@@ -10,7 +10,7 @@
 
 @implementation PLMenuItem
 
-@synthesize name, plateId, description, allergies, isGlutenFree, isVegan, isVegetarian;
+@synthesize name, plateId, itemDescription, allergies, isGlutenFree, isVegan, isVegetarian;
 
 -(void)readFromJSONDictionary:(NSDictionary *)d
 {
@@ -35,7 +35,7 @@
     another.name = [name copyWithZone: zone];
     another.plateId = [plateId copyWithZone: zone];
     another.itemType = [self itemType];
-    another.description = [description copyWithZone: zone];
+    another.itemDescription = [itemDescription copyWithZone: zone];
     another.allergies = [allergies copyWithZone:zone];
     another.isGlutenFree = [self isGlutenFree];
     another.isVegan = [self isVegan];
