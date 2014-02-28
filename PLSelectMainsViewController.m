@@ -120,6 +120,8 @@
     [super viewDidAppear:animated];
     [self.tableMains reloadData];
     [super displayBasketInNavBar];    
+    UIBarButtonItem *statusButton = [[self toolbarItems] objectAtIndex:0];
+    [statusButton setTitle:@"Select 1 Main"];
 }
 
 - (void)viewDidLoad

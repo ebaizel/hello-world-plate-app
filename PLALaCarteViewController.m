@@ -67,8 +67,11 @@
         }
     }
 
-    return [[PLBasketStore sharedStore] addALaCarteItem:item];
     [[self alaCarteMains] reloadData];
+
+    int numItems = [[PLBasketStore sharedStore] addALaCarteItem:item];
+    [self setStatusButton];
+    return numItems;
 }
 
 // Action for - button; removes the item from the builder
@@ -91,7 +94,9 @@
         }
     }
     
-    return [[PLBasketStore sharedStore] removeALaCarteItem:item];
+    int numItems = [[PLBasketStore sharedStore] removeALaCarteItem:item];
+    [self setStatusButton];
+    return numItems;
 }
 
 
@@ -145,6 +150,16 @@
     [self.alaCarteSides reloadData];
     
     [self displayBasketInNavBar];
+    [self setStatusButton];
+}
+
+- (void)setStatusButton
+{
+    UIBarButtonItem *statusButton = [[self toolbarItems] objectAtIndex:0];
+    int numALaCarteAdded = [[PLBasketStore sharedStore] quantityOfItemsInALaCarteBuilder];
+    
+    NSString *status = [NSString stringWithFormat:@"%d items selected", numALaCarteAdded];
+    [statusButton setTitle:status];
 }
 
 - (void)viewDidLoad
@@ -166,14 +181,14 @@
     
     
     // Setup the bottom toolbar
-    UIBarButtonItem *flexibleSpaceLeft = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
-    UIBarButtonItem *barButton = [[UIBarButtonItem alloc] initWithTitle:@"Continue" style:UIBarButtonItemStylePlain target:self action:@selector(actionContinue:)];
-    [barButton setTitleTextAttributes:@{
-                                        NSFontAttributeName: [UIFont fontWithName:@"Helvetica" size:18.0],
-                                        NSForegroundColorAttributeName: [UIColor moneyGreenColor]
-                                        } forState:UIControlStateNormal];
-    
-    self.toolbarItems = [NSArray arrayWithObjects: flexibleSpaceLeft, barButton, nil];
+//    UIBarButtonItem *flexibleSpaceLeft = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+//    UIBarButtonItem *barButton = [[UIBarButtonItem alloc] initWithTitle:@"Continue" style:UIBarButtonItemStylePlain target:self action:@selector(actionContinue:)];
+//    [barButton setTitleTextAttributes:@{
+//                                        NSFontAttributeName: [UIFont fontWithName:@"Helvetica" size:18.0],
+//                                        NSForegroundColorAttributeName: [UIColor moneyGreenColor]
+//                                        } forState:UIControlStateNormal];
+//    
+//    self.toolbarItems = [NSArray arrayWithObjects: flexibleSpaceLeft, barButton, nil];
 }
 
 - (void)fetchALaCarteItems

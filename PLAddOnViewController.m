@@ -54,7 +54,9 @@
         }
     }
     
-    return [[PLBasketStore sharedStore] addAddOnItem:item];
+    int numItems = [[PLBasketStore sharedStore] addAddOnItem:item];
+    [self setStatusButton];
+    return numItems;
 }
 
 // Action for - button; removes the item from the builder
@@ -69,7 +71,10 @@
         }
     }
     
-    return [[PLBasketStore sharedStore] removeAddOnItem:item];
+
+    int numItems = [[PLBasketStore sharedStore] removeAddOnItem:item];
+    [self setStatusButton];
+    return numItems;
 }
 
 
@@ -100,6 +105,14 @@
     return [[self addOns] count];
 }
 
+- (void)setStatusButton
+{
+    UIBarButtonItem *statusButton = [[self toolbarItems] objectAtIndex:0];
+    int numAddOnsAdded = [[PLBasketStore sharedStore] quantityOfItemsInAddOnBuilder];
+    NSString *status = [NSString stringWithFormat:@"%d items selected", numAddOnsAdded];
+    [statusButton setTitle:status];
+}
+
 -(void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
@@ -113,6 +126,7 @@
     [self.addOnsTable reloadData];
     
     [super displayBasketInNavBar];
+    [self setStatusButton];
 }
 
 - (void)viewDidLoad
@@ -133,14 +147,14 @@
     
     
     // Setup the bottom toolbar
-    UIBarButtonItem *flexibleSpaceLeft = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
-    UIBarButtonItem *barButton = [[UIBarButtonItem alloc] initWithTitle:@"Continue" style:UIBarButtonItemStylePlain target:self action:@selector(actionContinue:)];
-    [barButton setTitleTextAttributes:@{
-                                        NSFontAttributeName: [UIFont fontWithName:@"Helvetica" size:18.0],
-                                        NSForegroundColorAttributeName: [UIColor moneyGreenColor]
-                                        } forState:UIControlStateNormal];
-    
-    self.toolbarItems = [NSArray arrayWithObjects: flexibleSpaceLeft, barButton, nil];
+//    UIBarButtonItem *flexibleSpaceLeft = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
+//    UIBarButtonItem *barButton = [[UIBarButtonItem alloc] initWithTitle:@"Continue" style:UIBarButtonItemStylePlain target:self action:@selector(actionContinue:)];
+//    [barButton setTitleTextAttributes:@{
+//                                        NSFontAttributeName: [UIFont fontWithName:@"Helvetica" size:18.0],
+//                                        NSForegroundColorAttributeName: [UIColor moneyGreenColor]
+//                                        } forState:UIControlStateNormal];
+//    
+//    self.toolbarItems = [NSArray arrayWithObjects: flexibleSpaceLeft, barButton, nil];
     
 //    // Setup the bottom toolbar
 //    UIBarButtonItem *flexibleSpaceLeft = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];

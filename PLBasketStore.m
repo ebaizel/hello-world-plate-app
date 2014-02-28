@@ -269,6 +269,22 @@
     return count;
 }
 
+-(int)quantityOfItemsInALaCarteBuilder{
+    int count = 0;
+    for (PLALaCarteItem *aLaCarteItem in [self alaCarteBuilder]) {
+        count += [aLaCarteItem quantity];
+    }
+    return count;
+}
+
+-(int)quantityOfItemsInAddOnBuilder{
+    int count = 0;
+    for (PLAddOnItem *addOnItem in [self addOnBuilder]) {
+        count += [addOnItem quantity];
+    }
+    return count;
+}
+
 -(NSString *)printContentsOfBasket
 {
     NSString *summary = @"";
@@ -319,22 +335,10 @@
     float total = 0.0;
     for (PLPlate *plate in [self plates]) {
         total += [[plate plateSize] price];
-//        if ([plate size] == Ultra) {
-//            total += 15.0;
-//        } else if ([plate size] == Fit) {
-//            total += 12.0;
-//        } else if ([plate size] == Kids) {
-//            total += 8.0;
-//        }
     }
     
     for (PLALaCarteItem *item in [self alaCarteItems]) {
         total += [item price] * [item quantity];
-//        if ([item itemType] == MenuItemMain) {
-//            total += (10 * [item quantity]);
-//        } else if ([item itemType] == MenuItemSide) {
-//            total += (4 * [item quantity]);
-//        }
     }
 
     for (PLAddOnItem *item in [self addOns]) {
@@ -358,6 +362,7 @@
 
     return count;
 }
+
 
 #pragma Singleton setup
 

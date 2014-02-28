@@ -48,13 +48,20 @@
     
     // Setup the bottom toolbar
     UIBarButtonItem *flexibleSpaceLeft = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
-    UIBarButtonItem *barButton = [[UIBarButtonItem alloc] initWithTitle:@"Continue" style:UIBarButtonItemStylePlain target:self action:@selector(actionContinue:)];
-    [barButton setTitleTextAttributes:@{
+    UIBarButtonItem *continueButton = [[UIBarButtonItem alloc] initWithTitle:@"Continue" style:UIBarButtonItemStylePlain target:self action:@selector(actionContinue:)];
+    UIBarButtonItem *statusButton = [[UIBarButtonItem alloc] initWithTitle:@"" style:UIBarButtonItemStylePlain target:self action:nil];
+    
+    [continueButton setTitleTextAttributes:@{
                                         NSFontAttributeName: [UIFont fontWithName:@"Helvetica" size:18.0],
                                         NSForegroundColorAttributeName: [UIColor moneyGreenColor]
                                         } forState:UIControlStateNormal];
+    
+    [statusButton setTitleTextAttributes:@{
+                                             NSFontAttributeName: [UIFont fontWithName:@"HelveticaNeue-Thin_Italic" size:18.0],
+                                             NSForegroundColorAttributeName: [UIColor moneyGreenColor]
+                                             } forState:UIControlStateNormal];
 
-    self.toolbarItems = [NSArray arrayWithObjects: flexibleSpaceLeft, barButton, nil];
+    self.toolbarItems = [NSArray arrayWithObjects: statusButton, flexibleSpaceLeft, continueButton, nil];
     
     // We don't want extra space above tables for scrolling
     self.automaticallyAdjustsScrollViewInsets = NO;

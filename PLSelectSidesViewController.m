@@ -143,6 +143,7 @@
     
     [[PLBasketStore sharedStore] addPlateSide:item];
     [cell.parentTableView reloadData];
+    [self setStatusButton];
     return [[PLBasketStore sharedStore] quantityOfSideInPlateBuilder:item];
 }
 
@@ -158,8 +159,8 @@
     
     [[PLBasketStore sharedStore] removePlateSide:item];
     [cell.parentTableView reloadData];
+    [self setStatusButton];    
     return [[PLBasketStore sharedStore] quantityOfSideInPlateBuilder:item];
-    
 }
 
 
@@ -181,7 +182,26 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    [super displayBasketInNavBar];    
+    [super displayBasketInNavBar];
+    [self setStatusButton];
+}
+
+- (void)setStatusButton
+{
+    PLPlate *plate = [[PLBasketStore sharedStore] plateBuilder];
+    int numSidesNeeded = 0;
+    NSString *slug = [[[[PLBasketStore sharedStore] plateBuilder] plateTypeSize] typeSlug];
+    if ([slug isEqualToString:OneMainTwoSides]) {
+        numSidesNeeded = 2;
+    } else if ([slug isEqualToString:FourSides]) {
+        numSidesNeeded = 4;
+    }
+
+    UIBarButtonItem *statusButton = [[self toolbarItems] objectAtIndex:0];
+    int numSidesAdded = [[plate sides] count];
+    
+    NSString *status = [NSString stringWithFormat:@"%d of %d", numSidesAdded, numSidesNeeded];
+    [statusButton setTitle:status];
 }
 
 - (IBAction)actionContinue:(id)sender {

@@ -52,6 +52,9 @@
 -(int)quantityOfItemInAddOnBuilder:(PLAddOnItem *)item;
 -(int)quantityOfSideInPlateBuilder:(PLMenuItem *)item;
 
+-(int)quantityOfItemsInALaCarteBuilder;
+-(int)quantityOfItemsInAddOnBuilder;
+
 // Debugging helper
 -(NSString *)printContentsOfBasket;
 
