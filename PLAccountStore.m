@@ -13,10 +13,10 @@
 
 - (BOOL)login:(PLAccount *)pAccount
 {
-    NSString *path = [self accountArchivePath];
-    [NSKeyedArchiver archiveRootObject:pAccount toFile:path];
-    account = pAccount;
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"UserLoggedIn" object:self];
+//    NSString *path = [self accountArchivePath];
+//    [NSKeyedArchiver archiveRootObject:pAccount toFile:path];
+//    account = pAccount;
+//    [[NSNotificationCenter defaultCenter] postNotificationName:@"UserLoggedIn" object:self];
     return true;
 }
 
@@ -27,13 +27,13 @@
 
 - (id)init {
     self = [super init];
-    if (self) {
-        NSString *path = [self accountArchivePath];
-        account = [NSKeyedUnarchiver unarchiveObjectWithFile:path];
-        if (!account) {
-            account = nil;
-        }
-    }
+//    if (self) {
+//        NSString *path = [self accountArchivePath];
+//        account = [NSKeyedUnarchiver unarchiveObjectWithFile:path];
+//        if (!account) {
+//            account = nil;
+//        }
+//    }
     return self;
 }
 

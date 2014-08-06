@@ -7,10 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "JSONSerializable.h"
 
-@interface PLAccount : NSObject <NSCoding>
+@interface PLAccount : NSObject <NSCoding, JSONSerializable>
 
 @property (nonatomic, strong) NSString *login;
 @property (nonatomic, strong) NSString *password;
+@property (nonatomic, strong) NSString *accessToken;
 
 @end

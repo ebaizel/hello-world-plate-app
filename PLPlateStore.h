@@ -11,6 +11,7 @@
 #import "PLMenuItem.h"
 #import "PLPlatesTypesAndSizes.h"
 #import "PLPlateSize.h"
+#import "PLAccount.h"
 
 @interface PLPlateStore : NSObject
 {
@@ -18,11 +19,14 @@
     NSMutableArray *plateMenus;
     PLMenu *aLaCarteMenu;
     PLMenu *addOnsMenu;
+    PLAccount *account;
 }
 
 + (PLPlateStore *)sharedStore;
 - (void)clearCache;
 
+- (void)login:(PLAccount *)pAccount forBlock:(void (^)(PLAccount *, NSError *))block;
+- (void)logout:(void (^)(NSError *))block;
 - (void)getPlateMenu:(PLPlateSize *)plateSize plateType:(PLPlateTypeSize *)plateTypeSize forBlock:(void (^)(PLMenu *menuResult, NSError *))block;
 - (void)getAddOnMenu:(void (^)(PLMenu *menuResult, NSError *err))block;
 - (void)getALaCarteMenu:(void (^)(PLMenu *menuResult, NSError *))block;

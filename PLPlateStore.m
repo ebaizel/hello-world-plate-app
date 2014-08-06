@@ -12,6 +12,7 @@
 #import "PLMenu.h"
 #import "PLPlatesTypesAndSizes.h"
 #import "PLPlateTypeSize.h"
+#import "PLAccount.h"
 
 #ifdef DEBUG
     #define BASEURL @"http://ep2.gulosolutions.com/"
@@ -61,6 +62,60 @@
         }];
         [connect start];
     }
+}
+
+- (void)login:(PLAccount *)pAccount forBlock:(void (^)(PLAccount *, NSError *))block
+{
+    NSString *urlString = [NSString stringWithFormat:@"%@%@", BASEURL, @"login"];
+    NSURL *url = [NSURL URLWithString:urlString];
+    
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url
+                                                           cachePolicy:NSURLRequestUseProtocolCachePolicy
+                                                       timeoutInterval:60.0];
+    
+    [request setHTTPMethod:@"POST"];
+    NSString *postString = [NSString stringWithFormat:@"username=%@&password=%@", pAccount.login, pAccount.password];
+    [request setHTTPBody:[postString dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    PLAccount *accountRootObject = [[PLAccount alloc]init];
+    PLConnection *connect = [[PLConnection alloc]initWithRequest:request];
+    [connect setJsonRootObject:accountRootObject];
+    
+    [connect setCompletionBlock:^(PLAccount *loginResult, NSError *err) {
+        if (!err) {
+            account = loginResult;
+            block(loginResult, nil);
+        } else {
+            block(nil, err);
+        }
+    }];
+    [connect start];
+}
+
+- (void)logout:(void (^)(NSError *))block
+{
+    NSString *urlString = [NSString stringWithFormat:@"%@%@", BASEURL, @"logout"];
+    NSURL *url = [NSURL URLWithString:urlString];
+    
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url
+                                                           cachePolicy:NSURLRequestUseProtocolCachePolicy
+                                                       timeoutInterval:60.0];
+    
+    [request setHTTPMethod:@"POST"];
+    NSString *postString = [NSString stringWithFormat:@"accessToken=%@", account.accessToken];
+    [request setHTTPBody:[postString dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    PLConnection *connect = [[PLConnection alloc]initWithRequest:request];
+    
+    [connect setCompletionBlock:^(PLAccount *accountRootObject, NSError *err) {
+        if (!err) {
+            [self clearCache];
+            block(nil);
+        } else {
+            block(err);
+        }
+    }];
+    [connect start];
 }
 
 - (void)getAddOnMenu:(void (^)(PLMenu *, NSError *))block
@@ -275,12 +330,32 @@
     }
 }
 
+- (id)init {
+    self = [super init];
+    if (self) {
+        NSString *path = [self accountArchivePath];
+        account = [NSKeyedUnarchiver unarchiveObjectWithFile:path];
+        if (!account) {
+            account = nil;
+        }
+    }
+    return self;
+}
+
+- (NSString *)accountArchivePath
+{
+    NSArray *documentDirectories = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentDirectory = [documentDirectories objectAtIndex:0];
+    return [documentDirectory stringByAppendingPathComponent:@"account.archive"];
+}
+
 - (void)clearCache
 {
     plateTypesSizes = nil;
     plateMenus = nil;
     aLaCarteMenu = nil;
     addOnsMenu = nil;
+    account = nil;
 }
 
 + (PLPlateStore *)sharedStore

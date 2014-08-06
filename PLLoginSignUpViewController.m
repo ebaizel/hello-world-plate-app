@@ -9,6 +9,7 @@
 #import "PLLoginSignUpViewController.h"
 #import "PLAccountStore.h"
 #import "PLAccount.h"
+#import "PLPlateStore.h"
 
 @interface PLLoginSignUpViewController ()
 
@@ -45,9 +46,42 @@
     PLAccount *account = [[PLAccount alloc]init];
     account.login = _textEmail.text;
     account.password = _textPassword.text;
-    [[PLAccountStore sharedStore] login:account];
-    [[self delegate] userLoggedIn];
+    [[PLPlateStore sharedStore] login:account forBlock:^(PLAccount *accountResult, NSError *err) {
+
+        if (!err) {
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"UserLoggedIn" object:self];
+            NSString *path = [self accountArchivePath];
+            [NSKeyedArchiver archiveRootObject:accountResult toFile:path];
+            [[self delegate] userLoggedIn];            
+        } else {
+            UIAlertView *av =[[UIAlertView alloc]
+                              initWithTitle:@"Error"
+                              message:[err localizedDescription]
+                              delegate:nil
+                              cancelButtonTitle:@"OK"
+                              otherButtonTitles:nil];
+            [av show];
+        }
+    }];
 }
+
+- (IBAction)logout:(id)sender {
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSError *error;
+    BOOL success = [fileManager removeItemAtPath:[self accountArchivePath] error:&error];
+    if (success) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"UserLoggedOut" object:self];
+    }
+}
+
+
+- (NSString *)accountArchivePath
+{
+    NSArray *documentDirectories = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentDirectory = [documentDirectories objectAtIndex:0];
+    return [documentDirectory stringByAppendingPathComponent:@"account.archive"];
+}
+
 
 - (IBAction)closeModal:(id)sender {
     [[self delegate] dismissModal];
