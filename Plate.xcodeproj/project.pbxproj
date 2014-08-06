@@ -92,6 +92,7 @@
 		97BD773E1991D6BB003977E4 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 97BD77381991D6BB003977E4 /* README.md */; };
 		97BD773F1991D6BB003977E4 /* release_notes.md in Resources */ = {isa = PBXBuildFile; fileRef = 97BD77391991D6BB003977E4 /* release_notes.md */; };
 		97BD77401991D7AC003977E4 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 97BD77371991D6BB003977E4 /* libTestFlight.a */; };
+		97BD77431991E900003977E4 /* PLPayment.m in Sources */ = {isa = PBXBuildFile; fileRef = 97BD77421991E900003977E4 /* PLPayment.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -239,6 +240,8 @@
 		97BD773A1991D6BB003977E4 /* TestFlight+AsyncLogging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestFlight+AsyncLogging.h"; sourceTree = "<group>"; };
 		97BD773B1991D6BB003977E4 /* TestFlight+ManualSessions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TestFlight+ManualSessions.h"; sourceTree = "<group>"; };
 		97BD773C1991D6BB003977E4 /* TestFlight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestFlight.h; sourceTree = "<group>"; };
+		97BD77411991E900003977E4 /* PLPayment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLPayment.h; sourceTree = "<group>"; };
+		97BD77421991E900003977E4 /* PLPayment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLPayment.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -550,6 +553,8 @@
 				0A6D138E189310E000C8F977 /* PLPlateSize.m */,
 				0AA3D7F518BD555100AA7DBB /* PLAccount.h */,
 				0AA3D7F618BD555100AA7DBB /* PLAccount.m */,
+				97BD77411991E900003977E4 /* PLPayment.h */,
+				97BD77421991E900003977E4 /* PLPayment.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -732,6 +737,7 @@
 				0AA3D7FA18BD584300AA7DBB /* PLAccountStore.m in Sources */,
 				0A0D169D185102140057F538 /* PLAccountViewController.m in Sources */,
 				0A2E0B4A1888A21200DF3A85 /* PLAddOnViewController.m in Sources */,
+				97BD77431991E900003977E4 /* PLPayment.m in Sources */,
 				0A2186A01896EC8F00F79E4A /* PLBasketViewTableCell.m in Sources */,
 				0A5FC531186A2EFB00F69BA5 /* PLALaCarteSummaryViewController.m in Sources */,
 				0A5FC5411886199800F69BA5 /* PLMenuItemTableViewCell.m in Sources */,
