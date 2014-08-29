@@ -14,5 +14,7 @@
 - (IBAction)addToBasket:(id)sender;
 @property (weak, nonatomic) IBOutlet UILabel *mainsToBeAdded;
 @property (weak, nonatomic) IBOutlet UILabel *sidesToBeAdded;
+@property (weak, nonatomic) IBOutlet UITextView *textMainsSummary;
+@property (weak, nonatomic) IBOutlet UITextView *textSidesSummary;
 
 @end

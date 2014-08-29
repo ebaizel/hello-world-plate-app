@@ -29,7 +29,8 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.navigationItem.title = @"About Plate";    
+    self.navigationItem.title = @"About Plate";
+    self.textAboutPlate.text = @"Plate is modern, comfort food to go.  \n\nWe believe pre-made meals can be delicious, convenient and nutritious.\n\nWe also believe that Michigan football was the unanimous national champion in 1997.";
 }
 
 - (void)didReceiveMemoryWarning

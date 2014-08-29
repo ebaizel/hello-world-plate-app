@@ -89,6 +89,9 @@
 		0ADC53301856738400258E1E /* PLPlateStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ADC532F1856738400258E1E /* PLPlateStore.m */; };
 		0ADC53331856808F00258E1E /* PLConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ADC53321856808F00258E1E /* PLConnection.m */; };
 		0ADC533718579C6300258E1E /* PLMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 0ADC533618579C6300258E1E /* PLMenu.m */; };
+		975C665919B0116E00B198C9 /* PLPaymentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 975C665719B0116E00B198C9 /* PLPaymentViewController.m */; };
+		975C665A19B0116E00B198C9 /* PLPaymentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 975C665819B0116E00B198C9 /* PLPaymentViewController.xib */; };
+		97889A711996EF7D00C07B56 /* PLStubOrders.m in Sources */ = {isa = PBXBuildFile; fileRef = 97889A701996EF7D00C07B56 /* PLStubOrders.m */; };
 		97BD773E1991D6BB003977E4 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 97BD77381991D6BB003977E4 /* README.md */; };
 		97BD773F1991D6BB003977E4 /* release_notes.md in Resources */ = {isa = PBXBuildFile; fileRef = 97BD77391991D6BB003977E4 /* release_notes.md */; };
 		97BD77401991D7AC003977E4 /* libTestFlight.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 97BD77371991D6BB003977E4 /* libTestFlight.a */; };
@@ -234,6 +237,11 @@
 		0ADC533418568E3600258E1E /* JSONSerializable.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JSONSerializable.h; sourceTree = "<group>"; };
 		0ADC533518579C6300258E1E /* PLMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLMenu.h; sourceTree = "<group>"; };
 		0ADC533618579C6300258E1E /* PLMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLMenu.m; sourceTree = "<group>"; };
+		975C665619B0116E00B198C9 /* PLPaymentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLPaymentViewController.h; sourceTree = "<group>"; };
+		975C665719B0116E00B198C9 /* PLPaymentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLPaymentViewController.m; sourceTree = "<group>"; };
+		975C665819B0116E00B198C9 /* PLPaymentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PLPaymentViewController.xib; sourceTree = "<group>"; };
+		97889A6F1996EF7D00C07B56 /* PLStubOrders.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PLStubOrders.h; sourceTree = "<group>"; };
+		97889A701996EF7D00C07B56 /* PLStubOrders.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PLStubOrders.m; sourceTree = "<group>"; };
 		97BD77371991D6BB003977E4 /* libTestFlight.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libTestFlight.a; sourceTree = "<group>"; };
 		97BD77381991D6BB003977E4 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		97BD77391991D6BB003977E4 /* release_notes.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = release_notes.md; sourceTree = "<group>"; };
@@ -443,6 +451,7 @@
 		0ABBE3E71843D0390031D3E2 = {
 			isa = PBXGroup;
 			children = (
+				975C665519B0112000B198C9 /* Payment */,
 				0AA914AD18C107C900C89D6A /* Item Detail */,
 				0A0D169F185102890057F538 /* Account */,
 				0AA3D7EF18BD4B6800AA7DBB /* Login and Signup */,
@@ -533,6 +542,7 @@
 		0AC187F0185F871100A0DD9F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				97889A6E1996EF3C00C07B56 /* Stubs */,
 				0ADC533518579C6300258E1E /* PLMenu.h */,
 				0ADC533618579C6300258E1E /* PLMenu.m */,
 				0AC187F1185F872D00A0DD9F /* PLPlate.h */,
@@ -573,6 +583,25 @@
 				0A6D139718932A9700C8F977 /* PLBasketViewTableCellAddOn.xib */,
 			);
 			name = "Shopping Cart";
+			sourceTree = "<group>";
+		};
+		975C665519B0112000B198C9 /* Payment */ = {
+			isa = PBXGroup;
+			children = (
+				975C665619B0116E00B198C9 /* PLPaymentViewController.h */,
+				975C665719B0116E00B198C9 /* PLPaymentViewController.m */,
+				975C665819B0116E00B198C9 /* PLPaymentViewController.xib */,
+			);
+			name = Payment;
+			sourceTree = "<group>";
+		};
+		97889A6E1996EF3C00C07B56 /* Stubs */ = {
+			isa = PBXGroup;
+			children = (
+				97889A6F1996EF7D00C07B56 /* PLStubOrders.h */,
+				97889A701996EF7D00C07B56 /* PLStubOrders.m */,
+			);
+			name = Stubs;
 			sourceTree = "<group>";
 		};
 		97BD77361991D6BB003977E4 /* TestFlightSDK3.0.2 */ = {
@@ -673,6 +702,7 @@
 				0A6D1396189328E200C8F977 /* PLBasketViewTableCellPlate.xib in Resources */,
 				0AA3D7EE18BD41A600AA7DBB /* PLWelcomeViewController.xib in Resources */,
 				0ABBE3FE1843D0390031D3E2 /* InfoPlist.strings in Resources */,
+				975C665A19B0116E00B198C9 /* PLPaymentViewController.xib in Resources */,
 				0A5FC52D1868D06B00F69BA5 /* PLALaCarteViewController.xib in Resources */,
 				0A9D7DDB184A93C800BAE38D /* PLSelectMainsViewController.xib in Resources */,
 				0A495EF01852824800C14B03 /* bg-salmon.jpg in Resources */,
@@ -735,6 +765,7 @@
 				0AC187F6185F8D4D00A0DD9F /* PLOrder.m in Sources */,
 				0ADC533718579C6300258E1E /* PLMenu.m in Sources */,
 				0AA3D7FA18BD584300AA7DBB /* PLAccountStore.m in Sources */,
+				975C665919B0116E00B198C9 /* PLPaymentViewController.m in Sources */,
 				0A0D169D185102140057F538 /* PLAccountViewController.m in Sources */,
 				0A2E0B4A1888A21200DF3A85 /* PLAddOnViewController.m in Sources */,
 				97BD77431991E900003977E4 /* PLPayment.m in Sources */,
@@ -749,6 +780,7 @@
 				0A6D138F189310E000C8F977 /* PLPlateSize.m in Sources */,
 				0A0D16AC185131680057F538 /* PLBaseOrderViewController.m in Sources */,
 				0A9D7DF3184D19C400BAE38D /* PLOrderSummaryViewController.m in Sources */,
+				97889A711996EF7D00C07B56 /* PLStubOrders.m in Sources */,
 				0A9D7DCE18470F5F00BAE38D /* PLSelectPlateSizeViewController.m in Sources */,
 				0A5FC53C18860B9D00F69BA5 /* PLALaCarteItem.m in Sources */,
 				0A5FC5271868CE5600F69BA5 /* PLBasketStore.m in Sources */,
@@ -826,6 +858,7 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
+					"LOCAL=1",
 					"$(inherited)",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
@@ -839,6 +872,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = NO;
 			};
 			name = Debug;
 		};
@@ -869,9 +903,10 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
+				VALIDATE_PRODUCT = NO;
 			};
 			name = Release;
 		};
@@ -880,7 +915,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Emile Baizel (PUU4SK2RV3)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Plate/Plate-Prefix.pch";
 				INFOPLIST_FILE = "Plate/Plate-Info.plist";
@@ -899,8 +935,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Emile Baizel (PUU4SK2RV3)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Plate/Plate-Prefix.pch";
 				INFOPLIST_FILE = "Plate/Plate-Info.plist";
@@ -909,7 +945,7 @@
 					"$(PROJECT_DIR)/Plate/TestFlightSDK3.0.2",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "65C72D6A-D562-48E3-9167-117F32B40E7E";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

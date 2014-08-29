@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "PLBasketViewTableCell.h"
+#import "PLPaymentViewController.h"
 
-@interface PLBasketViewController : UIViewController <BasketViewTableCellDelegate>
+@interface PLBasketViewController : UIViewController <BasketViewTableCellDelegate, AddPaymentModalDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *basketTable;
+@property (strong, nonatomic) PLPaymentViewController *plpvc;
 @end

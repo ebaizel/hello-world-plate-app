@@ -51,8 +51,11 @@
         sidesSummary = @"no sides";
     }
     
-    self.mainsToBeAdded.text = mainsSummary;
-    self.sidesToBeAdded.text = sidesSummary;
+    self.textMainsSummary.text = mainsSummary;
+    self.textSidesSummary.text = sidesSummary;
+    
+//    self.mainsToBeAdded.text = mainsSummary;
+//    self.sidesToBeAdded.text = sidesSummary;
 }
 
 -(void)viewDidAppear:(BOOL)animated

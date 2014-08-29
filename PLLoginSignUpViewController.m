@@ -42,6 +42,30 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)createAccount:(id)sender {
+    PLAccount *account = [[PLAccount alloc]init];
+    account.login = _textEmailCreateAccount.text;
+    account.password = _textPasswordCreateAccount.text;
+    [[PLPlateStore sharedStore] login:account forBlock:^(PLAccount *accountResult, NSError *err) {
+        
+        if (!err) {
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"UserLoggedIn" object:self];
+            NSString *path = [self accountArchivePath];
+            [NSKeyedArchiver archiveRootObject:accountResult toFile:path];
+            [[self delegate] userLoggedIn];
+        } else {
+            UIAlertView *av =[[UIAlertView alloc]
+                              initWithTitle:@"Error"
+                              message:[err localizedDescription]
+                              delegate:nil
+                              cancelButtonTitle:@"OK"
+                              otherButtonTitles:nil];
+            [av show];
+        }
+    }];
+
+}
+
 - (IBAction)login:(id)sender {
     PLAccount *account = [[PLAccount alloc]init];
     account.login = _textEmail.text;
@@ -65,14 +89,14 @@
     }];
 }
 
-- (IBAction)logout:(id)sender {
-    NSFileManager *fileManager = [NSFileManager defaultManager];
-    NSError *error;
-    BOOL success = [fileManager removeItemAtPath:[self accountArchivePath] error:&error];
-    if (success) {
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"UserLoggedOut" object:self];
-    }
-}
+//- (IBAction)logout:(id)sender {
+//    NSFileManager *fileManager = [NSFileManager defaultManager];
+//    NSError *error;
+//    BOOL success = [fileManager removeItemAtPath:[self accountArchivePath] error:&error];
+//    if (success) {
+//        [[NSNotificationCenter defaultCenter] postNotificationName:@"UserLoggedOut" object:self];
+//    }
+//}
 
 
 - (NSString *)accountArchivePath

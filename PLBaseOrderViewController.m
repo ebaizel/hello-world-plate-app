@@ -56,8 +56,16 @@
                                         NSForegroundColorAttributeName: [UIColor moneyGreenColor]
                                         } forState:UIControlStateNormal];
     
+    UIFontDescriptor *fontDescriptor = [[UIFontDescriptor alloc] init];
+    
+    UIFontDescriptor *fontDescriptorForHelveticaNeue = [fontDescriptor fontDescriptorWithFamily:@"Helvetica Neue"];
+    UIFontDescriptor *symbolicFontDescriptor = [fontDescriptorForHelveticaNeue fontDescriptorWithSymbolicTraits:UIFontDescriptorTraitItalic];
+    
+    UIFont *statusButtonFont = [UIFont fontWithDescriptor:symbolicFontDescriptor  size:18.0];
+    
+    
     [statusButton setTitleTextAttributes:@{
-                                             NSFontAttributeName: [UIFont fontWithName:@"HelveticaNeue-Thin_Italic" size:18.0],
+                                             NSFontAttributeName: statusButtonFont,
                                              NSForegroundColorAttributeName: [UIColor moneyGreenColor]
                                              } forState:UIControlStateNormal];
 

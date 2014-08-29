@@ -19,5 +19,6 @@
 @property (nonatomic, strong) NSString *location;
 @property (nonatomic, strong) NSArray *orderItems;
 @property (nonatomic, strong) NSString *userId;
+@property (nonatomic, assign) double cost;
 
 @end

@@ -18,6 +18,6 @@
 - (PLAccount *) getAccount;
 
 - (BOOL) login:(PLAccount *)account;
-- (BOOL) logout;
+//- (BOOL) logout;
 
 @end

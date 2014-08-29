@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface PLAboutViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UITextView *textAboutPlate;
 
 @end

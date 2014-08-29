@@ -61,7 +61,30 @@
     return [documentDirectory stringByAppendingPathComponent:@"account.archive"];
 }
 
-- (BOOL)logout
+//- (void) logout
+//{
+//    [[PLPlateStore sharedStore] login:account forBlock:^(PLAccount *accountResult, NSError *err) {
+//    
+//        if (!err) {
+//            [[NSNotificationCenter defaultCenter] postNotificationName:@"UserLoggedIn" object:self];
+//            NSString *path = [self accountArchivePath];
+//            [NSKeyedArchiver archiveRootObject:accountResult toFile:path];
+//            [[self delegate] userLoggedIn];
+//        } else {
+//            UIAlertView *av =[[UIAlertView alloc]
+//                              initWithTitle:@"Error"
+//                              message:[err localizedDescription]
+//                              delegate:nil
+//                              cancelButtonTitle:@"OK"
+//                              otherButtonTitles:nil];
+//            [av show];
+//        }
+//    }];
+//}
+
+
+
+- (BOOL)logout2
 {
     NSFileManager *fileManager = [NSFileManager defaultManager];
     NSError *error;

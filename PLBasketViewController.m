@@ -245,11 +245,31 @@
 
 - (IBAction)actionContinue:(id)sender {
     
-    if ([[PLBasketStore sharedStore] quantityOfAllItemsInBasket] > 0) {
+//    if ([[PLBasketStore sharedStore] quantityOfAllItemsInBasket] > 0) {
         // GO TO THE PAYMENT PAGE
-        //        [[self navigationController] pushViewController:[self orderSummaryController] animated:YES];
-    }
+
+        NSLog(@"Displaying payment modal from BasketView");
+        _plpvc = [[PLPaymentViewController alloc]init];
+        _plpvc.displaySaveToAccount = true;
+        [[self plpvc] setDelegate:self];
+        //[self presentViewController:_plpvc animated:YES completion:nil];
+
+        [[self navigationController] pushViewController:_plpvc animated:YES];
+//    }
 }
+
+
+- (void)dismissModal
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)paymentAdded
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+
 
 -(void)removeItemWithCell:(PLBasketViewTableCell *)cell
 {

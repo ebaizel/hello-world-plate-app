@@ -28,9 +28,13 @@
 - (void)clearCache;
 
 // Account Management
+- (PLAccount *) getAccount;
+- (void)createAccount:(PLAccount *)pAccount forBlock:(void (^)(PLAccount *, NSError *))block;
 - (void)login:(PLAccount *)pAccount forBlock:(void (^)(PLAccount *, NSError *))block;
 - (void)logout:(void (^)(NSError *))block;
 - (void)addPayment:(PLPayment *)pPayment forBlock:(void (^)(PLPayment *, NSError *))block;
+- (void)getOrderHistory:(void (^)(NSMutableArray *, NSError *))block;
+- (void)getPayment:(void (^)(PLPayment *, NSError *))block;
 
 // Menus and Ordering
 - (void)getPlateMenu:(PLPlateSize *)plateSize plateType:(PLPlateTypeSize *)plateTypeSize forBlock:(void (^)(PLMenu *menuResult, NSError *))block;
