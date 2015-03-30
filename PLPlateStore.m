@@ -17,9 +17,9 @@
 #import "PLOrder.h"
 
 #ifdef DEBUG
-    #define BASEURL @"http://ep2.gulosolutions.com/"
+    #define BASEURL @"https://platesf.com/"
 #else
-    #define BASEURL @"http://ep2.gulosolutions.com/"
+    #define BASEURL @"https://platesf.com/"
 #endif
 
 @implementation PLPlateStore
