@@ -14,11 +14,15 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fjo-2d-JBc">
-                    <rect key="frame" x="73" y="100" width="174" height="30"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fjo-2d-JBc">
+                    <rect key="frame" x="73" y="323" width="174" height="40"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.45115443560000001" green="0.66694972829999999" blue="0.1219838739" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="e7r-A3-ska"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                    <state key="normal" title="Login / Sign Up">
+                    <state key="normal" title="LOGIN / SIGN UP">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -26,11 +30,12 @@
                         <action selector="login:" destination="-1" eventType="touchUpInside" id="ncy-AE-Wtb"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EaG-oa-xE0">
-                    <rect key="frame" x="77" y="259" width="166" height="39"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EaG-oa-xE0">
+                    <rect key="frame" x="73" y="373" width="174" height="36"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.45115443560000001" green="0.66694972829999999" blue="0.1219838739" alpha="1" colorSpace="calibratedRGB"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                    <state key="normal" title="Start Ordering">
+                    <state key="normal" title="START ORDER">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -39,7 +44,15 @@
                     </connections>
                 </button>
             </subviews>
-            <color key="backgroundColor" red="0.33284981455471246" green="0.49458644701086951" blue="0.089329798145283038" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="EaG-oa-xE0" secondAttribute="trailing" constant="73" id="Go1-xT-aea"/>
+                <constraint firstAttribute="bottom" secondItem="EaG-oa-xE0" secondAttribute="bottom" constant="71" id="LJP-Gy-Mgv"/>
+                <constraint firstAttribute="centerX" secondItem="EaG-oa-xE0" secondAttribute="centerX" id="PUj-8o-j73"/>
+                <constraint firstItem="fjo-2d-JBc" firstAttribute="leading" secondItem="EaG-oa-xE0" secondAttribute="leading" id="Rw1-8M-PMd"/>
+                <constraint firstItem="EaG-oa-xE0" firstAttribute="top" secondItem="fjo-2d-JBc" secondAttribute="bottom" constant="10" id="aZP-4J-7Tf"/>
+                <constraint firstItem="fjo-2d-JBc" firstAttribute="trailing" secondItem="EaG-oa-xE0" secondAttribute="trailing" id="bst-zy-241"/>
+            </constraints>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
